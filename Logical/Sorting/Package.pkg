@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.5.2.102?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Package" Description="gAxisSortobj">gAxisSortobj</Object>
+    <Object Type="File" Description="Package global variables" Private="true">SortGlobal.var</Object>
+    <Object Type="File" Description="Package global types" Private="true">SortGlobal.typ</Object>
+    <Object Type="File" Description="Local data types" Private="true">Station.typ</Object>
+    <Object Type="File" Description="Local variables" Private="true">Station.var</Object>
+    <Object Type="Package" Description="Visualization package">Visualization</Object>
+    <Object Type="Package" Description="OPCUA package">OPCUA</Object>
+    <Object Type="Package" Description="Sorting machine functionality">Machine</Object>
+    <Object Type="Program" Language="IEC" Description="Alarm control for sorter">AlarmCtrl</Object>
+  </Objects>
+</Package>

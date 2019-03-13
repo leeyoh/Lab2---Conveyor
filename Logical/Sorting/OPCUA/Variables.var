@@ -1,0 +1,50 @@
+VAR
+	READ_VAR : {REDUND_UNREPLICABLE} STRING[255] := '::MainCtrl:OpcUaComm'; (*Read variable*)
+	WRITE_VAR : {REDUND_UNREPLICABLE} STRING[255] := '::MainCtrl:MachineState'; (*Write variable*)
+	SERVER_URL : {REDUND_UNREPLICABLE} STRING[255] := 'opc.tcp://10.1.16.113:4840'; (*Server Endpoint Url*)
+	NS_URI : {REDUND_UNREPLICABLE} STRING[255] := 'urn:B&R/pv/'; (*NamespaceUri*)
+	NODE_IDENTIFIER : {REDUND_UNREPLICABLE} STRING[255] := '::AsGlobalPV:OpcUaComm'; (*Node identifier*)
+	UaWrite_0 : UA_Write; (*Function block for UA_Write*)
+	UaConnect_0 : UA_Connect; (*Function block for UA_Connect*)
+	ExecuteConnect : BOOL; (*Execute connect command*)
+	UaSessionConnectInfo : UASessionConnectInfo; (*Info for connect session*)
+	ConnectionHdl : DWORD := 0; (*Connection handle*)
+	ExecuteWrite : BOOL; (*Execute write command*)
+	ErrorID : DWORD; (*ID for error*)
+	UaGetNamespaceIndex_0 : UA_GetNamespaceIndex; (*Function block for UA_GetNamespaceIndex*)
+	ExecuteGetnamespaceIndex : BOOL; (*Execute get namespace command*)
+	NamespaceIndex : UINT := 0; (*Namespace index*)
+	UaNodeGetHandle_0 : UA_NodeGetHandle; (*Function block for UA_NodeGetHandle*)
+	ExecuteNodeGetHandle : BOOL; (*Execute get node handle command*)
+	UaNodeID : UANodeID; (*Node identifier*)
+	NodeHdl : DWORD := 0; (*Node handle*)
+	UaNodeAddInfo : UANodeAdditionalInfo; (*Additional info for reading and writing*)
+	Variable_0 : STRING[255]; (*OPCUA process variable*)
+	UaMonitoringSettings : UAMonitoringSettings; (*Settings for monitoring*)
+	MonitoredItemHdl : DWORD; (*Monitored item handle*)
+END_VAR
+VAR CONSTANT
+	SESSION_TIMEOUT : TIME := T#1m; (*Connect session timeout*)
+	MONITOR_CONNECT_TIME : TIME := T#10s; (*Monitor connection time*)
+	CONNECT_INFO_TIMEOUT : TIME := T#10s; (*Session connect info timeout*)
+	NS_TIMEOUT : TIME := T#5s; (*Namespace timeout*)
+	NH_RELEASE_TIMEOUT : TIME := T#10s; (*Node handle release timeout*)
+	NH_TIMEOUT : TIME := T#10s; (*Node handle timeout*)
+END_VAR
+VAR
+	Variable_Wr0 : STRING[255]; (*Write to variable*)
+	Variable_Rd0 : STRING[255]; (*Read variable*)
+END_VAR
+VAR CONSTANT
+	WRITE_TIMEOUT : TIME := T#10s; (*Timeout for writing variable*)
+	READ_TIMEOUT : TIME := T#10s; (*Timeout for reading variable*)
+	DISCONNECT_TIMEOUT : TIME := T#10s; (*Timeout for disconnecting from server*)
+END_VAR
+VAR
+	UaRead_0 : UA_Read; (*Function block for UA_Read*)
+	ExecuteRead : BOOL; (*Execute read command*)
+	UaNodeReleaseHandle_0 : UA_NodeReleaseHandle; (*Function block for UA_NodeReleaseHandle*)
+	ExecuteNodeReleaseHandle : BOOL; (*Execute release node handle command*)
+	UaDisconnect_0 : UA_Disconnect; (*Function block for UA_Disconnect*)
+	ExecuteDisconnect : BOOL; (*Execute disconnect command*)
+END_VAR

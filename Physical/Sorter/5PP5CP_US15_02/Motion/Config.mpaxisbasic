@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gAxisBasic" Type="mpaxisbasic">
+    <Selector ID="AxisConfiguration" Value="AxisWithConfiguration">
+      <Group ID="Axis">
+        <Property ID="BaseType" Value="2" />
+        <Property ID="MeasurementUnit" Value="1" />
+        <Property ID="MeasurementResolution" Value="1" />
+        <Group ID="PeriodSettings">
+          <Property ID="Period" Value="150" />
+        </Group>
+        <Group ID="MovementLimits">
+          <Property ID="VelocityPositive" Value="10000" />
+          <Property ID="VelocityNegative" Value="10000" />
+          <Property ID="Acceleration" Value="50000" />
+          <Property ID="Deceleration" Value="50000" />
+        </Group>
+      </Group>
+      <Group ID="Drive">
+        <Group ID="Transformation">
+          <Property ID="ReferenceDistance" Value="150" />
+        </Group>
+        <Group ID="Controller">
+          <Group ID="LoopFilters">
+            <Selector ID="[0]" />
+            <Selector ID="[1]" />
+            <Selector ID="[2]" />
+          </Group>
+        </Group>
+      </Group>
+    </Selector>
+  </Element>
+</Configuration>

@@ -1,0 +1,4 @@
+VAR
+	AutoModeActive : BOOL;
+	ManualModeActive : BOOL;
+END_VAR

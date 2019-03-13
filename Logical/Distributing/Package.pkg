@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.5.2.102?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Package global types" Private="true">DistGlobal.typ</Object>
+    <Object Type="File" Description="Package global variables" Private="true">DistGlobal.var</Object>
+    <Object Type="Package" Description="Visualization package">Visualization</Object>
+    <Object Type="Package" Description="Distributing machine functionality">Machine</Object>
+    <Object Type="Program" Language="IEC" Description="Alarm control for distributor">AlarmCtrl</Object>
+    <Object Type="File" Description="Package global types" Private="true">DistMain.typ</Object>
+    <Object Type="File" Description="Package global variables" Private="true">DistMain.var</Object>
+  </Objects>
+</Package>

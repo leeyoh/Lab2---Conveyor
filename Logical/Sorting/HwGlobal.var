@@ -1,0 +1,3 @@
+VAR
+	gSortHW : gSortHW_type; (*Control variable for hardware IO types for sorter*)
+END_VAR

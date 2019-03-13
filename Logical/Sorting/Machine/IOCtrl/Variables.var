@@ -1,0 +1,8 @@
+VAR CONSTANT
+	PUCK_PAST : REAL := 500;
+END_VAR
+VAR
+	Update_Accel : BOOL;
+	Update_Decel : BOOL;
+	Update_Vel : BOOL;
+END_VAR

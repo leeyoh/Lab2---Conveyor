@@ -1,0 +1,9 @@
+VAR
+	Station : Station_type;
+	OpcUaComm : ARRAY[0..7] OF USINT;
+	OpcUaCommOld : ARRAY[0..7] OF USINT;
+	OpcUaCommTemp : ARRAY[0..7] OF USINT;
+	MachineState : ARRAY[0..7] OF USINT;
+	MachineStateOld : ARRAY[0..7] OF USINT;
+	MachineStateTemp : ARRAY[0..7] OF USINT;
+END_VAR

@@ -1,0 +1,4 @@
+VAR
+	gAxisDist_oSetPosOld : INT := 0;
+	gAxisSort_oSetPosOld : INT := 0;
+END_VAR

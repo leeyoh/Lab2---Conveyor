@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.5.2.102?>
+<NcMapping NcSwId="Acp10" DisabledNodesAreHidden="False">
+  <NcObject Name="gAxisSort" ModuleId="X67SM2436" ModuleAddress="SDC_IF1.ST1" Type="ncAXIS" Channel="1" AcoposSimulation="Off" InitParameter="gAxisSorti" AcoposParameter="gAxisSorta" Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="X67SM2436_ncAXIS2" ModuleId="X67SM2436" ModuleAddress="SDC_IF1.ST2" Type="ncAXIS" Channel="1" AcoposSimulation="Off" Disabled="TRUE" ModuleDisabled="FALSE" />
+</NcMapping>

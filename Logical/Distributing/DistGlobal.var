@@ -1,0 +1,4 @@
+VAR
+	gDistHW : gDistHW_type; (*Control variable for hardware IO types for distributor*)
+	gDistModuleOK : gDistModuleOK_type; (*Control variable for distributor module statuses*)
+END_VAR

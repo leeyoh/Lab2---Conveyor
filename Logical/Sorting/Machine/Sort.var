@@ -1,0 +1,11 @@
+VAR
+	Sorter : Sorter_type;
+	MpAxisBasicConveyor : MpAxisBasic;
+	ConveyorParam : MpAxisBasicParType;
+	TP_10ms_Start : TP_10ms;
+	TimeIn : UDINT;
+	SlotIndex : USINT;
+	TON_10ms_Opc : TON_10ms;
+	MIndex : INT;
+	MchUpdate : BOOL;
+END_VAR

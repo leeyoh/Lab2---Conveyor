@@ -1,0 +1,3 @@
+VAR
+	ClientState : ClientState_enum; (*State of OPCUA client*)
+END_VAR

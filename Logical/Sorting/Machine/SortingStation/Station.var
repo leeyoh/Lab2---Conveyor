@@ -1,0 +1,7 @@
+VAR
+	AutoState : USINT := 1;
+	SorterState : USINT;
+	EqLeft : BOOL;
+	EqRight : BOOL;
+	EqMiddle : BOOL;
+END_VAR

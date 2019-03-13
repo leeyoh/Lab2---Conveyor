@@ -1,0 +1,29 @@
+VAR_CONFIG
+	Cyclic#1.gAxisSort_DrvIf.iLifeCnt AT %IB."X67SM2436".LifeCnt;
+	Cyclic#1.gAxisSort_DrvIf.iDrvOK AT %IX."X67SM2436".DrvOk01;
+	Cyclic#1.gAxisSort_DrvIf.oBoostCurrent AT %QX."X67SM2436".BoostCurrent01;
+	Cyclic#1.gAxisSort_DrvIf.oStandStillCurrent AT %QX."X67SM2436".StandstillCurrent01;
+	Cyclic#1.gAxisSort_DrvIf.oSetTime AT %QW."X67SM2436".SetTime01;
+	Cyclic#1.gAxisSort_MotorStep0 AT %QW."X67SM2436".Motor1Step0;
+	Cyclic#1.gAxisSort_DiDoIf.iLifeCntDriveEnable AT %IB."X67SM2436".LifeCnt;
+	Cyclic#1.gAxisSort_DiDoIf.iLifeCntDriveReady AT %IB."X67SM2436".LifeCnt;
+	Cyclic#1.gAxisSort_DiDoIf.iDriveReady AT %IX."X67SM2436".DrvOk01;
+	Cyclic#1.gAxisSort_DiDoIf.oDriveEnable AT %QX."X67SM2436".DriveEnable01;
+	Cyclic#1.gAxisSort_EncIf1.iLifeCnt AT %IB."X67SM2436".LifeCnt;
+	Cyclic#1.gAxisSort_EncIf1.iEncOK AT %IX."X67SM2436".EncOk01;
+	Cyclic#1.gAxisSort_EncIf1.iActPos AT %IW."X67SM2436".ActPos01;
+	Cyclic#1.gAxisSort_EncIf1.iRefPulsePos AT %IW."X67SM2436".RefPulsePos01;
+	Cyclic#1.gAxisSort_EncIf1.iRefPulseCnt AT %IB."X67SM2436".RefPulseCnt01;
+	Cyclic#1.gAxisSort_EncIf1.iActTime AT %IW."X67SM2436".ActTime01;
+	::gSortHW.do.ExtendSwitch1 AT %QX."X20DO9322".DigitalOutput02; (* *) (*Extend switch 1*)
+	::gSortHW.do.ExtendSwitch2 AT %QX."X20DO9322".DigitalOutput03; (* *) (*Extend switch 2*)
+	::gSortHW.do.RetractStopper AT %QX."X20DO9322".DigitalOutput04; (* *) (*Retract stopper*)
+	::gSortHW.di.ProductAvailable AT %IX."X20DI9371".DigitalInput01; (* *) (*Product available*)
+	::gSortHW.di.Metallic AT %IX."X20DI9371".DigitalInput02; (* *) (*Metallic product*)
+	::gSortHW.di.NotBlack AT %IX."X20DI9371".DigitalInput03; (* *) (*Product is not black*)
+	::gSortHW.di.LaneFull AT %IX."X20DI9371".DigitalInput04; (* *) (*Lane full*)
+	::gSortHW.di.Switch1Retracted AT %IX."X20DI9371".DigitalInput05; (* *) (*Switch 1 retracted*)
+	::gSortHW.di.Switch1Extended AT %IX."X20DI9371".DigitalInput06; (* *) (*Switch 1 extended*)
+	::gSortHW.di.Switch2Retracted AT %IX."X20DI9371".DigitalInput07; (* *) (*Switch 2 retracted*)
+	::gSortHW.di.Switch2Extended AT %IX."X20DI9371".DigitalInput08; (* *) (*Switch 2 extended*)
+END_VAR

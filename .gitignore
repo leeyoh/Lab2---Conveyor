@@ -1,0 +1,8 @@
+Binaries/
+Temp/
+Diagnosis/
+AS/
+*.set
+*.isopen
+*.orig
+*.zip

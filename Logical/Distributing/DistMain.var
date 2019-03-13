@@ -1,0 +1,4 @@
+VAR
+	MainCtrl : MainCtrl_typ;
+	OpcUaComm : ARRAY[0..7] OF USINT;
+END_VAR

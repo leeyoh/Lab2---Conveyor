@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.5.2.102"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="MachineStatus_Strings">
+  <Property Name="Description" Value="Machine status strings"/>
+  <Property Name="Index" Value="2"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="211025" Value="Product identified"/>
+    <Text ID="211026" Value="Lane full"/>
+    <Text ID="211029" Value="Switch 1 extended"/>
+    <Text ID="211030" Value="Switch 1 retracted"/>
+    <Text ID="211031" Value="Switch 2 extended"/>
+    <Text ID="211032" Value="Switch 2 retracted"/>
+    <Text ID="211033" Value="Stopper open"/>
+    <Text ID="211034" Value="Stopper closed"/>
+    <Text ID="211035" Value="Conveyor clear for next product"/>
+    <Text ID="211036" Value="Not at home position"/>
+    <Text ID="211037" Value="Machine READY"/>
+    <Text ID="211038" Value=""/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="211025" Value=""/>
+    <Text ID="211026" Value=""/>
+    <Text ID="211029" Value=""/>
+    <Text ID="211030" Value=""/>
+    <Text ID="211031" Value=""/>
+    <Text ID="211032" Value=""/>
+    <Text ID="211033" Value=""/>
+    <Text ID="211034" Value=""/>
+    <Text ID="211035" Value=""/>
+    <Text ID="211036" Value=""/>
+    <Text ID="211037" Value=""/>
+    <Text ID="211038" Value=""/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="211025" Value="0"/>
+    <Index ID="211026" Value="1"/>
+    <Index ID="211029" Value="2"/>
+    <Index ID="211030" Value="3"/>
+    <Index ID="211031" Value="4"/>
+    <Index ID="211032" Value="5"/>
+    <Index ID="211033" Value="6"/>
+    <Index ID="211034" Value="7"/>
+    <Index ID="211035" Value="8"/>
+    <Index ID="211036" Value="9"/>
+    <Index ID="211037" Value="10"/>
+    <Index ID="211038" Value="13"/>
+  </IndexMap>
+</TextGroup>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.5.2.102"?>
+<Layer xmlns="http://br-automation.co.at/AS/VC/Project" Name="MpBackground">
+  <Property Name="BackColor" Value="9"/>
+  <Property Name="Description" Value="Background for all pages"/>
+  <Property Name="Height" Value="480"/>
+  <Property Name="Left" Value="0"/>
+  <Property Name="StatusDatapoint" Value="None"/>
+  <Property Name="Top" Value="0"/>
+  <Property Name="Width" Value="640"/>
+  <TextGroup>
+    <TextLayer LanguageId="en"/>
+    <TextLayer LanguageId="de"/>
+    <IndexMap/>
+  </TextGroup>
+  <Controls>
+    <Control ClassId="0x00001005" Name="bmpBackground">
+      <Property Name="Bitmap" Value="Source[local].Bitmap[MpBackgroundVGA_Logo]"/>
+      <Property Name="BitmapSource" Value="SingleBitmap"/>
+      <Property Name="ControlID" Value="0"/>
+      <Property Name="Description" Value=""/>
+      <Property Name="FillStyle" Value="Transparent"/>
+      <Property Name="Height" Value="480"/>
+      <Property Name="IndexDatapoint" Value="None"/>
+      <Property Name="Left" Value="0"/>
+      <Property Name="SimulationValue" Value="0"/>
+      <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+      <Property Name="Top" Value="0"/>
+      <Property Name="Width" Value="640"/>
+    </Control>
+    <Control ClassId="0x0000100A" Name="dtTime">
+      <Property Name="AlignmentHorizontal" Value="Center"/>
+      <Property Name="ControlID" Value="0"/>
+      <Property Name="Description" Value=""/>
+      <Property Name="Font" Value="Source[local].Font[MpPads]"/>
+      <Property Name="Height" Value="15"/>
+      <Property Name="Left" Value="441"/>
+      <Property Name="SimulationValue" Value="10:26"/>
+      <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+      <Property Name="TextGroup" Value="Source[global].TextGroup[MpDateTimeFormats]"/>
+      <Property Name="TextIndex" Value="3"/>
+      <Property Name="TextSource" Value="SingleText"/>
+      <Property Name="Top" Value="6"/>
+      <Property Name="ValueDatapoint" Value="None"/>
+      <Property Name="Width" Value="81"/>
+    </Control>
+    <Control ClassId="0x0000100A" Name="dtDate">
+      <Property Name="AlignmentHorizontal" Value="Center"/>
+      <Property Name="ControlID" Value="0"/>
+      <Property Name="Description" Value=""/>
+      <Property Name="Height" Value="15"/>
+      <Property Name="Left" Value="441"/>
+      <Property Name="SimulationValue" Value="01/12/2014"/>
+      <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+      <Property Name="TextGroup" Value="Source[global].TextGroup[MpDateTimeFormats]"/>
+      <Property Name="TextIndex" Value="1"/>
+      <Property Name="TextSource" Value="SingleText"/>
+      <Property Name="Top" Value="24"/>
+      <Property Name="ValueDatapoint" Value="None"/>
+      <Property Name="Width" Value="81"/>
+    </Control>
+    <Control ClassId="0x00001002" Name="cmdSetupPage">
+      <Property Name="BackColor" Value="0"/>
+      <Property Name="Bitmap" Value="Source[local].Bitmap[MpImg_Config]"/>
+      <Property Name="BitmapAlignmentHorizontal" Value="Center"/>
+      <Property Name="BitmapAlignmentVertical" Value="Above Text"/>
+      <Property Name="BitmapIndexDatapoint" Value="None"/>
+      <Property Name="BitmapSource" Value="SingleBitmap"/>
+      <Property Name="Border" Value="Source[local].Border[Mp_FrameInvisible]"/>
+      <Property Name="ControlID" Value="0"/>
+      <Property Name="Description" Value=""/>
+      <Property Name="EmbVirtualKey" Value="Source[local].VirtualKey[%embVirtualKey_173]"/>
+      <Property Name="Font" Value="Source[local].Font[MpMenuButtons]"/>
+      <Property Name="Height" Value="50"/>
+      <Property Name="KeyMatrixOffset" Value="None"/>
+      <Property Name="Left" Value="390"/>
+      <Property Name="PressedBitmapSource" Value="Source[embedded].Property[BitmapSource]"/>
+      <Property Name="PressedBorder" Value="Source[local].Border[Mp_Flat_grey]"/>
+      <Property Name="PressedTextSource" Value="Source[embedded].Property[TextSource]"/>
+      <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpGlobalAreaButton]"/>
+      <Property Name="TextIndexDatapoint" Value="None"/>
+      <Property Name="TextSimulationValue" Value="0"/>
+      <Property Name="TextSource" Value="None"/>
+      <Property Name="Top" Value="0"/>
+      <Property Name="VirtualKey" Value="Source[local].VirtualKey[%embVirtualKey_173]"/>
+      <Property Name="Width" Value="50"/>
+    </Control>
+    <Control ClassId="0x00001002" Name="cmdHomePage">
+      <Property Name="BackColor" Value="0"/>
+      <Property Name="Bitmap" Value="Source[local].Bitmap[MpImg_Home]"/>
+      <Property Name="BitmapAlignmentHorizontal" Value="Center"/>
+      <Property Name="BitmapAlignmentVertical" Value="Above Text"/>
+      <Property Name="BitmapIndexDatapoint" Value="None"/>
+      <Property Name="BitmapSource" Value="SingleBitmap"/>
+      <Property Name="Border" Value="Source[local].Border[Mp_FrameInvisible]"/>
+      <Property Name="ControlID" Value="0"/>
+      <Property Name="Description" Value=""/>
+      <Property Name="EmbVirtualKey" Value="Source[local].VirtualKey[%embVirtualKey_174]"/>
+      <Property Name="Font" Value="Source[local].Font[MpMenuButtons]"/>
+      <Property Name="Height" Value="50"/>
+      <Property Name="KeyMatrixOffset" Value="None"/>
+      <Property Name="Left" Value="0"/>
+      <Property Name="PressedBitmapSource" Value="Source[embedded].Property[BitmapSource]"/>
+      <Property Name="PressedBorder" Value="Source[local].Border[Mp_Flat_grey]"/>
+      <Property Name="PressedTextSource" Value="Source[embedded].Property[TextSource]"/>
+      <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpGlobalAreaButton]"/>
+      <Property Name="TextIndexDatapoint" Value="None"/>
+      <Property Name="TextSimulationValue" Value="0"/>
+      <Property Name="TextSource" Value="None"/>
+      <Property Name="Top" Value="430"/>
+      <Property Name="VirtualKey" Value="Source[local].VirtualKey[%embVirtualKey_174]"/>
+      <Property Name="Width" Value="55"/>
+    </Control>
+    <Control ClassId="0x00001002" Name="cmdAlarmPage">
+      <Property Name="BackColor" Value="0"/>
+      <Property Name="Bitmap" Value="Source[local].Bitmap[MpImg_Warning]"/>
+      <Property Name="BitmapAlignmentHorizontal" Value="Center"/>
+      <Property Name="BitmapAlignmentVertical" Value="Above Text"/>
+      <Property Name="BitmapIndexDatapoint" Value="None"/>
+      <Property Name="BitmapSource" Value="SingleBitmap"/>
+      <Property Name="Border" Value="Source[local].Border[Mp_FrameInvisible]"/>
+      <Property Name="ControlID" Value="0"/>
+      <Property Name="Description" Value=""/>
+      <Property Name="EmbVirtualKey" Value="Source[local].VirtualKey[%embVirtualKey_175]"/>
+      <Property Name="Font" Value="Source[local].Font[MpMenuButtons]"/>
+      <Property Name="Height" Value="50"/>
+      <Property Name="KeyMatrixOffset" Value="None"/>
+      <Property Name="Left" Value="585"/>
+      <Property Name="PressedBitmapSource" Value="Source[embedded].Property[BitmapSource]"/>
+      <Property Name="PressedBorder" Value="Source[local].Border[Mp_Flat_grey]"/>
+      <Property Name="PressedTextSource" Value="Source[embedded].Property[TextSource]"/>
+      <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpGlobalAreaButton]"/>
+      <Property Name="TextIndexDatapoint" Value="None"/>
+      <Property Name="TextSimulationValue" Value="0"/>
+      <Property Name="TextSource" Value="None"/>
+      <Property Name="Top" Value="430"/>
+      <Property Name="VirtualKey" Value="Source[local].VirtualKey[%embVirtualKey_175]"/>
+      <Property Name="Width" Value="55"/>
+    </Control>
+    <Control ClassId="0x00001005" Name="Bitmap_1">
+      <Property Name="BackColor" Value="16"/>
+      <Property Name="Bitmap" Value="Source[local].Bitmap[bnrlogo]"/>
+      <Property Name="BitmapSource" Value="SingleBitmap"/>
+      <Property Name="ControlID" Value="0"/>
+      <Property Name="Description" Value=""/>
+      <Property Name="Height" Value="45"/>
+      <Property Name="IndexDatapoint" Value="None"/>
+      <Property Name="Left" Value="557"/>
+      <Property Name="SimulationValue" Value="0"/>
+      <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+      <Property Name="Top" Value="0"/>
+      <Property Name="Width" Value="81"/>
+    </Control>
+    <Control ClassId="0x00001004" Name="Text_1">
+      <Property Name="ControlID" Value="0"/>
+      <Property Name="Description" Value=""/>
+      <Property Name="ForeColor" Value="248"/>
+      <Property Name="Height" Value="21"/>
+      <Property Name="IndexDatapoint" Value="Source[global].Variable[DataSource.Sorting.Visualization.VisCtrl.Vis.Sts.StatusString]"/>
+      <Property Name="Left" Value="12"/>
+      <Property Name="SimulationIndex" Value="0"/>
+      <Property Name="SimulationValue" Value=""/>
+      <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+      <Property Name="TextGroup" Value="Source[local].TextGroup[MachineStatus_Strings]"/>
+      <Property Name="TextIndexOffset" Value="0"/>
+      <Property Name="TextSource" Value="MultipleTexts"/>
+      <Property Name="Top" Value="13"/>
+      <Property Name="Width" Value="376"/>
+    </Control>
+  </Controls>
+  <KeyMapping>
+    <VirtualKey Name="%embVirtualKey_173">
+      <Property Name="Description" Value=""/>
+      <Property Name="VirtualKey_LED" Value="False"/>
+      <KeyActions>
+        <KeyAction ClassId="0x00000160">
+          <Property Name="Description" Value=""/>
+          <Property Name="Locking" Value="Never"/>
+          <Property Name="Name" Value="Action_0"/>
+          <Property Name="Page" Value="Source[local].Page[MachineStatusPage]"/>
+          <Property Name="Target" Value="Page"/>
+        </KeyAction>
+      </KeyActions>
+    </VirtualKey>
+    <VirtualKey Name="%embVirtualKey_174">
+      <Property Name="Description" Value=""/>
+      <Property Name="VirtualKey_LED" Value="False"/>
+      <KeyActions>
+        <KeyAction ClassId="0x00000160">
+          <Property Name="Description" Value=""/>
+          <Property Name="Locking" Value="Never"/>
+          <Property Name="Name" Value="Action_0"/>
+          <Property Name="Page" Value="Source[local].Page[MainPage]"/>
+          <Property Name="Target" Value="Page"/>
+        </KeyAction>
+      </KeyActions>
+    </VirtualKey>
+    <VirtualKey Name="%embVirtualKey_175">
+      <Property Name="Description" Value=""/>
+      <Property Name="VirtualKey_LED" Value="False"/>
+      <KeyActions>
+        <KeyAction ClassId="0x00000160">
+          <Property Name="Description" Value=""/>
+          <Property Name="Locking" Value="Never"/>
+          <Property Name="Name" Value="Action_0"/>
+          <Property Name="Page" Value="Source[local].Page[AlarmPage]"/>
+          <Property Name="Target" Value="Page"/>
+        </KeyAction>
+      </KeyActions>
+    </VirtualKey>
+  </KeyMapping>
+</Layer>

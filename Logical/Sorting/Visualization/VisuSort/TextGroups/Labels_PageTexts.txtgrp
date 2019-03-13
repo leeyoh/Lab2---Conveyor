@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.5.2.102"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="Labels_PageTexts">
+  <Property Name="Description" Value="Texts for labels on pages"/>
+  <Property Name="Index" Value="1"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="209561" Value="Number of sorted products:"/>
+    <Text ID="209562" Value="Number of red products:"/>
+    <Text ID="209563" Value="Number of black products:"/>
+    <Text ID="209564" Value="Number of metallic products:"/>
+    <Text ID="209565" Value="Automatic mode time:"/>
+    <Text ID="209566" Value="OPCUA"/>
+    <Text ID="209567" Value="Lane Configuration"/>
+    <Text ID="209568" Value="Conveyor Settings"/>
+    <Text ID="209569" Value="Velocity"/>
+    <Text ID="209570" Value="Acceleration"/>
+    <Text ID="209571" Value="Deceleration"/>
+    <Text ID="215449" Value="Lane 1"/>
+    <Text ID="215450" Value="Lane 2 "/>
+    <Text ID="215451" Value="Lane 3"/>
+    <Text ID="215452" Value="Inputs and Outputs"/>
+    <Text ID="215453" Value="Product available"/>
+    <Text ID="215454" Value="Metallic product"/>
+    <Text ID="215455" Value="Product is not black"/>
+    <Text ID="215456" Value="Lane full"/>
+    <Text ID="215457" Value="Switch 1 retracted"/>
+    <Text ID="215458" Value="Switch 1 extended"/>
+    <Text ID="215459" Value="Switch 2 retracted"/>
+    <Text ID="215460" Value="Switch 2 extended"/>
+    <Text ID="215461" Value="Extend switch 1"/>
+    <Text ID="215462" Value="Extend switch 2"/>
+    <Text ID="215463" Value="Retract stopper"/>
+    <Text ID="218483" Value="Jog Conveyor"/>
+    <Text ID="218484" Value="Stopper"/>
+    <Text ID="218485" Value="Switch 1"/>
+    <Text ID="218486" Value="Switch 2"/>
+    <Text ID="218487" Value="Detect Product"/>
+    <Text ID="220021" Value="The machine is running in automatic mode. Distributing station has controls."/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="209561" Value=""/>
+    <Text ID="209562" Value=""/>
+    <Text ID="209563" Value=""/>
+    <Text ID="209564" Value=""/>
+    <Text ID="209565" Value=""/>
+    <Text ID="209566" Value=""/>
+    <Text ID="209567" Value=""/>
+    <Text ID="209568" Value=""/>
+    <Text ID="209569" Value=""/>
+    <Text ID="209570" Value=""/>
+    <Text ID="209571" Value=""/>
+    <Text ID="215449" Value=""/>
+    <Text ID="215450" Value=""/>
+    <Text ID="215451" Value=""/>
+    <Text ID="215452" Value=""/>
+    <Text ID="215453" Value=""/>
+    <Text ID="215454" Value=""/>
+    <Text ID="215455" Value=""/>
+    <Text ID="215456" Value=""/>
+    <Text ID="215457" Value=""/>
+    <Text ID="215458" Value=""/>
+    <Text ID="215459" Value=""/>
+    <Text ID="215460" Value=""/>
+    <Text ID="215461" Value=""/>
+    <Text ID="215462" Value=""/>
+    <Text ID="215463" Value=""/>
+    <Text ID="218483" Value=""/>
+    <Text ID="218484" Value=""/>
+    <Text ID="218485" Value=""/>
+    <Text ID="218486" Value=""/>
+    <Text ID="218487" Value=""/>
+    <Text ID="220021" Value=""/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="209561" Value="0"/>
+    <Index ID="209562" Value="1"/>
+    <Index ID="209563" Value="2"/>
+    <Index ID="209564" Value="3"/>
+    <Index ID="209565" Value="4"/>
+    <Index ID="209566" Value="5"/>
+    <Index ID="209567" Value="6"/>
+    <Index ID="209568" Value="7"/>
+    <Index ID="209569" Value="8"/>
+    <Index ID="209570" Value="9"/>
+    <Index ID="209571" Value="10"/>
+    <Index ID="215449" Value="11"/>
+    <Index ID="215450" Value="12"/>
+    <Index ID="215451" Value="13"/>
+    <Index ID="215452" Value="14"/>
+    <Index ID="215453" Value="15"/>
+    <Index ID="215454" Value="16"/>
+    <Index ID="215455" Value="17"/>
+    <Index ID="215456" Value="18"/>
+    <Index ID="215457" Value="19"/>
+    <Index ID="215458" Value="20"/>
+    <Index ID="215459" Value="21"/>
+    <Index ID="215460" Value="22"/>
+    <Index ID="215461" Value="23"/>
+    <Index ID="215462" Value="24"/>
+    <Index ID="215463" Value="25"/>
+    <Index ID="218483" Value="26"/>
+    <Index ID="218484" Value="27"/>
+    <Index ID="218485" Value="28"/>
+    <Index ID="218486" Value="29"/>
+    <Index ID="218487" Value="30"/>
+    <Index ID="220021" Value="31"/>
+  </IndexMap>
+</TextGroup>

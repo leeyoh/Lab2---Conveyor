@@ -1,0 +1,14 @@
+VAR
+	gAxisDist : ACP10AXIS_typ;
+	gAxisDist_HW : SdcHwCfg_typ := (0);
+	gAxisDist_DrvIf : SdcDrvIf16_typ := (0);
+	gAxisDist_EncIf1 : SdcEncIf16_typ := (0);
+	gAxisDist_DiDoIf : SdcDiDoIf_typ := (0);
+	gAxisDist_MotorStep0 : INT := 0;
+	gAxisSort : ACP10AXIS_typ;
+	gAxisSort_HW : SdcHwCfg_typ := (0);
+	gAxisSort_DrvIf : SdcDrvIf16_typ := (0);
+	gAxisSort_EncIf1 : SdcEncIf16_typ := (0);
+	gAxisSort_DiDoIf : SdcDiDoIf_typ := (0);
+	gAxisSort_MotorStep0 : INT := 0;
+END_VAR

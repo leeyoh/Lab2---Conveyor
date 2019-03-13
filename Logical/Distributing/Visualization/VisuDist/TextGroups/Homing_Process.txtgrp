@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.5.2.102"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="Homing_Process">
+  <Property Name="Description" Value="Homing procedure"/>
+  <Property Name="Index" Value="6"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="223059" Value="The machine is homing:"/>
+    <Text ID="223060" Value="Suction is switched off."/>
+    <Text ID="223061" Value="Conveyors are switched off."/>
+    <Text ID="223062" Value="Please remove all products from the station."/>
+    <Text ID="223063" Value="Ejection cylinder is retracted."/>
+    <Text ID="223064" Value="Swivel arm is positioned over conveyor."/>
+    <Text ID="223065" Value="Stopper is closed."/>
+    <Text ID="223066" Value="Switches are retracted."/>
+    <Text ID="223067" Value=""/>
+    <Text ID="223068" Value=""/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="223059" Value=""/>
+    <Text ID="223060" Value=""/>
+    <Text ID="223061" Value=""/>
+    <Text ID="223062" Value=""/>
+    <Text ID="223063" Value=""/>
+    <Text ID="223064" Value=""/>
+    <Text ID="223065" Value=""/>
+    <Text ID="223066" Value=""/>
+    <Text ID="223067" Value=""/>
+    <Text ID="223068" Value=""/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="223059" Value="0"/>
+    <Index ID="223060" Value="1"/>
+    <Index ID="223061" Value="2"/>
+    <Index ID="223062" Value="3"/>
+    <Index ID="223063" Value="4"/>
+    <Index ID="223064" Value="5"/>
+    <Index ID="223065" Value="6"/>
+    <Index ID="223066" Value="7"/>
+    <Index ID="223067" Value="8"/>
+    <Index ID="223068" Value="9"/>
+  </IndexMap>
+</TextGroup>

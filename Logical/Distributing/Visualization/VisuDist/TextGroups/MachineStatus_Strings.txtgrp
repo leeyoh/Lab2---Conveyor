@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.5.2.102"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="MachineStatus_Strings">
+  <Property Name="Description" Value="Machine status texts"/>
+  <Property Name="Index" Value="2"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="212488" Value="Ejection cylinder position: extended"/>
+    <Text ID="212489" Value="Suction on"/>
+    <Text ID="212490" Value="Ejection cylinder position: retracted"/>
+    <Text ID="212491" Value="Suction off"/>
+    <Text ID="212492" Value="Swivel arm position: pick-up"/>
+    <Text ID="212493" Value="Swivel arm position: drop-off"/>
+    <Text ID="212494" Value="Distributing bay empty"/>
+    <Text ID="212495" Value="Conveyor clear for next product"/>
+    <Text ID="212496" Value="Product leaving distributing station conveyor"/>
+    <Text ID="212497" Value="Not at home position"/>
+    <Text ID="226151" Value="Machine READY"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="212488" Value=""/>
+    <Text ID="212489" Value=""/>
+    <Text ID="212490" Value=""/>
+    <Text ID="212491" Value=""/>
+    <Text ID="212492" Value=""/>
+    <Text ID="212493" Value=""/>
+    <Text ID="212494" Value=""/>
+    <Text ID="212495" Value=""/>
+    <Text ID="212496" Value=""/>
+    <Text ID="212497" Value=""/>
+    <Text ID="226151" Value=""/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="212488" Value="0"/>
+    <Index ID="212489" Value="2"/>
+    <Index ID="212490" Value="1"/>
+    <Index ID="212491" Value="3"/>
+    <Index ID="212492" Value="4"/>
+    <Index ID="212493" Value="5"/>
+    <Index ID="212494" Value="6"/>
+    <Index ID="212495" Value="7"/>
+    <Index ID="212496" Value="8"/>
+    <Index ID="212497" Value="9"/>
+    <Index ID="226151" Value="10"/>
+  </IndexMap>
+</TextGroup>

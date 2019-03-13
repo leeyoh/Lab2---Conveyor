@@ -1,0 +1,11 @@
+VAR
+	EjectorState : EjectorState_typ;
+	CommandProcessing : REFERENCE TO BOOL;
+	CylinderExtended : BOOL;
+	CylinderRetracted : BOOL;
+	AutoStep : EjectorAutoStep_Enum := EJECTOR_EXTEND;
+	EjectorExtendTimer : TON;
+END_VAR
+VAR CONSTANT
+	EJECTOR_EXTEND_TIMEOUT : TIME := T#2s;
+END_VAR

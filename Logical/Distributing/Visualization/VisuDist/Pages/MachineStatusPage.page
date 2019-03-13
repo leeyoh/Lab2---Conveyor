@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.5.2.102"?>
+<Page xmlns="http://br-automation.co.at/AS/VC/Project" Name="MachineStatusPage">
+  <Property Name="Description" Value="Template setup page - system configuration"/>
+  <Property Name="Height" Value="480"/>
+  <Property Name="Index" Value="1000"/>
+  <Property Name="MoveFocus" Value="Circular"/>
+  <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+  <Property Name="Width" Value="640"/>
+  <Layers>
+    <LayerRef Source="Source[local].Layer[MpBackground]">
+      <Property Name="Description" Value=""/>
+      <Property Name="EditingMode" Value="Frozen"/>
+      <Property Name="Left" Value="0"/>
+      <Property Name="Name" Value="MpBackground"/>
+      <Property Name="OutlineColor" Value="0"/>
+      <Property Name="OutlineDisplayControl" Value="False"/>
+      <Property Name="OutlineDisplayName" Value="True"/>
+      <Property Name="OutlineHatched" Value="False"/>
+      <Property Name="Top" Value="0"/>
+      <Property Name="VisibilityMode" Value="Normal"/>
+      <Property Name="Z-Order" Value="0"/>
+    </LayerRef>
+    <Layer Name="Default">
+      <Property Name="BackColor" Value="9"/>
+      <Property Name="Description" Value=""/>
+      <Property Name="EditingMode" Value="Normal"/>
+      <Property Name="Height" Value="480"/>
+      <Property Name="Left" Value="0"/>
+      <Property Name="OutlineColor" Value="0"/>
+      <Property Name="OutlineDisplayControl" Value="False"/>
+      <Property Name="OutlineDisplayName" Value="True"/>
+      <Property Name="OutlineHatched" Value="False"/>
+      <Property Name="StatusDatapoint" Value="None"/>
+      <Property Name="Top" Value="0"/>
+      <Property Name="VisibilityMode" Value="Normal"/>
+      <Property Name="Width" Value="640"/>
+      <Property Name="Z-Order" Value="1"/>
+      <TextGroup>
+        <TextLayer LanguageId="en"/>
+        <TextLayer LanguageId="de"/>
+        <IndexMap/>
+      </TextGroup>
+      <Controls>
+        <Control ClassId="0x00001004" Name="txtGroupControl">
+          <Property Name="Border" Value="Source[local].Border[Mp_GroupControl]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader2]"/>
+          <Property Name="Height" Value="384"/>
+          <Property Name="Left" Value="0"/>
+          <Property Name="Multiline" Value="Automatic"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpGroupControl]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[MpButtons_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="2"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="45"/>
+          <Property Name="Width" Value="640"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="txtIPAddress">
+          <Property Name="Border" Value="Source[local].Border[Mp_LabelBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Height" Value="29"/>
+          <Property Name="Left" Value="28"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="18"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="153"/>
+          <Property Name="Width" Value="108"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="txtNetworkSettings">
+          <Property Name="AlignmentVertical" Value="Center"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader2]"/>
+          <Property Name="ForeColor" Value="254"/>
+          <Property Name="Height" Value="22"/>
+          <Property Name="Left" Value="35"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="24"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="119"/>
+          <Property Name="Width" Value="188"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="txtDateTime">
+          <Property Name="AlignmentVertical" Value="Center"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader2]"/>
+          <Property Name="ForeColor" Value="254"/>
+          <Property Name="Height" Value="22"/>
+          <Property Name="Left" Value="35"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="3"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="228"/>
+          <Property Name="Width" Value="129"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="Line_3">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="29"/>
+          <Property Name="EndY" Value="249"/>
+          <Property Name="ForeColor" Value="249"/>
+          <Property Name="StartX" Value="614"/>
+          <Property Name="StartY" Value="249"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="Line_4">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="28"/>
+          <Property Name="EndY" Value="140"/>
+          <Property Name="ForeColor" Value="249"/>
+          <Property Name="StartX" Value="614"/>
+          <Property Name="StartY" Value="140"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="txtIPAddress1">
+          <Property Name="Border" Value="Source[local].Border[Mp_LabelBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Height" Value="29"/>
+          <Property Name="Left" Value="232"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="19"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="153"/>
+          <Property Name="Width" Value="108"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="txtIPAddress2">
+          <Property Name="Border" Value="Source[local].Border[Mp_LabelBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Height" Value="29"/>
+          <Property Name="Left" Value="432"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="20"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="153"/>
+          <Property Name="Width" Value="108"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="setHour2">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_InputBorder]"/>
+          <Property Name="CompletionValue" Value="1"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Height" Value="40"/>
+          <Property Name="InputTouchpad" Value="Source[local].TouchPad[MpNumPad]"/>
+          <Property Name="Left" Value="142"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="5000"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinIntegerDigits" Value="2"/>
+          <Property Name="MinValue" Value="0"/>
+          <Property Name="SimulationValue" Value="1000"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpInput]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="147"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.Visualization.VisCtrl.Vis.Par.Velocity]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="70"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="setHour3">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_InputBorder]"/>
+          <Property Name="CompletionValue" Value="1"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Height" Value="40"/>
+          <Property Name="InputTouchpad" Value="Source[local].TouchPad[MpNumPad]"/>
+          <Property Name="Left" Value="344"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="50000"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinIntegerDigits" Value="2"/>
+          <Property Name="MinValue" Value="0"/>
+          <Property Name="SimulationValue" Value="5000"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpInput]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="147"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.Visualization.VisCtrl.Vis.Par.Acceleration]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="70"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="setHour4">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_InputBorder]"/>
+          <Property Name="CompletionValue" Value="1"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Height" Value="40"/>
+          <Property Name="InputTouchpad" Value="Source[local].TouchPad[MpNumPad]"/>
+          <Property Name="Left" Value="544"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="50000"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinIntegerDigits" Value="2"/>
+          <Property Name="MinValue" Value="0"/>
+          <Property Name="SimulationValue" Value="5000"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpInput]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="147"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.Visualization.VisCtrl.Vis.Par.Deceleration]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="70"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_2">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpInfo]"/>
+          <Property Name="ForeColor" Value="254"/>
+          <Property Name="Height" Value="20"/>
+          <Property Name="Left" Value="36"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="5"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="257"/>
+          <Property Name="Width" Value="162"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_2">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_OutputBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
+          <Property Name="Height" Value="20"/>
+          <Property Name="Left" Value="231"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="257"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.gDistHW.di.EjCylExtended]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="55"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_3">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpInfo]"/>
+          <Property Name="ForeColor" Value="254"/>
+          <Property Name="Height" Value="21"/>
+          <Property Name="Left" Value="36"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="6"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="280"/>
+          <Property Name="Width" Value="159"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_3">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_OutputBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
+          <Property Name="Height" Value="20"/>
+          <Property Name="Left" Value="231"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="280"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.gDistHW.di.EjCylRetracted]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="55"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_4">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpInfo]"/>
+          <Property Name="ForeColor" Value="254"/>
+          <Property Name="Height" Value="21"/>
+          <Property Name="Left" Value="36"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="7"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="303"/>
+          <Property Name="Width" Value="142"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_4">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_OutputBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
+          <Property Name="Height" Value="20"/>
+          <Property Name="Left" Value="231"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="303"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.gDistHW.di.ProductGripped]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="55"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_5">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpInfo]"/>
+          <Property Name="ForeColor" Value="254"/>
+          <Property Name="Height" Value="22"/>
+          <Property Name="Left" Value="36"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="8"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="326"/>
+          <Property Name="Width" Value="199"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_5">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_OutputBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
+          <Property Name="Height" Value="20"/>
+          <Property Name="Left" Value="231"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="327"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.gDistHW.di.SwDrMagPos]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="55"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_6">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpInfo]"/>
+          <Property Name="ForeColor" Value="254"/>
+          <Property Name="Height" Value="23"/>
+          <Property Name="Left" Value="36"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="9"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="350"/>
+          <Property Name="Width" Value="194"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_6">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_OutputBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
+          <Property Name="Height" Value="20"/>
+          <Property Name="Left" Value="231"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="351"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.gDistHW.di.SwDrConvPos]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="55"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_7">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpInfo]"/>
+          <Property Name="ForeColor" Value="254"/>
+          <Property Name="Height" Value="21"/>
+          <Property Name="Left" Value="36"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="10"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="374"/>
+          <Property Name="Width" Value="142"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_7">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_OutputBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
+          <Property Name="Height" Value="20"/>
+          <Property Name="Left" Value="231"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="374"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.gDistHW.di.MagEmpty]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="55"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_8">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpInfo]"/>
+          <Property Name="ForeColor" Value="254"/>
+          <Property Name="Height" Value="21"/>
+          <Property Name="Left" Value="312"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="11"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="257"/>
+          <Property Name="Width" Value="142"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_8">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_OutputBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
+          <Property Name="Height" Value="20"/>
+          <Property Name="Left" Value="518"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="257"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.gDistHW.di.SortStationFree]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="55"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_9">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpInfo]"/>
+          <Property Name="ForeColor" Value="254"/>
+          <Property Name="Height" Value="20"/>
+          <Property Name="Left" Value="312"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="12"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="282"/>
+          <Property Name="Width" Value="214"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_9">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_OutputBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
+          <Property Name="Height" Value="20"/>
+          <Property Name="Left" Value="518"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="282"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.gDistHW.do.EjCylPushProduct]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="55"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_10">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpInfo]"/>
+          <Property Name="ForeColor" Value="254"/>
+          <Property Name="Height" Value="21"/>
+          <Property Name="Left" Value="312"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="13"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="305"/>
+          <Property Name="Width" Value="142"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_10">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_OutputBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
+          <Property Name="Height" Value="20"/>
+          <Property Name="Left" Value="518"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="305"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.gDistHW.do.Vacuum]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="55"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_11">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpInfo]"/>
+          <Property Name="ForeColor" Value="254"/>
+          <Property Name="Height" Value="21"/>
+          <Property Name="Left" Value="312"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="14"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="329"/>
+          <Property Name="Width" Value="142"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_11">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_OutputBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
+          <Property Name="Height" Value="20"/>
+          <Property Name="Left" Value="518"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="329"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.gDistHW.do.EjImpulse]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="55"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_12">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpInfo]"/>
+          <Property Name="ForeColor" Value="254"/>
+          <Property Name="Height" Value="19"/>
+          <Property Name="Left" Value="312"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="15"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="353"/>
+          <Property Name="Width" Value="170"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_12">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_OutputBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
+          <Property Name="Height" Value="20"/>
+          <Property Name="Left" Value="518"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="352"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.gDistHW.do.SwDrToMag]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="55"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_13">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpInfo]"/>
+          <Property Name="ForeColor" Value="254"/>
+          <Property Name="Height" Value="21"/>
+          <Property Name="Left" Value="312"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
+          <Property Name="TextIndexOffset" Value="16"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="374"/>
+          <Property Name="Width" Value="162"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_13">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="Border" Value="Source[local].Border[Mp_OutputBorder]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
+          <Property Name="Height" Value="20"/>
+          <Property Name="Left" Value="518"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="374"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.gDistHW.do.SwDrToConv]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="55"/>
+        </Control>
+      </Controls>
+      <KeyMapping>
+        <VirtualKey Name="TouchCalibration">
+          <Property Name="Description" Value=""/>
+          <Property Name="VirtualKey_LED" Value="False"/>
+          <KeyActions>
+            <KeyAction ClassId="0x00000164">
+              <Property Name="Description" Value=""/>
+              <Property Name="Locking" Value="Never"/>
+              <Property Name="Name" Value="Action_0"/>
+            </KeyAction>
+          </KeyActions>
+        </VirtualKey>
+      </KeyMapping>
+    </Layer>
+  </Layers>
+  <MovementOrder>
+    <MovementEntry Control="Source[embedded].Layer[Default].Control[setHour2]">
+      <Property Name="Down" Value="Source[embedded].Layer[Default].Control[setHour3]"/>
+      <Property Name="Left" Value="Source[embedded].Layer[Default].Control[setHour4]"/>
+      <Property Name="Right" Value="Source[embedded].Layer[Default].Control[setHour3]"/>
+      <Property Name="Up" Value="Source[embedded].Layer[Default].Control[setHour3]"/>
+    </MovementEntry>
+    <MovementEntry Control="Source[embedded].Layer[Default].Control[setHour3]">
+      <Property Name="Down" Value="Source[embedded].Layer[Default].Control[setHour4]"/>
+      <Property Name="Left" Value="Source[embedded].Layer[Default].Control[setHour2]"/>
+      <Property Name="Right" Value="Source[embedded].Layer[Default].Control[setHour4]"/>
+      <Property Name="Up" Value="Source[embedded].Layer[Default].Control[setHour2]"/>
+    </MovementEntry>
+    <MovementEntry Control="Source[embedded].Layer[Default].Control[setHour4]">
+      <Property Name="Down" Value="Source[embedded].Layer[Default].Control[setHour3]"/>
+      <Property Name="Left" Value="Source[embedded].Layer[Default].Control[setHour3]"/>
+      <Property Name="Right" Value="Source[embedded].Layer[Default].Control[setHour2]"/>
+      <Property Name="Up" Value="Source[embedded].Layer[Default].Control[setHour3]"/>
+    </MovementEntry>
+  </MovementOrder>
+  <TabSequence>
+    <TabSeqItem Index="0" Value="Source[embedded].Layer[Default].Control[setHour2]"/>
+    <TabSeqItem Index="1" Value="Source[embedded].Layer[Default].Control[setHour3]"/>
+    <TabSeqItem Index="2" Value="Source[embedded].Layer[Default].Control[setHour4]"/>
+    <TabSeqItem Index="3" Value="Source[embedded].Layer[Default].Control[Numeric_2]"/>
+    <TabSeqItem Index="4" Value="Source[embedded].Layer[Default].Control[Numeric_3]"/>
+    <TabSeqItem Index="5" Value="Source[embedded].Layer[Default].Control[Numeric_4]"/>
+    <TabSeqItem Index="6" Value="Source[embedded].Layer[Default].Control[Numeric_5]"/>
+    <TabSeqItem Index="7" Value="Source[embedded].Layer[Default].Control[Numeric_6]"/>
+    <TabSeqItem Index="8" Value="Source[embedded].Layer[Default].Control[Numeric_7]"/>
+    <TabSeqItem Index="9" Value="Source[embedded].Layer[Default].Control[Numeric_8]"/>
+    <TabSeqItem Index="10" Value="Source[embedded].Layer[Default].Control[Numeric_9]"/>
+    <TabSeqItem Index="11" Value="Source[embedded].Layer[Default].Control[Numeric_10]"/>
+    <TabSeqItem Index="12" Value="Source[embedded].Layer[Default].Control[Numeric_11]"/>
+    <TabSeqItem Index="13" Value="Source[embedded].Layer[Default].Control[Numeric_12]"/>
+    <TabSeqItem Index="14" Value="Source[embedded].Layer[Default].Control[Numeric_13]"/>
+  </TabSequence>
+</Page>

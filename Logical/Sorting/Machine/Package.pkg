@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.5.2.102?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Local variables" Private="true">Sort.var</Object>
+    <Object Type="File" Description="Local data types" Private="true">Sort.typ</Object>
+    <Object Type="Program" Language="IEC" Description="Sorting main control">MainCtrl</Object>
+    <Object Type="Program" Language="IEC" Description="Sorting conveyor">SortingStation</Object>
+    <Object Type="Program" Language="IEC" Description="Sorter inputs and outputs">IOCtrl</Object>
+  </Objects>
+</Package>
