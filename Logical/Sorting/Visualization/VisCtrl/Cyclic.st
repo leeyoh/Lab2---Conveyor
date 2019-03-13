@@ -195,7 +195,7 @@ PROGRAM _CYCLIC
 	END_IF	
 		
 		//Buttons lanes
-		PROGRAM _CYCLIC
+		
 		FOR Colour := 0 TO MAI_COLOURS BY 1 DO
 			FOR Lane := 0 TO MAI_LANES BY 1 DO
 				RTRIG[Colour,Lane].CLK := ButtonPressed[Colour,Lane];
