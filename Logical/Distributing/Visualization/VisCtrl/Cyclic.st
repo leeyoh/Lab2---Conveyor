@@ -18,7 +18,8 @@ PROGRAM _CYCLIC
 	(************* Main page commands *************)
 	IF Vis.Cmd.Automatic = TRUE THEN
 		MainCtrl.Input.Par.Mode  := DISTCTRL_AUTO;
-		Vis.Cmd.Automatic := FALSE;
+		OpcUaComm[1] 			 := 0;
+		Vis.Cmd.Automatic 		 := FALSE;
 	ELSE MainCtrl.Input.Par.Mode := DISTCTRL_MANUAL;
 	END_IF
 		

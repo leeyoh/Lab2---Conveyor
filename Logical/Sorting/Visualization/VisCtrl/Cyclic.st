@@ -18,6 +18,7 @@ PROGRAM _CYCLIC
 	(************* Main page commands *************)
 	IF Vis.Cmd.Automatic = TRUE THEN
 		MachineState[0]   := 1;
+		MachineState[1]   := 1;
 		Vis.Cmd.Automatic := FALSE;
 	END_IF
 	
