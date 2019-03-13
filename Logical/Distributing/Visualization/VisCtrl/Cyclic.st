@@ -20,7 +20,6 @@ PROGRAM _CYCLIC
 		MainCtrl.Input.Par.Mode  := DISTCTRL_AUTO;
 		OpcUaComm[1] 			 := 0;
 		Vis.Cmd.Automatic 		 := FALSE;
-	ELSE MainCtrl.Input.Par.Mode := DISTCTRL_MANUAL;
 	END_IF
 		
 	IF Vis.Cmd.Start = TRUE THEN
@@ -30,6 +29,7 @@ PROGRAM _CYCLIC
 	
 	IF Vis.Cmd.Stop = TRUE THEN
 		MainCtrl.Input.Cmd.StopAuto := TRUE;
+		MainCtrl.Input.Par.Mode := DISTCTRL_MANUAL;
 		Vis.Cmd.Stop 				:= FALSE;
 	END_IF
 	
