@@ -52,7 +52,8 @@ TYPE
 	END_STRUCT;
 	MainCtrlRejectionCode_Enum : 
 		(
-		DIST_IN_AUTO_MODE
+		DIST_IN_AUTO_MODE,
+		DIST_REJECT_PLACEHOLDER
 		);
 	MainCtrlStatus_typ : 	STRUCT 
 		AutoRunTime : TIME;

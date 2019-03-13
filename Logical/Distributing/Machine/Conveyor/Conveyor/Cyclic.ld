@@ -257,8 +257,8 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 		<row>
-			<empty/>
-			<empty/>
+			<contact type="open" name="MpAxisBasic_0.Error"/>
+			<line/>
 			<functionblock position="middle" type="MpAxisBasic"><input name="ErrorReset"/><output name="StatusID"/></functionblock>
 			<empty/>
 		</row>
@@ -361,6 +361,7 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
 
 
 

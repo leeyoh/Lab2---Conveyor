@@ -409,12 +409,14 @@ ACTION StateAuto:
 			<line/>
 			<line/>
 			<line/>
+			<line/>
 			<coil type="set" name="Conveyor.Input.Cmd.RunCycle"/>
 		</row>
 		<row>
 			<empty/>
-			<function position="middle" type="Compare!"><input name=""/><output name="40"/></function>
+			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
 			<analog type="output" name="ConveyorStep" or="true"/>
+			<contact type="open" name="ConveyorStep"/>
 			<contact type="open" name="gDistHW.di.ConvStartVacant"/>
 			<line/>
 			<line/>
@@ -425,12 +427,14 @@ ACTION StateAuto:
 			<empty/>
 			<function position="bottom" type="Compare!"><input name="&lt;!MainAutoStep = DIST_CYCLE_CONVEYOR"/></function>
 			<empty or="true"/>
+			<contact type="open" name="ConveyorStep"/>
 			<contact type="positive transition" name="Conveyor.Output.Status.CycleDone"/>
 			<contact type="open" name="SwivelArm.Output.Status.IsHomed"/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty/>
 		</row>
 		<row>
+			<empty/>
 			<empty/>
 			<empty/>
 			<empty/>
@@ -477,6 +481,7 @@ ACTION StateAuto:
 	</network>
 </networks>
 END_ACTION
+
 
 
 
