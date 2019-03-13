@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.5.2.102"?>
+<BitmapGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="AlarmButton_grp">
+  <Property Name="Description" Value="AlarmX page change active alarm"/>
+  <Property Name="Index" Value="0"/>
+  <Property Name="Translate" Value="False"/>
+  <BitmapLayer LanguageId="neutral">
+    <BitmapRef ID="3948" Value="Source[local].Bitmap[MpImg_Warning]"/>
+    <BitmapRef ID="3949" Value="Source[local].Bitmap[MpImg_ActiveWarning]"/>
+  </BitmapLayer>
+  <IndexMap>
+    <Index ID="3948" Value="0"/>
+    <Index ID="3949" Value="1"/>
+  </IndexMap>
+</BitmapGroup>

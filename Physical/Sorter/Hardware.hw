@@ -4,6 +4,9 @@
   <Module Name="5PP520.1043-00" Type="5PP520.1043-00" Version="2.0.3.1">
     <Connector Name="IF3">
       <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="Mode" Value="Manual" />
+      <Parameter ID="InternetAddress" Value="10.10.10.100" />
+      <Parameter ID="SubnetMask" Value="255.255.255.0" />
       <Group ID="Vnc1" />
       <Parameter ID="VncVcObjectName1" Value="VisuSo" />
       <Parameter ID="VncKeyMappingFile1" Value="" />

@@ -4,7 +4,9 @@ VAR
 	TIMER_CHANGE_STS : TIME := T#1s; (*Timer value to change machine status string*)
 END_VAR
 VAR CONSTANT
-	VEL : REAL := 2000.0; (*Initialize velocity*)
-	ACCEL : REAL := 5000.0; (*Initialize acceleration*)
-	DECEL : REAL := 5000.0; (*Initialize deceleration*)
+	DEFAULT_VEL : REAL := 50.0; (*Initialize velocity*)
+	DEFAULT_ACCEL : REAL := 50.0; (*Initialize acceleration*)
+	DEFAULT_DECEL : REAL := 50.0; (*Initialize deceleration*)
+	SHOW : UINT := 0; (*Show layer on vis*)
+	HIDE : UINT := 1; (*Hide layer on vis*)
 END_VAR

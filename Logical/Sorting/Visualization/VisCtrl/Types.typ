@@ -40,5 +40,7 @@ TYPE
 		StatusIndex : UDINT; (*Machine status index*)
 		StatusString : UINT; (*Control variable for machine status string*)
 		InHomePos : BOOL; (*In home position*)
+		ErrorPresent : UINT; (*An error has been detected*)
+		Locked : BOOL; (*Button locked*)
 	END_STRUCT;
 END_TYPE

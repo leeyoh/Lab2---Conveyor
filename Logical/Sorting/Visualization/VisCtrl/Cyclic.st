@@ -13,17 +13,44 @@ PROGRAM _CYCLIC
 	Station.Conveyor.Decel 	  := Vis.Par.Deceleration;
 	Station.Conveyor.JogNeg   := Vis.Cmd.JogBackward;
 	Station.Conveyor.JogPos   := Vis.Cmd.JogForward;
+	Vis.Par.ProductsSorted 	  := Station.ColorCount[0] + Station.ColorCount[1] + Station.ColorCount[2]; //Number of sorted products
 	
 	(************* Main page commands *************)
-	//automatic := Vis.Cmd.Automatic;
-	//start := Vis.Cmd.Start;
-	//stop := Vis.Cmd.Stop;
-	Station.Input.CMD.Home := Vis.Cmd.Home;
-	//reset := Vis.Cmd.Reset;
-
+	IF Vis.Cmd.Automatic = TRUE THEN
+		MachineState[0]   := 1;
+		Vis.Cmd.Automatic := FALSE;
+	END_IF
+	
+	IF Vis.Cmd.Stop = TRUE THEN
+		MachineState[2] := 0;
+		Vis.Cmd.Stop    := FALSE;
+	END_IF
+	
+	IF Vis.Cmd.Start = TRUE THEN
+		MachineState[2] := 1;
+		Vis.Cmd.Start   := FALSE;
+	END_IF
+	
+	IF Vis.Cmd.Reset = TRUE THEN
+		MachineState[2] := 3;
+		Vis.Cmd.Reset   := FALSE;
+	END_IF
+	
+	IF Vis.Cmd.Home = TRUE THEN
+		Station.Input.CMD.Home := Vis.Cmd.Home;
+		Vis.Cmd.Home 		   := FALSE;
+	END_IF
+	
 	(************* OPCUA commands *************)
-	Station.OpcUa.Connect 	 := Vis.Cmd.OPCUAConnect;
-	Station.OpcUa.Disconnect := Vis.Cmd.OPCUADisconnect;
+	IF Vis.Cmd.OPCUAConnect = TRUE THEN
+		Station.OpcUa.Connect 	 := Vis.Cmd.OPCUAConnect;
+		Vis.Cmd.OPCUAConnect 	 := FALSE;
+	END_IF
+	
+	IF Vis.Cmd.OPCUADisconnect = TRUE THEN
+		Station.OpcUa.Disconnect := Vis.Cmd.OPCUADisconnect;
+		Vis.Cmd.OPCUADisconnect  := FALSE;
+	END_IF
 	
 	(************* Manual mode commands set/reset *************)
 	
@@ -83,15 +110,15 @@ PROGRAM _CYCLIC
 	
 	//Homing pop-up
 	IF Vis.Cmd.Home = TRUE THEN
-		Vis.Sts.Homing  := 0; //Visible
-	ELSE Vis.Sts.Homing := 1; //Invisible
+		Vis.Sts.Homing  := SHOW;
+	ELSE Vis.Sts.Homing := HIDE;
 	END_IF
 	
-	(*//Distributing station set automatic mode
-	IF //Auto[0] = 1 AND Auto[1] = 0 THEN
-		Vis.Sts.AutoDistributing  := 0; //Visible
-	ELSE Vis.Sts.AutoDistributing := 1; //Invisible
-	END_IF*)
+	//Distributing station set automatic mode
+	IF MachineState[0] = 1 AND MachineState[1] = 0 THEN
+		Vis.Sts.AutoDistributing  := SHOW;
+	ELSE Vis.Sts.AutoDistributing := HIDE;
+	END_IF
 	
 	(************* Machine status *************)
 	
@@ -177,10 +204,10 @@ PROGRAM _CYCLIC
 	
 	
 		FOR Colour := 0 TO MAI_COLOURS BY 1 DO 
-			colourassigned := FALSE;
+			ColourAssigned := FALSE;
 			FOR Lane := 0 TO MAI_LANES BY 1 DO
 				IF ButtonPressed[Colour,Lane] THEN
-					colourassigned := TRUE;
+					ColourAssigned := TRUE;
 					FOR i := 0 TO MAI_LANES BY 1 DO
 						IF i <> Lane THEN
 							ButtonLocked[Colour,i] := TRUE;
@@ -189,7 +216,7 @@ PROGRAM _CYCLIC
 				END_IF
 			END_FOR
 		
-			IF colourassigned = FALSE THEN
+			IF ColourAssigned = FALSE THEN
 				FOR Lane := 0 TO MAI_LANES BY 1 DO
 					ButtonLocked[Colour,Lane] := FALSE;
 				END_FOR
@@ -212,8 +239,21 @@ PROGRAM _CYCLIC
 				RTRIG[Colour,Lane]();
 			END_FOR
 		END_FOR
+		
+	(************* Button locking *************)
 	
-		//Number of sorted products
-		Vis.Par.ProductsSorted := Station.ColorCount[0] + Station.ColorCount[1] + Station.ColorCount[2];
+	//Lock out manual buttons when in automatic mode
+	IF MachineState[0] = 1 THEN
+		Vis.Sts.Locked := TRUE;
+	ELSIF MachineState[0] = 0 THEN
+		Vis.Sts.Locked := FALSE;
+	END_IF
+		
+	//Alarm page button error present 
+	IF MachineState[6] = 1 THEN
+		Vis.Sts.ErrorPresent := TRUE;
+	ELSIF MachineState[6] = 0 THEN
+		Vis.Sts.ErrorPresent := FALSE;	
+	END_IF
 	 
 END_PROGRAM

@@ -36,6 +36,7 @@ TYPE
 		Error : BOOL; (*True if the station is in an error state*)
 		ErrorID : EjectorErrorID_Enum; (*Container for error information*)
 		IsHomed : BOOL; (*True if the station is in the home position*)
+		CycleDone : BOOL;
 	END_STRUCT;
 	EjectorErrorID_Enum : 
 		( (*Information about Error status of the Ejector Task*)
@@ -47,12 +48,12 @@ END_TYPE
 
 TYPE
 	SwivelArm_typ : {REDUND_UNREPLICABLE} 	STRUCT  (*Interface for Ejector station. Accessed by the Distributor MainCtrl Program.*)
-	Input : {REDUND_UNREPLICABLE} SwivelArmInput_typ; (*Input for Ejector Station, contains Commands and Parameters.*)
-	Output : {REDUND_UNREPLICABLE} SwivelArmOutput_typ; (*Output for Ejector Station, contains Statuses(e.g. cylinder position) and information regarding which commands are allowed at any given time*)
+		Input : {REDUND_UNREPLICABLE} SwivelArmInput_typ; (*Input for Ejector Station, contains Commands and Parameters.*)
+		Output : {REDUND_UNREPLICABLE} SwivelArmOutput_typ; (*Output for Ejector Station, contains Statuses(e.g. cylinder position) and information regarding which commands are allowed at any given time*)
 	END_STRUCT;
 	SwivelArmInput_typ : {REDUND_UNREPLICABLE} 	STRUCT  (*Ejector Input*)
-	Cmd : {REDUND_UNREPLICABLE} SwivelArmCmd_typ; (*Commands for the Ejector Station. Includes a command to run a full ejector cycle, as well as commands for finer control of the station, to be used during manual mode.*)
-	Par : {REDUND_UNREPLICABLE} SwivelArmPar_typ; (*Parameters for the Ejector Station.*)
+		Cmd : {REDUND_UNREPLICABLE} SwivelArmCmd_typ; (*Commands for the Ejector Station. Includes a command to run a full ejector cycle, as well as commands for finer control of the station, to be used during manual mode.*)
+		Par : {REDUND_UNREPLICABLE} SwivelArmPar_typ; (*Parameters for the Ejector Station.*)
 	END_STRUCT;
 	SwivelArmPar_typ : 	STRUCT  (*Ejector Parameters*)
 		Placeholder : USINT; (*Placeholder for parameters*)
@@ -78,34 +79,36 @@ TYPE
 		SWIVEL_VAC_ALREADY_INACTIVE,
 		SWIVEL_VAC_ALREADY_ACTIVE,
 		SWIVEL_ALREADY_HOMED
-	);
+		);
 	SwivelArmStatus_typ : 	STRUCT  (*Ejector Status*)
 		AtMagazine : BOOL; (*True if the ejector cylinder is fully extended*)
 		AtConveyor : BOOL; (*True if the ejector cylinder is fully retracted*)
 		VacuumOn : BOOL; (*True if the station is in an error state*)
 		ErrorID : SwivelArmErrorID_Enum; (*Container for error information*)
 		IsHomed : BOOL; (*True if the station is in the home position*)
+		CycleDone : BOOL;
 	END_STRUCT;
 	SwivelArmErrorID_Enum : 
 		( (*Information about Error status of the Ejector Task*)
 		SWIVEL_ERROR
-	);
+		);
 END_TYPE
 
 (*SwivelArm Station Interface Structures*)
 
 TYPE
 	Conveyor_typ : {REDUND_UNREPLICABLE} 	STRUCT  (*Interface for Ejector station. Accessed by the Distributor MainCtrl Program.*)
-	Input : {REDUND_UNREPLICABLE} ConveyorInput_typ; (*Input for Ejector Station, contains Commands and Parameters.*)
-	Output : {REDUND_UNREPLICABLE} ConveyorOutput_typ; (*Output for Ejector Station, contains Statuses(e.g. cylinder position) and information regarding which commands are allowed at any given time*)
+		Input : {REDUND_UNREPLICABLE} ConveyorInput_typ; (*Input for Ejector Station, contains Commands and Parameters.*)
+		Output : {REDUND_UNREPLICABLE} ConveyorOutput_typ; (*Output for Ejector Station, contains Statuses(e.g. cylinder position) and information regarding which commands are allowed at any given time*)
 	END_STRUCT;
 	ConveyorInput_typ : {REDUND_UNREPLICABLE} 	STRUCT  (*Ejector Input*)
-	Cmd : {REDUND_UNREPLICABLE} ConveyorCmd_typ; (*Commands for the Ejector Station. Includes a command to run a full ejector cycle, as well as commands for finer control of the station, to be used during manual mode.*)
-	Par : {REDUND_UNREPLICABLE} ConveyorPar_typ; (*Parameters for the Ejector Station.*)
+		Cmd : {REDUND_UNREPLICABLE} ConveyorCmd_typ; (*Commands for the Ejector Station. Includes a command to run a full ejector cycle, as well as commands for finer control of the station, to be used during manual mode.*)
+		Par : {REDUND_UNREPLICABLE} ConveyorPar_typ; (*Parameters for the Ejector Station.*)
 	END_STRUCT;
 	ConveyorPar_typ : 	STRUCT  (*Ejector Parameters*)
-		Accel : REAL;
-		Speed : REAL; (*Placeholder for parameters*)
+		Accel : REAL := 5000;
+		Speed : REAL := 2000; (*Placeholder for parameters*)
+		Decel : REAL := 5000;
 	END_STRUCT;
 	ConveyorCmd_typ : 	STRUCT  (*Ejector Commands*)
 		JogForward : BOOL := FALSE; (*Command to run one full cycle of the ejector station*)
@@ -121,16 +124,17 @@ TYPE
 	ConveyorRejectionCode_Enum : 
 		( (*Information about which command was rejected, and why*)
 		CONV_PART_AT_START
-	);
+		);
 	ConveyorStatus_typ : 	STRUCT  (*Ejector Status*)
 		AtMagazine : BOOL; (*True if the ejector cylinder is fully extended*)
 		AtConveyor : BOOL; (*True if the ejector cylinder is fully retracted*)
 		VacuumOn : BOOL; (*True if the station is in an error state*)
 		ErrorID : ConveyorErrorID_typ; (*Container for error information*)
 		IsHomed : BOOL; (*True if the station is in the home position*)
+		CycleDone : BOOL;
 	END_STRUCT;
 	ConveyorErrorID_typ : 
 		( (*Information about Error status of the Ejector Task*)
 		CONV_ERROR
-	);
+		);
 END_TYPE

@@ -9,22 +9,38 @@
 PROGRAM _CYCLIC
 	
 	(************* Conveyor parameters *************)
-	 //velocity := Vis.Par.Velocity;
-	 //acceleration := Vis.Par.Acceleration;
-	 //deceleration := Vis.Par.Deceleration;
+	MainCtrl.Input.Par.Conveyor.Speed 	:= Vis.Par.Velocity;
+	MainCtrl.Input.Par.Conveyor.Accel 	:= Vis.Par.Acceleration;
+	MainCtrl.Input.Par.Conveyor.Decel 	:= Vis.Par.Deceleration;
 	MainCtrl.Input.Cmd.Conveyor.JogBack := Vis.Cmd.JogBackward;
 	MainCtrl.Input.Cmd.Conveyor.JogFwd  := Vis.Cmd.JogForward;
 	
 	(************* Main page commands *************)
 	IF Vis.Cmd.Automatic = TRUE THEN
 		MainCtrl.Input.Par.Mode  := DISTCTRL_AUTO;
+		Vis.Cmd.Automatic := FALSE;
 	ELSE MainCtrl.Input.Par.Mode := DISTCTRL_MANUAL;
 	END_IF
 		
-	MainCtrl.Input.Cmd.StartAuto := Vis.Cmd.Start;
-	MainCtrl.Input.Cmd.StopAuto  := Vis.Cmd.Stop;
-	MainCtrl.Input.Cmd.Home 	 := Vis.Cmd.Home;
-	//reset := Vis.Cmd.Reset;
+	IF Vis.Cmd.Start = TRUE THEN
+		MainCtrl.Input.Cmd.StartAuto := TRUE;
+		Vis.Cmd.Start 				 := FALSE;
+	END_IF
+	
+	IF Vis.Cmd.Stop = TRUE THEN
+		MainCtrl.Input.Cmd.StopAuto := TRUE;
+		Vis.Cmd.Stop 				:= FALSE;
+	END_IF
+	
+	IF Vis.Cmd.Home = TRUE THEN
+		MainCtrl.Input.Cmd.Home := TRUE;
+		Vis.Cmd.Home 			:= FALSE;
+	END_IF
+	
+	IF Vis.Cmd.Reset = TRUE THEN
+		MainCtrl.Input.Cmd.Reset := TRUE;
+		Vis.Cmd.Reset 			 := FALSE;
+	END_IF
 	
 	(************* Manual mode commands set/reset *************)
 	
@@ -68,15 +84,15 @@ PROGRAM _CYCLIC
 	
 	//Homing pop-up
 	IF Vis.Cmd.Home = TRUE THEN
-		Vis.Sts.Homing 	:= 0; //Visible
-	ELSE Vis.Sts.Homing := 1; //Invisible
+		Vis.Sts.Homing 	:= SHOW;
+	//ELSE Vis.Sts.Homing := HIDE;
 	END_IF
 	
-	(*//Sorting station set automatic mode
-	IF //Auto[0] = 1 AND Auto[1] = 1 THEN
-		Vis.Sts.AutoSorting  := 0; //Visible
-	ELSE Vis.Sts.AutoSorting := 1; //Invisible
-	END_IF*)
+	//Sorting station set automatic mode
+	IF OpcUaComm[0] = 1 AND OpcUaComm[1] = 1 THEN
+		Vis.Sts.AutoSorting  := SHOW;
+	ELSE Vis.Sts.AutoSorting := HIDE;
+	END_IF
 	
 	(************* Machine status *************)
 	
@@ -152,4 +168,20 @@ PROGRAM _CYCLIC
 		END_CASE
 	END_IF	
 	
-		END_PROGRAM
+	(************* Button locking *************)
+	
+	//Lock out manual buttons when in automatic mode
+	IF OpcUaComm[0] = 1 THEN
+		Vis.Sts.Locked := TRUE;
+	ELSIF OpcUaComm[0] = 0 THEN
+		Vis.Sts.Locked := FALSE;
+	END_IF
+	
+	//Alarm page button error present 
+	IF OpcUaComm[6] = 1 THEN
+		Vis.Sts.ErrorPresent := TRUE;
+	ELSIF OpcUaComm[6] = 0 THEN
+		Vis.Sts.ErrorPresent := FALSE;
+	END_IF
+	
+END_PROGRAM

@@ -9,6 +9,5 @@
     <File Description="Local variables" Private="true">Variables.var</File>
     <File>StateManual.ld</File>
     <File>StateAuto.ld</File>
-    <File>AutoModeHandleManualCmds.ld</File>
   </Files>
 </Program>

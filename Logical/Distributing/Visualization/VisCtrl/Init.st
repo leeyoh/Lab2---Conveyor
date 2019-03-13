@@ -3,8 +3,8 @@
 PROGRAM _INIT
 	
 	//Initialize conveyor parameters
-	Vis.Par.Velocity := VEL;
-	Vis.Par.Acceleration := ACCEL;
-	Vis.Par.Deceleration := DECEL;
+	Vis.Par.Velocity 	 := DEFAULT_VEL;
+	Vis.Par.Acceleration := DEFAULT_ACCEL;
+	Vis.Par.Deceleration := DEFAULT_DECEL;
 	 
 END_PROGRAM

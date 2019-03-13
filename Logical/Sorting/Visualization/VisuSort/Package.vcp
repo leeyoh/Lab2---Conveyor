@@ -377,6 +377,7 @@
     <Source File="BitmapGroups\MpDataLimitViolation.bmgrp"/>
     <Source File="BitmapGroups\MpBorders.bmgrp"/>
     <Source File="BitmapGroups\MpTweetLock.bmgrp"/>
+    <Source File="BitmapGroups\AlarmButton_grp.bmgrp"/>
     <Source File="Pages\MachineStatusPage.page"/>
     <Source File="Pages\MainPage.page"/>
     <Source File="Pages\AlarmPage.page"/>

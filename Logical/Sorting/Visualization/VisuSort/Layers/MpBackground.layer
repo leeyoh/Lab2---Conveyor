@@ -167,6 +167,34 @@
       <Property Name="Top" Value="13"/>
       <Property Name="Width" Value="376"/>
     </Control>
+    <Control ClassId="0x00001002" Name="cmdAlarmPage1">
+      <Property Name="BackColor" Value="0"/>
+      <Property Name="BitmapAlignmentHorizontal" Value="Center"/>
+      <Property Name="BitmapAlignmentVertical" Value="Above Text"/>
+      <Property Name="BitmapGroup" Value="Source[local].BitmapGroup[AlarmButton_grp]"/>
+      <Property Name="BitmapIndex" Value="0"/>
+      <Property Name="BitmapIndexDatapoint" Value="None"/>
+      <Property Name="BitmapSource" Value="BitmapGroup"/>
+      <Property Name="Border" Value="Source[local].Border[Mp_FrameInvisible]"/>
+      <Property Name="ControlID" Value="0"/>
+      <Property Name="Description" Value=""/>
+      <Property Name="EmbVirtualKey" Value="Source[local].VirtualKey[%embVirtualKey_176]"/>
+      <Property Name="Font" Value="Source[local].Font[MpMenuButtons]"/>
+      <Property Name="Height" Value="50"/>
+      <Property Name="KeyMatrixOffset" Value="None"/>
+      <Property Name="Left" Value="458"/>
+      <Property Name="PressedBitmapSource" Value="Source[embedded].Property[BitmapSource]"/>
+      <Property Name="PressedBorder" Value="Source[local].Border[Mp_Flat_grey]"/>
+      <Property Name="PressedTextSource" Value="Source[embedded].Property[TextSource]"/>
+      <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.Sorting.Visualization.VisCtrl.Vis.Sts.ErrorPresent]"/>
+      <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpGlobalAreaButton]"/>
+      <Property Name="TextIndexDatapoint" Value="None"/>
+      <Property Name="TextSimulationValue" Value="0"/>
+      <Property Name="TextSource" Value="None"/>
+      <Property Name="Top" Value="430"/>
+      <Property Name="VirtualKey" Value="Source[local].VirtualKey[%embVirtualKey_176]"/>
+      <Property Name="Width" Value="55"/>
+    </Control>
   </Controls>
   <KeyMapping>
     <VirtualKey Name="%embVirtualKey_173">
@@ -196,6 +224,19 @@
       </KeyActions>
     </VirtualKey>
     <VirtualKey Name="%embVirtualKey_175">
+      <Property Name="Description" Value=""/>
+      <Property Name="VirtualKey_LED" Value="False"/>
+      <KeyActions>
+        <KeyAction ClassId="0x00000160">
+          <Property Name="Description" Value=""/>
+          <Property Name="Locking" Value="Never"/>
+          <Property Name="Name" Value="Action_0"/>
+          <Property Name="Page" Value="Source[local].Page[AlarmPage]"/>
+          <Property Name="Target" Value="Page"/>
+        </KeyAction>
+      </KeyActions>
+    </VirtualKey>
+    <VirtualKey Name="%embVirtualKey_176">
       <Property Name="Description" Value=""/>
       <Property Name="VirtualKey_LED" Value="False"/>
       <KeyActions>

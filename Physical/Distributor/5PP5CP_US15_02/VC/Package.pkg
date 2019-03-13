@@ -2,7 +2,6 @@
 <?AutomationStudio Version=4.5.2.102?>
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-    <Object Type="File">Linker.st</Object>
-    <Object Type="File">OpcUa.st</Object>
+    <Object Type="File" Description="Key mapping for PS2-Keyboard">PS2-Keyboard.dis</Object>
   </Objects>
 </Package>

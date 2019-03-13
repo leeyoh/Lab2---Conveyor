@@ -99,9 +99,10 @@
     </Connection>
     <Parameter ID="Supervision" Value="off" />
     <Parameter ID="HoldingCurrent01" Value="0" />
-    <Parameter ID="RatedCurrent01" Value="80" />
+    <Parameter ID="RatedCurrent01" Value="100" />
     <Parameter ID="MaximumCurrent01" Value="160" />
     <Parameter ID="LatchSync01" Value="Stepper 1 latch value synchron (AB/R_1 latch value asynchron)" />
+    <Parameter ID="LatchSync02" Value="Stepper 2 latch value synchron (AB/R_2 latch value asynchron)" />
     <Parameter ID="SCALE_ENCOD_INCR_r1" Value="51200" />
     <Parameter ID="BothEndSwitchesAreNormallyOpen_r1" Value="on" />
   </Module>

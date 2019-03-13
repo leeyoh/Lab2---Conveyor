@@ -1,4 +1,11 @@
 VAR
 	AutoModeActive : BOOL;
 	ManualModeActive : BOOL;
+	AutoModeInitialized : BOOL;
+	MainAutoStep : MainAutoStep_Enum := DIST_CYCLE_EJECTOR;
+	DispensedPuckTaken : BOOL;
+	EjectorStep : BOOL;
+	SwivelStep : BOOL;
+	PuckPosition : PuckPosition_Enum;
+	ConveyorStep : BOOL;
 END_VAR

@@ -3,7 +3,7 @@ ACTION StateHome:
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks xmlns:dt="urn:schemas-microsoft-com:datatypes" maxcolumn="0">
-	<network label="" comment="" row="5" column="0" commented="0">
+	<network label="" comment="" row="6" column="0" commented="0">
 		<row>
 			<contact type="open" name="EjectorState.Home"/>
 			<line/>
@@ -30,13 +30,20 @@ ACTION StateHome:
 		</row>
 		<row>
 			<empty/>
-			<empty/>
+			<empty or="true"/>
 			<empty or="true"/>
 			<coil type="reset" name="Ejector.Input.Cmd.RunCycle"/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<line/>
+			<coil type="set" name="Ejector.Output.Status.IsHomed"/>
 		</row>
 	</network>
 </networks>
 END_ACTION
+
 
 
 

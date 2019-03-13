@@ -11,10 +11,19 @@ ACTION StateRunCycle:
 			<coil type="reset" name="SwivelArm.Output.Status.IsHomed"/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="" row="5" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="SwivelArm.Output.Status.CycleDone"/>
+		</row>
+		<row>
+			<empty/>
+			<function position="bottom" type="Compare!" or="true"><input name="&lt;!AutoStep = GOTO_PICKUP"/></function>
 			<contact type="open" name="SwivelArmState.RunCycle"/>
 			<line/>
 			<line/>
@@ -23,7 +32,8 @@ ACTION StateRunCycle:
 		</row>
 		<row>
 			<empty/>
-			<function position="bottom" type="Compare!"><input name="&lt;!AutoStep = GOTO_PICKUP"/></function>
+			<empty/>
+			<empty/>
 			<empty or="true"/>
 			<line/>
 			<line/>
@@ -183,7 +193,7 @@ ACTION StateRunCycle:
 			<analog type="output" name="AutoStep"/>
 		</row>
 	</network>
-	<network label="" comment="" row="7" column="0" commented="0">
+	<network label="" comment="" row="8" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
@@ -210,6 +220,17 @@ ACTION StateRunCycle:
 			<empty/>
 			<empty or="true"/>
 			<contact type="open" name="gDistHW.di.SwDrMagPos"/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="set" name="SwivelArm.Output.Status.CycleDone"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
 			<line/>
 			<line/>
 			<line/>
@@ -260,6 +281,7 @@ ACTION StateRunCycle:
 	</network>
 </networks>
 END_ACTION
+
 
 
 

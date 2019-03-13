@@ -1,14 +1,14 @@
 VAR
-	gAxisDist : ACP10AXIS_typ;
-	gAxisDist_HW : SdcHwCfg_typ := (0);
-	gAxisDist_DrvIf : SdcDrvIf16_typ := (0);
-	gAxisDist_EncIf1 : SdcEncIf16_typ := (0);
-	gAxisDist_DiDoIf : SdcDiDoIf_typ := (0);
-	gAxisDist_MotorStep0 : INT := 0;
-	gAxisSort : ACP10AXIS_typ;
-	gAxisSort_HW : SdcHwCfg_typ := (0);
-	gAxisSort_DrvIf : SdcDrvIf16_typ := (0);
-	gAxisSort_EncIf1 : SdcEncIf16_typ := (0);
-	gAxisSort_DiDoIf : SdcDiDoIf_typ := (0);
-	gAxisSort_MotorStep0 : INT := 0;
+	gAxisDist : ACP10AXIS_typ; (*Axis variable distributor*)
+	gAxisDist_HW : SdcHwCfg_typ := (0); (*Axis variable distributor*)
+	gAxisDist_DrvIf : SdcDrvIf16_typ := (0); (*Axis variable distributor*)
+	gAxisDist_EncIf1 : SdcEncIf16_typ := (0); (*Axis variable distributor*)
+	gAxisDist_DiDoIf : SdcDiDoIf_typ := (0); (*Axis variable distributor*)
+	gAxisDist_MotorStep0 : INT := 0; (*Axis variable distributor*)
+	gAxisSort : ACP10AXIS_typ; (*Axis variable sorter*)
+	gAxisSort_HW : SdcHwCfg_typ := (0); (*Axis variable sorter*)
+	gAxisSort_DrvIf : SdcDrvIf16_typ := (0); (*Axis variable sorter*)
+	gAxisSort_EncIf1 : SdcEncIf16_typ := (0); (*Axis variable sorter*)
+	gAxisSort_DiDoIf : SdcDiDoIf_typ := (0); (*Axis variable sorter*)
+	gAxisSort_MotorStep0 : INT := 0; (*Axis variable sorter*)
 END_VAR

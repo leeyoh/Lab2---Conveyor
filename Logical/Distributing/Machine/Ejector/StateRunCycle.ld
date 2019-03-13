@@ -3,11 +3,24 @@ ACTION StateRunCycle:
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks xmlns:dt="urn:schemas-microsoft-com:datatypes" maxcolumn="0">
-	<network label="" comment="" row="5" column="0" commented="0">
+	<network label="" comment="" row="6" column="0" commented="0">
 		<row>
 			<empty/>
+			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="Ejector.Output.Status.CycleDone"/>
+		</row>
+		<row>
 			<empty/>
-			<empty/>
+			<function position="middle" type="Compare!" or="true"/>
 			<empty/>
 			<empty/>
 			<empty/>
@@ -20,7 +33,7 @@ ACTION StateRunCycle:
 		</row>
 		<row>
 			<empty/>
-			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
+			<function position="bottom" type="Compare!" or="true"><input name="&lt;!AutoStep = EJECTOR_EXTEND"/></function>
 			<contact type="open" name="EjectorState.RunCycle"/>
 			<contact type="closed" name="gDistHW.di.MagEmpty"/>
 			<line/>
@@ -33,7 +46,8 @@ ACTION StateRunCycle:
 		</row>
 		<row>
 			<empty/>
-			<function position="bottom" type="Compare!"><input name="&lt;!AutoStep = EJECTOR_EXTEND"/></function>
+			<empty/>
+			<empty/>
 			<empty or="true"/>
 			<contact type="open" name="gDistHW.di.EjCylExtended"/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
@@ -73,7 +87,7 @@ ACTION StateRunCycle:
 			<coil type="set" name="gDistHW.do.EjCylPushProduct"/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="" row="4" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
@@ -89,6 +103,17 @@ ACTION StateRunCycle:
 			<function position="bottom" type="Compare!"><input name="&lt;!AutoStep = EJECTOR_RETRACT"/></function>
 			<empty or="true"/>
 			<contact type="open" name="gDistHW.di.EjCylRetracted"/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="set" name="Ejector.Output.Status.CycleDone"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<line/>
 			<coil type="reset" name="EjectorState.RunCycle"/>
@@ -106,5 +131,6 @@ ACTION StateRunCycle:
 	</network>
 </networks>
 END_ACTION
+
 
 
