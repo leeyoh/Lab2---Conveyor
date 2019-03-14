@@ -6,6 +6,6 @@
     <File Description="Initialization code">Init.ld</File>
     <File Description="Exit code">Exit.ld</File>
     <File Description="Local data types" Private="true">Types.typ</File>
-    <File>Alarm_SortString.st</File>
+    <File Description="Alarm action file">Alarm_SortString.st</File>
   </Files>
 </Program>

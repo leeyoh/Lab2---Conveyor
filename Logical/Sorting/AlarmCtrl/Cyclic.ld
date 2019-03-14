@@ -1,15 +1,15 @@
 (*********************************************************************************
- * Copyright: 	
- * Author:    	
+ * Copyright: 	Hartfiel Automation
+ * Author:    	cashley
  * Created:   	March 8, 2019/12:43 PM 
- * Description: 
+ * Description: 	This file contains alarm handling for the sorting 		station.
  *********************************************************************************)
 PROGRAM _CYCLIC
 <?xml version="1.0"?>
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks maxcolumn="0">
-	<network label="" comment="" row="7" column="0" commented="0">
+	<network label="" comment="MpAlarmX to record and manage alarms." row="7" column="0" commented="0">
 		<row>
 			<empty/>
 			<empty/>
@@ -53,7 +53,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="6" column="0" commented="0">
+	<network label="" comment="Connection between MpAlarmX and HMI." row="6" column="0" commented="0">
 		<row>
 			<empty/>
 			<empty/>
@@ -91,7 +91,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="7" column="0" commented="0">
+	<network label="" comment="Save alarm history." row="7" column="0" commented="0">
 		<row>
 			<empty/>
 			<empty/>
@@ -135,7 +135,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="6" column="0" commented="0">
+	<network label="" comment="Connection between MpAlarmXHistory and HMI." row="6" column="0" commented="0">
 		<row>
 			<empty/>
 			<empty/>
@@ -173,7 +173,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="Enables user-defined alarms." row="3" column="0" commented="0">
 		<row>
 			<contact type="positive transition" name="Station.Output.Status.Error"/>
 			<function position="top" type="MpAlarmXSet"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
@@ -190,7 +190,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Action: Set user-defined alarm" row="1" column="0" commented="0">
 		<row>
 			<actionblock position="topbottom"><input qualifier="N"/><output name="Alarm_SortString"/></actionblock>
 			<empty/>
@@ -199,6 +199,7 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
 
 
 

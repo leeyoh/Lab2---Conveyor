@@ -1,15 +1,15 @@
 (*********************************************************************************
- * Copyright: 	
- * Author:    	
+ * Copyright: 	Hartfiel Automation
+ * Author:    	cashley
  * Created:   	March 8, 2019/12:40 PM 
- * Description: 
+ * Description: 	This file contains alarm handling for the distributing 			station.
  *********************************************************************************)
 PROGRAM _CYCLIC
 <?xml version="1.0"?>
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks maxcolumn="0">
-	<network label="" comment="" row="7" column="0" commented="0">
+	<network label="" comment="MpAlarmX to record and manage alarms." row="7" column="0" commented="0">
 		<row>
 			<empty/>
 			<empty/>
@@ -53,7 +53,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="6" column="0" commented="0">
+	<network label="" comment="Connection between MpAlarmX and HMI." row="6" column="0" commented="0">
 		<row>
 			<empty/>
 			<empty/>
@@ -91,7 +91,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="7" column="0" commented="0">
+	<network label="" comment="Save alarm history." row="7" column="0" commented="0">
 		<row>
 			<empty/>
 			<empty/>
@@ -135,7 +135,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="6" column="0" commented="0">
+	<network label="" comment="Connection between MpAlarmXHistory and HMI." row="6" column="0" commented="0">
 		<row>
 			<empty/>
 			<empty/>
@@ -181,7 +181,7 @@ PROGRAM _CYCLIC
 		</row>
 		<row>
 			<analog type="input" name="gAlarmXCore_Dist"/>
-			<function position="middle" type="MpAlarmXSet"><input name="MpLink"/><output name="7"/></function>
+			<function position="middle" type="MpAlarmXSet"><input name="MpLink"/><output name="56"/></function>
 			<analog type="output" name="AlarmXSetStatus"/>
 		</row>
 		<row>
@@ -190,7 +190,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="" row="1" column="0" commented="1">
 		<row>
 			<actionblock position="topbottom"><input qualifier="N"/><output name="Alarm_DistString"/></actionblock>
 			<empty/>
@@ -199,6 +199,8 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
+
 
 
 

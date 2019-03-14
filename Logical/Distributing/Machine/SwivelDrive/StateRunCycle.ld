@@ -59,11 +59,12 @@ ACTION StateRunCycle:
 			<analog type="output" name="AutoStep"/>
 		</row>
 	</network>
-	<network label="" comment="" row="5" column="0" commented="0">
+	<network label="" comment="" row="7" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
 			<contact type="open" name="SwivelArmState.RunCycle"/>
+			<line/>
 			<line/>
 			<line/>
 			<line/>
@@ -80,12 +81,37 @@ ACTION StateRunCycle:
 			<empty/>
 			<empty/>
 			<empty/>
+			<empty/>
 		</row>
 		<row>
 			<empty/>
 			<function position="bottom" type="Compare!"><input name="&lt;!AutoStep = ACTIVATE_VACUUM"/></function>
 			<empty or="true"/>
 			<functionblock position="top" type="TON"><input name="IN"/><output name="Q"/></functionblock>
+			<line/>
+			<contact type="open" name="SwivelArm.Input.Par.PuckReadyToBeGrabbed"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<analog type="input" name="PICKUP_TIMER_DELAY"/>
+			<functionblock position="bottom" type="TON"><input name="PT"/><output name="ET"/></functionblock>
+			<empty or="true"/>
+			<analog type="input" name="SA_PUCK_POS_AT_TRAY"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="SwivelArm.Output.Status.PuckPosition"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
 			<line/>
 			<line/>
 			<line/>
@@ -95,10 +121,12 @@ ACTION StateRunCycle:
 			<empty/>
 			<empty/>
 			<empty/>
-			<analog type="input" name="PICKUP_TIMER_DELAY"/>
-			<functionblock position="bottom" type="TON"><input name="PT"/><output name="ET"/></functionblock>
+			<empty/>
+			<empty/>
+			<empty/>
 			<empty or="true"/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
 			<empty/>
 		</row>
 		<row>
@@ -111,13 +139,31 @@ ACTION StateRunCycle:
 			<analog type="input" name="MOVE_TO_CONV"/>
 			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
 			<analog type="output" name="AutoStep"/>
+			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="" row="6" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
 			<contact type="open" name="SwivelArmState.RunCycle"/>
+			<contact type="open" name="CmpPuckAtTray"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<function position="bottom" type="Compare!"><input name="&lt;!AutoStep = MOVE_TO_CONV"/></function>
+			<empty or="true"/>
+			<analog type="input" name="SA_PUCK_POS_IN_TRANSIT"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="SwivelArm.Output.Status.PuckPosition"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
 			<line/>
 			<line/>
 			<line/>
@@ -125,7 +171,8 @@ ACTION StateRunCycle:
 		</row>
 		<row>
 			<empty/>
-			<function position="bottom" type="Compare!"><input name="&lt;!AutoStep = MOVE_TO_CONV"/></function>
+			<empty/>
+			<empty/>
 			<empty or="true"/>
 			<line/>
 			<line/>
@@ -151,11 +198,32 @@ ACTION StateRunCycle:
 			<analog type="output" name="AutoStep"/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="" row="6" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
 			<contact type="open" name="SwivelArmState.RunCycle"/>
+			<contact type="open" name="CmpPuckAtConv"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<function position="bottom" type="Compare!"><input name="&lt;!AutoStep = DEACTIVATE_VACUUM"/></function>
+			<empty or="true"/>
+			<analog type="input" name="SA_PUCK_POS_AT_CONV"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="SwivelArm.Output.Status.PuckPosition"/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
 			<line/>
 			<line/>
 			<line/>
@@ -165,7 +233,8 @@ ACTION StateRunCycle:
 		</row>
 		<row>
 			<empty/>
-			<function position="middle" type="Compare!"/>
+			<empty/>
+			<empty/>
 			<empty or="true"/>
 			<functionblock position="header" name="DropoffTimer" type="TON"/>
 			<empty/>
@@ -175,7 +244,8 @@ ACTION StateRunCycle:
 		</row>
 		<row>
 			<empty/>
-			<function position="bottom" type="Compare!"><input name="&lt;!AutoStep = DEACTIVATE_VACUUM"/></function>
+			<empty/>
+			<empty/>
 			<empty or="true"/>
 			<functionblock position="top" type="TON"><input name="IN"/><output name="Q"/></functionblock>
 			<line/>
@@ -281,6 +351,7 @@ ACTION StateRunCycle:
 	</network>
 </networks>
 END_ACTION
+
 
 
 

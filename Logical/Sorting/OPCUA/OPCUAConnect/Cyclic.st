@@ -16,7 +16,6 @@ PROGRAM _CYCLIC
 	UaSessionConnectInfo.MonitorConnection 					   	 := MONITOR_CONNECT_TIME;
 
 	//UaConnect - establish connection to OPCUA server
-
 	UaConnect_0.Execute 		   := ExecuteConnect;
 	UaConnect_0.ServerEndpointUrl  := SERVER_URL;
 	UaConnect_0.SessionConnectInfo := UaSessionConnectInfo;

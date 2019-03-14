@@ -7,6 +7,6 @@
     <File Description="Exit code">Exit.ld</File>
     <File Description="Local data types" Private="true">Types.typ</File>
     <File Description="Local variables" Private="true">Variables.var</File>
-    <File>Alarm_DistString.st</File>
+    <File Description="Alarm action file">Alarm_DistString.st</File>
   </Files>
 </Program>

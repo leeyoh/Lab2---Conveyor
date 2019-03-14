@@ -1,4 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Configuration>
-  <Element ID="gAlarmXCore_Sort" Type="mpalarmxcore" />
+  <Element ID="gAlarmXCore_Sort" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="Lane1Full" />
+        <Property ID="Message" Value="Lane 1 is full." />
+        <Property ID="Code" Value="1" />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="Lane2Full" />
+        <Property ID="Message" Value="Lane 2 is full." />
+        <Property ID="Code" Value="2" />
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="Lane3Full" />
+        <Property ID="Message" Value="Lane 3 is full." />
+        <Property ID="Code" Value="3" />
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="NoProductAvail" />
+        <Property ID="Message" Value="There is no product available." />
+        <Property ID="Code" Value="4" />
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Name" Value="SwitchStuck" />
+        <Property ID="Message" Value="The switch is stuck." />
+        <Property ID="Code" Value="5" />
+      </Group>
+      <Group ID="[5]">
+        <Property ID="Name" Value="PuckMissing" />
+        <Property ID="Message" Value="No product detected." />
+        <Property ID="Code" Value="6" />
+      </Group>
+      <Group ID="[6]">
+        <Property ID="Name" Value="Axis" />
+        <Property ID="Message" Value="Axis error." />
+        <Property ID="Code" Value="7" />
+      </Group>
+      <Group ID="[7]">
+        <Property ID="Name" Value="CheckHW" />
+        <Property ID="Message" Value="Hardware module not OK." />
+        <Property ID="Code" Value="8" />
+      </Group>
+      <Group ID="[8]">
+        <Property ID="Name" Value="CheckMachine" />
+        <Property ID="Message" Value="Machine error." />
+        <Property ID="Code" Value="9" />
+      </Group>
+    </Group>
+  </Element>
 </Configuration>
