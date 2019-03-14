@@ -7,4 +7,5 @@ VAR
 	EjectorStep : BOOL;
 	SwivelStep : BOOL;
 	ConveyorStep : BOOL;
+	DIST_REJECT_PLACEHOLDER : USINT;
 END_VAR

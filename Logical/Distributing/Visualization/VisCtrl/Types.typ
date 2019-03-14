@@ -29,11 +29,15 @@ TYPE
 	END_STRUCT;
 	VisStsDist_type : 	STRUCT  (*Visualization statuses*)
 		StatusIndex : UDINT; (*Machine status index*)
+		ManualGuide : UINT; (*Control variable for show/hide manual guide*)
+		ManualGuideString : UDINT; (*Control variable for manual command guide*)
 		StatusString : UINT; (*Control variable for machine status string*)
 		Homing : UINT; (*The machine is homing*)
 		InHomePos : BOOL; (*In home position*)
 		Locked : BOOL; (*Button locked*)
 		AutoSorting : UINT; (*Automatic mode started from sorting station*)
-		ErrorPresent : UINT; (*An error has been detected*)
+		ErrorHide : UINT; (*Show / hide error alarm*)
+		CmdRejected : BOOL; (*Command has been rejected*)
+		AutoLock : BOOL; (*Automatic button locked*)
 	END_STRUCT;
 END_TYPE

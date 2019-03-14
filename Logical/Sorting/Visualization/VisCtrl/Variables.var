@@ -25,3 +25,9 @@ VAR CONSTANT
 	SHOW : UINT := 0; (*Show layer on vis*)
 	HIDE : UINT := 1; (*Hide layer on vis*)
 END_VAR
+VAR
+	TON_Guide : TON; (*Timer for manual command guide*)
+END_VAR
+VAR CONSTANT
+	TIMER_GUIDE : TIME := T#3s; (*Timer value to hide manual command guide*)
+END_VAR

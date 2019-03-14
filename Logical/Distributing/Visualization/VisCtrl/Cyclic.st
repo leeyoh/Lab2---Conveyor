@@ -19,22 +19,30 @@ PROGRAM _CYCLIC
 	IF Vis.Cmd.Automatic = TRUE THEN
 		MainCtrl.Input.Par.Mode  := DISTCTRL_AUTO;
 		OpcUaComm[1] 			 := 0;
-		Vis.Cmd.Automatic 		 := FALSE;
+		//Vis.Cmd.Automatic 		 := FALSE;
 	END_IF
 		
-	IF Vis.Cmd.Start = TRUE THEN
+	IF Vis.Cmd.Start = TRUE AND Vis.Cmd.Automatic = TRUE THEN
 		MainCtrl.Input.Cmd.StartAuto := TRUE;
+		OpcUaComm[0] 				 := 1;
+		Vis.Sts.AutoLock := TRUE;
 		Vis.Cmd.Start 				 := FALSE;
+	ELSIF Vis.Cmd.Start = TRUE AND Vis.Cmd.Automatic = FALSE THEN
+		Vis.Cmd.Start := FALSE;
 	END_IF
 	
 	IF Vis.Cmd.Stop = TRUE THEN
 		MainCtrl.Input.Cmd.StopAuto := TRUE;
-		MainCtrl.Input.Par.Mode := DISTCTRL_MANUAL;
+		MainCtrl.Input.Par.Mode 	:= DISTCTRL_MANUAL;
+		OpcUaComm[0] 		   		:= 0;
+		(**)Vis.Cmd.Automatic := FALSE;
+		Vis.Sts.AutoLock := FALSE;
 		Vis.Cmd.Stop 				:= FALSE;
 	END_IF
 	
 	IF Vis.Cmd.Home = TRUE THEN
 		MainCtrl.Input.Cmd.Home := TRUE;
+		Vis.Sts.Homing 			:= SHOW;
 		Vis.Cmd.Home 			:= FALSE;
 	END_IF
 	
@@ -81,18 +89,24 @@ PROGRAM _CYCLIC
 		Vis.Cmd.Vacuum 								 := FALSE;
 	END_IF
 	
-	(************* Automatic mode / Homing layers *************)
+	(************* Layers / Pop-ups *************)
 	
 	//Homing pop-up
 	IF Vis.Cmd.Home = TRUE THEN
 		Vis.Sts.Homing 	:= SHOW;
-	//ELSE Vis.Sts.Homing := HIDE;
 	END_IF
 	
 	//Sorting station set automatic mode
 	IF OpcUaComm[0] = 1 AND OpcUaComm[1] = 1 THEN
 		Vis.Sts.AutoSorting  := SHOW;
 	ELSE Vis.Sts.AutoSorting := HIDE;
+	END_IF
+	
+	//Alarm page button error present 
+	IF OpcUaComm[6] = 1 THEN
+		Vis.Sts.ErrorHide := FALSE;
+	ELSIF OpcUaComm[6] = 0 THEN
+		Vis.Sts.ErrorHide := TRUE;
 	END_IF
 	
 	(************* Machine status *************)
@@ -178,11 +192,24 @@ PROGRAM _CYCLIC
 		Vis.Sts.Locked := FALSE;
 	END_IF
 	
-	//Alarm page button error present 
-	IF OpcUaComm[6] = 1 THEN
-		Vis.Sts.ErrorPresent := TRUE;
-	ELSIF OpcUaComm[6] = 0 THEN
-		Vis.Sts.ErrorPresent := FALSE;
+	(************* Alarm text guide for manual mode *************)
+	//Timer for manual command guide
+	TON_Guide.PT := TIMER_GUIDE;
+	TON_Guide();
+	
+	IF EDGEPOS(MainCtrl.Output.CommandRejected) THEN
+		Vis.Sts.CmdRejected := TRUE;
 	END_IF
+	
+	IF Vis.Sts.CmdRejected = TRUE THEN
+		Vis.Sts.ManualGuide := SHOW;
+		Vis.Sts.ManualGuideString := MainCtrl.Output.RejectionCode;
+		TON_Guide.IN := TRUE;
+		IF TON_Guide.Q = TRUE THEN
+			Vis.Sts.ManualGuide := HIDE;
+			Vis.Sts.CmdRejected := FALSE;
+			TON_Guide.IN := FALSE;
+		END_IF
+	END_IF 
 	
 END_PROGRAM
