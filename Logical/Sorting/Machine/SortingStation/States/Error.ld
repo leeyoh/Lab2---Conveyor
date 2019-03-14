@@ -3,7 +3,7 @@ ACTION Error:
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks xmlns:dt="urn:schemas-microsoft-com:datatypes" maxcolumn="0">
-	<network label="" comment="" row="5" column="0" commented="0">
+	<network label="" comment="" row="6" column="0" commented="0">
 		<row>
 			<contact type="open" name="Station.Input.CMD.ErrorReset"/>
 			<contact type="open" name="Sorter.Output.Status.Error"/>
@@ -14,7 +14,7 @@ ACTION Error:
 			<empty/>
 			<empty or="true"/>
 			<line/>
-			<coil type="set" name="Sorter.Input.CMD.Home"/>
+			<coil type="set" name="Station.Input.CMD.Home"/>
 		</row>
 		<row>
 			<empty/>
@@ -32,7 +32,13 @@ ACTION Error:
 			<empty/>
 			<empty or="true"/>
 			<line/>
-			<coil type="reset" name="Sorter.Conveyor.MoveAdditive"/>
+			<coil type="reset" name="Sorter.Conveyor.MoveVelocity"/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<line/>
+			<coil type="reset" name="Sorter.Output.Status.Occupied"/>
 		</row>
 	</network>
 	<network label="" comment="" row="5" column="0" commented="0">
@@ -91,6 +97,10 @@ ACTION Error:
 	</network>
 </networks>
 END_ACTION
+
+
+
+
 
 
 

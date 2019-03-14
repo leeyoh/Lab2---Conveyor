@@ -175,26 +175,30 @@ ACTION Auto:
 	<network label="" comment="" row="4" column="0" commented="0">
 		<row>
 			<contact type="open" name="AutoState.2"/>
-			<line/>
-			<line/>
+			<contact type="open" name="EqLeft"/>
+			<contact type="open" name="Sorter.Output.Status.Switch1Extended"/>
+			<contact type="open" name="Sorter.Output.Status.Switch2Retracted"/>
 			<coil type="set" name="Sorter.Input.CMD.RetractStopper"/>
 		</row>
 		<row>
 			<empty or="true"/>
-			<line/>
-			<line/>
+			<contact type="open" name="EqMiddle"/>
+			<contact type="open" name="Sorter.Output.Status.Switch1Retracted"/>
+			<contact type="open" name="Sorter.Output.Status.Switch2Extended" or="true"/>
 			<coil type="set" name="Sorter.Conveyor.MoveAdditive"/>
 		</row>
 		<row>
 			<empty or="true"/>
-			<line/>
-			<line/>
+			<contact type="open" name="EqRight"/>
+			<contact type="open" name="Sorter.Output.Status.Switch1Retracted"/>
+			<contact type="open" name="Sorter.Output.Status.Switch2Retracted" or="true"/>
 			<coil type="reset" name="AutoState.2"/>
 		</row>
 		<row>
+			<empty/>
+			<empty/>
+			<empty/>
 			<empty or="true"/>
-			<line/>
-			<line/>
 			<coil type="set" name="AutoState.3"/>
 		</row>
 	</network>
@@ -270,6 +274,7 @@ ACTION Auto:
 	</network>
 </networks>
 END_ACTION
+
 
 
 

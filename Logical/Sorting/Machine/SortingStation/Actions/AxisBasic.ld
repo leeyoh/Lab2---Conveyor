@@ -7,6 +7,7 @@ ACTION AxisBasic:
 		<row>
 			<contact type="open" name="MpAxisBasicConveyor.Active"/>
 			<contact type="closed" name="MpAxisBasicConveyor.PowerOn"/>
+			<contact type="closed" name="MpAxisBasicConveyor.Error"/>
 			<contact type="open" name="MpAxisBasicConveyor.Info.ReadyToPowerOn"/>
 			<coil type="set" name="MpAxisBasicConveyor.Power"/>
 		</row>
@@ -27,15 +28,29 @@ ACTION AxisBasic:
 			<coil type="reset" name="MpAxisBasicConveyor.Home"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="" row="2" column="0" commented="0">
 		<row>
 			<contact type="open" name="MpAxisBasicConveyor.Error"/>
 			<line/>
 			<line/>
 			<coil type="reset" name="MpAxisBasicConveyor.Power"/>
 		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MpAxisBasicConveyor.Home"/>
+		</row>
 	</network>
-	<network label="" comment="" row="6" column="0" commented="0">
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<contact type="open" name="MpAxisBasicConveyor.PowerOn"/>
+			<contact type="closed" name="MpAxisBasicConveyor.Error"/>
+			<contact type="open" name="MpAxisBasicConveyor.IsHomed"/>
+			<coil type="open" name="Sorter.Conveyor.Ready"/>
+		</row>
+	</network>
+	<network label="" comment="" row="5" column="0" commented="0">
 		<row>
 			<contact type="open" name="MpAxisBasicConveyor.ErrorReset"/>
 			<line/>
@@ -65,12 +80,6 @@ ACTION AxisBasic:
 			<line/>
 			<line/>
 			<coil type="reset" name="MpAxisBasicConveyor.JogPositive"/>
-		</row>
-		<row>
-			<empty or="true"/>
-			<contact type="open" name="MpAxisBasicConveyor.Active"/>
-			<line/>
-			<coil type="set" name="MpAxisBasicConveyor.Power"/>
 		</row>
 	</network>
 	<network label="" comment="" row="1" column="0" commented="0">
@@ -143,8 +152,8 @@ ACTION AxisBasic:
 			<empty/>
 		</row>
 		<row>
-			<empty/>
-			<empty/>
+			<contact type="open" name="Sorter.Conveyor.MoveVelocity"/>
+			<contact type="open" name="Sorter.Conveyor.Ready"/>
 			<functionblock position="middle" type="MpAxisBasic"><input name="MoveVelocity"/><output name="PowerOn" ENO="true"/></functionblock>
 			<empty/>
 		</row>
@@ -155,8 +164,8 @@ ACTION AxisBasic:
 			<empty/>
 		</row>
 		<row>
-			<empty/>
-			<empty/>
+			<contact type="open" name="Sorter.Conveyor.MoveAdditive"/>
+			<contact type="open" name="Sorter.Conveyor.Ready"/>
 			<functionblock position="middle" type="MpAxisBasic"><input name="MoveAdditive"/><output name="InVelocity" ENO="true"/></functionblock>
 			<empty/>
 		</row>
@@ -167,14 +176,14 @@ ACTION AxisBasic:
 			<empty/>
 		</row>
 		<row>
-			<empty/>
-			<empty/>
+			<contact type="open" name="Sorter.Conveyor.JogPos"/>
+			<contact type="open" name="Sorter.Conveyor.Ready"/>
 			<functionblock position="middle" type="MpAxisBasic"><input name="JogPositive"/><output name="MoveActive" ENO="true"/></functionblock>
 			<empty/>
 		</row>
 		<row>
-			<empty/>
-			<empty/>
+			<contact type="open" name="Sorter.Conveyor.JogNeg"/>
+			<contact type="open" name="Sorter.Conveyor.Ready"/>
 			<functionblock position="middle" type="MpAxisBasic"><input name="JogNegative"/><output name="Stopped" ENO="true"/></functionblock>
 			<empty/>
 		</row>
@@ -211,6 +220,8 @@ ACTION AxisBasic:
 	</network>
 </networks>
 END_ACTION
+
+
 
 
 

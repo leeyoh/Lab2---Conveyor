@@ -27,6 +27,7 @@ TYPE
 		Home : BOOL;
 		MoveActive : BOOL;
 		InPosition : BOOL;
+		Ready : BOOL;
 	END_STRUCT;
 	Index_enum : 
 		(

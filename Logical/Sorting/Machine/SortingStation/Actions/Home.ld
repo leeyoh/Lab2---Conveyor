@@ -29,6 +29,27 @@ ACTION Home:
 	</network>
 	<network label="" comment="" row="1" column="0" commented="0">
 		<row>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="Sorter.Conveyor.MoveAdditive"/>
+		</row>
+	</network>
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<coil type="reset" name="Sorter.Conveyor.MoveVelocity"/>
+		</row>
+	</network>
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="set" name="Sorter.Conveyor.Home"/>
+		</row>
+	</network>
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
 			<contact type="open" name="Sorter.Output.Status.Switch1Retracted"/>
 			<contact type="open" name="Sorter.Output.Status.Switch2Retracted"/>
 			<contact type="closed" name="Sorter.Input.CMD.RetractStopper"/>
@@ -38,6 +59,7 @@ ACTION Home:
 	</network>
 </networks>
 END_ACTION
+
 
 
 

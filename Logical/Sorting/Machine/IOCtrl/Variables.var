@@ -1,5 +1,5 @@
 VAR CONSTANT
-	PUCK_PAST : REAL := 300;
+	PUCK_PAST : REAL := 400;
 END_VAR
 VAR
 	Update_Accel : BOOL;

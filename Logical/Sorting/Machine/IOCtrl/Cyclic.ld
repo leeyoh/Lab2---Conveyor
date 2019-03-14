@@ -78,7 +78,7 @@ PROGRAM _CYCLIC
 			<analog type="output" name="Sorter.Output.Status.LaneFull"/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="" row="2" column="0" commented="0">
 		<row>
 			<contact type="open" name="Sorter.Conveyor.Stop"/>
 			<line/>
@@ -89,53 +89,7 @@ PROGRAM _CYCLIC
 			<empty or="true"/>
 			<line/>
 			<line/>
-			<coil type="reset" name="MpAxisBasicConveyor.MoveAbsolute"/>
-		</row>
-		<row>
-			<empty or="true"/>
-			<line/>
-			<line/>
 			<coil type="reset" name="MpAxisBasicConveyor.MoveVelocity"/>
-		</row>
-	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
-		<row>
-			<contact type="open" name="Sorter.Conveyor.MoveAdditive"/>
-			<line/>
-			<line/>
-			<coil type="open" name="MpAxisBasicConveyor.MoveAdditive"/>
-		</row>
-	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
-		<row>
-			<contact type="open" name="Sorter.Conveyor.JogPos"/>
-			<line/>
-			<line/>
-			<coil type="open" name="MpAxisBasicConveyor.JogPositive"/>
-		</row>
-	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
-		<row>
-			<contact type="open" name="Sorter.Conveyor.JogNeg"/>
-			<line/>
-			<line/>
-			<coil type="open" name="MpAxisBasicConveyor.JogNegative"/>
-		</row>
-	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
-		<row>
-			<contact type="open" name="Sorter.Conveyor.Home"/>
-			<line/>
-			<line/>
-			<coil type="open" name="MpAxisBasicConveyor.Home"/>
-		</row>
-	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
-		<row>
-			<contact type="open" name="Sorter.Conveyor.MoveVelocity"/>
-			<line/>
-			<line/>
-			<coil type="open" name="MpAxisBasicConveyor.MoveVelocity"/>
 		</row>
 	</network>
 	<network label="" comment="" row="1" column="0" commented="0">
@@ -266,6 +220,8 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
+
 
 
 

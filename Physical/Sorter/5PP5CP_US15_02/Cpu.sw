@@ -8,8 +8,8 @@
   <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4">
     <Task Name="MainCtrl" Source="Sorting.Machine.MainCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="OPCUAClien" Source="Sorting.OPCUA.OPCUAClient.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="OPCUAConne" Source="Sorting.OPCUA.OPCUAConnect.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="OPCUAClien" Source="Sorting.OPCUA.OPCUAClient.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
+    <Task Name="OPCUAConne" Source="Sorting.OPCUA.OPCUAConnect.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="IOCtrl" Source="Sorting.Machine.IOCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="SortingSta" Source="Sorting.Machine.SortingStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="AlarmCtrl" Source="Sorting.AlarmCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
@@ -69,18 +69,21 @@
     <BinaryObject Name="vctcal" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="VisuSo01" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="VisuSo03" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="iomap" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="Config" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="arconfig" Source="" Memory="SystemROM" Language="Binary" />
-    <BinaryObject Name="asfw" Source="" Memory="SystemROM" Language="Binary" />
-    <BinaryObject Name="ashwac" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="sysconf" Source="" Memory="SystemROM" Language="Binary" />
-    <BinaryObject Name="User" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="Role" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="ashwd" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="vcchspot" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="Config_2" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="Config_1" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="OpcUaMap" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="acp10cfg" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="ashwd" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="Role" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="User" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="sysconf" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="ashwac" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="asfw" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="arconfig" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="Config" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="iomap" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Acp10map" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="acp10cfg" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vcpkat" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vcpfar00" Source="" Memory="UserROM" Language="Binary" />
   </Binaries>
@@ -104,10 +107,11 @@
     <LibraryObject Name="Acp10par" Source="Libraries.Acp10par.lby" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="NcGlobal" Source="Libraries.NcGlobal.lby" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="MpAxis" Source="Libraries.MpAxis.lby" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="MpAlarmX" Source="Libraries.MpAlarmX.lby" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="fileio" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="powerlnk" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="vcresman" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="dataobj" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
-    <LibraryObject Name="MpAlarmX" Source="Libraries.MpAlarmX.lby" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="areventlog" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
   </Libraries>
 </SwConfiguration>

@@ -6,7 +6,7 @@ ACTION Linker:
 	Station.Output.Status.Switch1Retracted := Sorter.Output.Status.Switch1Retracted;
 	
 	Station.Output.Status.Error := Sorter.Output.Status.Error;
-	Station.Output.Status.ErrorID := Sorter.Output.Status.Error;
+	Station.Output.Status.ErrorID := Sorter.Output.Status.ErrorID;
 	
 	Station.Output.RejectionCode := Sorter.Output.RejectionCode;
 	Station.Output.CommandRejected := Sorter.Output.CommandRejected;

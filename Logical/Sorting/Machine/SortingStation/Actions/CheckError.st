@@ -93,6 +93,10 @@ ACTION CheckError:
 			
 			
 			IF AutoState.0 THEN 
+				IF EDGEPOS(Sorter.Output.Status.LaneFull) THEN 
+					TON_10ms_AutoTicker.IN := FALSE;
+				END_IF
+				
 				IF Sorter.Input.CMD.RunCycle THEN 
 					TON_10ms_AutoTicker.IN := TRUE;
 				END_IF
@@ -102,26 +106,21 @@ ACTION CheckError:
 			END_IF
 		
 			IF AutoState.1 THEN 
-				IF Sorter.Input.CMD.ExtendSwitch1 THEN 
-					TON_10ms_AutoTicker.IN := TRUE;
-				END_IF
-				IF Sorter.Input.CMD.ExtendSwitch2 THEN 
-					TON_10ms_AutoTicker.IN := TRUE;
-				END_IF
+	
 				
-				IF Sorter.NewPuck = Sorter.Input.Par.ParID[0] THEN 
+				IF EqLeft THEN 
 					IF Sorter.Output.Status.SlotFull[0] THEN 
 						Sorter.Output.Status.ErrorID := 1;    		//Left Lane Full
 						TON_10ms_AutoTicker.IN := FALSE;
 					END_IF
 				END_IF
-				IF Sorter.NewPuck = Sorter.Input.Par.ParID[1] THEN 
+				IF EqMiddle THEN 
 					IF Sorter.Output.Status.SlotFull[1] THEN 
 						Sorter.Output.Status.ErrorID := 2;    		//Middle Lane Full
 						TON_10ms_AutoTicker.IN := FALSE;
 					END_IF
 				END_IF
-				IF Sorter.NewPuck = Sorter.Input.Par.ParID[2] THEN 
+				IF EqRight THEN 
 					IF Sorter.Output.Status.SlotFull[2] THEN 
 						Sorter.Output.Status.ErrorID := 3;    		//Right Lane FULL
 						TON_10ms_AutoTicker.IN := FALSE;
@@ -132,17 +131,20 @@ ACTION CheckError:
 					Sorter.Output.Status.Switch2Extended THEN 
 					TON_10ms_AutoTicker.IN := FALSE;
 				END_IF
+				
+				
 			END_IF
-		
+			
+			IF AutoState.2 THEN 
+				TON_10ms_AutoTicker.IN := TRUE;
+			END_IF
+			
 			IF AutoState.3 THEN 
 				TON_10ms_AutoTicker.IN := TRUE;
 			END_IF
 			
 			IF AutoState.4 THEN 
 				TON_10ms_AutoTicker.IN := TRUE;
-				IF EDGEPOS(Sorter.Output.Status.LaneFull) THEN 
-					TON_10ms_AutoTicker.IN := FALSE;
-				END_IF
 			END_IF
 		
 	END_CASE;
@@ -159,6 +161,10 @@ ACTION CheckError:
 				Sorter.Output.Status.ErrorID := 4;  // Product Not Availiable 
 			2:
 				Sorter.Output.Status.ErrorID := 5;	 // Switch Stuck
+			4:
+				Sorter.Output.Status.ErrorID := 5;	 // Switch Stuck
+			8: 
+				Sorter.Output.Status.ErrorID := 6;  // 404 Puck
 			16:
 		 		Sorter.Output.Status.ErrorID := 6;  // 404 Puck
 		END_CASE;
