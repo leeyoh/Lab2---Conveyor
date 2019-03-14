@@ -1261,7 +1261,7 @@
               <Property Name="Name" Value="Action_0"/>
               <Property Name="ResetValue" Value="0"/>
               <Property Name="SetValue" Value="1"/>
-              <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Sorting.Visualization.VisCtrl.ButtonPressed[0,2]]"/>
+              <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Sorting.Visualization.VisCtrl.ButtonPressed[1,2]]"/>
             </KeyAction>
           </KeyActions>
         </VirtualKey>
