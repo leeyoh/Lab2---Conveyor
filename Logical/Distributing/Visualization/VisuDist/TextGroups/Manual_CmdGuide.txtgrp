@@ -5,14 +5,14 @@
   <Property Name="Index" Value="7"/>
   <TextSnippets/>
   <TextLayer LanguageId="en">
-    <Text ID="232388" Value="Failure message:"/>
-    <Text ID="232389" Value="Failure message:"/>
-    <Text ID="232390" Value="Failure message:"/>
-    <Text ID="232391" Value="Failure message:"/>
-    <Text ID="232392" Value="Failure message:"/>
-    <Text ID="232393" Value="Failure message:"/>
-    <Text ID="232394" Value="Failure message:"/>
-    <Text ID="232395" Value="Failure message:"/>
+    <Text ID="232388" Value="Failure message: Machine is in automatic mode."/>
+    <Text ID="232389" Value="Failure message: Product already in ejector tray."/>
+    <Text ID="232390" Value="Failure message: Swivel arm is in magazine position."/>
+    <Text ID="232391" Value="Failure message: Product present. Release before returning to magazine."/>
+    <Text ID="232392" Value="Failure message: Product already present at conveyor."/>
+    <Text ID="232393" Value="Failure message: No product available."/>
+    <Text ID="232394" Value="Failure message: Place product."/>
+    <Text ID="232395" Value="Failure message: Keep product on conveyor."/>
     <Text ID="232396" Value="Failure message:"/>
     <Text ID="232397" Value="Failure message:"/>
     <Text ID="232398" Value="Failure message:"/>

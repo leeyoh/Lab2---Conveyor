@@ -509,9 +509,9 @@
           <Property Name="Border" Value="Source[local].Border[Mp_TabActive]"/>
           <Property Name="ControlID" Value="0"/>
           <Property Name="Description" Value=""/>
-          <Property Name="Height" Value="21"/>
+          <Property Name="Height" Value="25"/>
           <Property Name="IndexDatapoint" Value="Source[global].Variable[DataSource.Sorting.Visualization.VisCtrl.Vis.Sts.ManualGuideString]"/>
-          <Property Name="Left" Value="97"/>
+          <Property Name="Left" Value="91"/>
           <Property Name="SimulationIndex" Value="0"/>
           <Property Name="SimulationValue" Value=""/>
           <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.Sorting.Visualization.VisCtrl.Vis.Sts.ManualGuide]"/>
@@ -520,7 +520,7 @@
           <Property Name="TextIndexOffset" Value="0"/>
           <Property Name="TextSource" Value="MultipleTexts"/>
           <Property Name="Top" Value="442"/>
-          <Property Name="Width" Value="410"/>
+          <Property Name="Width" Value="420"/>
         </Control>
       </Controls>
       <KeyMapping>

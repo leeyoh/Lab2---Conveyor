@@ -44,5 +44,6 @@ TYPE
 		Locked : BOOL; (*Button locked*)
 		ManualGuide : UINT; (*Control variable for show/hide manual guide*)
 		ManualGuideString : UINT; (*Control variable for manual command guide*)
+		CmdRejected : BOOL; (*Command has been rejected*)
 	END_STRUCT;
 END_TYPE

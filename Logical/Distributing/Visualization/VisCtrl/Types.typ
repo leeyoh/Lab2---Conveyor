@@ -37,5 +37,6 @@ TYPE
 		Locked : BOOL; (*Button locked*)
 		AutoSorting : UINT; (*Automatic mode started from sorting station*)
 		ErrorHide : UINT; (*Show / hide error alarm*)
+		CmdRejected : BOOL; (*Command has been rejected*)
 	END_STRUCT;
 END_TYPE

@@ -175,11 +175,11 @@
       <Property Name="FillStyle" Value="Transparent"/>
       <Property Name="Height" Value="32"/>
       <Property Name="IndexDatapoint" Value="None"/>
-      <Property Name="Left" Value="532"/>
+      <Property Name="Left" Value="543"/>
       <Property Name="SimulationValue" Value="0"/>
       <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.Distributing.Visualization.VisCtrl.Vis.Sts.ErrorHide]"/>
       <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
-      <Property Name="Top" Value="439"/>
+      <Property Name="Top" Value="438"/>
       <Property Name="Width" Value="32"/>
     </Control>
   </Controls>

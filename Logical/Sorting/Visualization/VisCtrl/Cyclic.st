@@ -109,7 +109,7 @@ PROGRAM _CYCLIC
 		END_IF
 	END_IF
 	
-	(************* Automatic mode / Homing layers *************)
+	(************* Layers / Pop-ups *************)
 	
 	//Homing pop-up
 	IF Vis.Cmd.Home = TRUE THEN
@@ -121,6 +121,13 @@ PROGRAM _CYCLIC
 	IF MachineState[0] = 1 AND MachineState[1] = 0 THEN
 		Vis.Sts.AutoDistributing  := SHOW;
 	ELSE Vis.Sts.AutoDistributing := HIDE;
+	END_IF
+	
+	//Alarm page button error present 
+	IF MachineState[6] = 1 THEN
+		Vis.Sts.ErrorHide := FALSE;
+	ELSIF MachineState[6] = 0 THEN
+		Vis.Sts.ErrorHide := TRUE;	
 	END_IF
 	
 	(************* Machine status *************)
@@ -251,12 +258,25 @@ PROGRAM _CYCLIC
 	ELSIF MachineState[0] = 0 THEN
 		Vis.Sts.Locked := FALSE;
 	END_IF
-		
-	//Alarm page button error present 
-	IF MachineState[6] = 1 THEN
-		Vis.Sts.ErrorHide := FALSE;
-	ELSIF MachineState[6] = 0 THEN
-		Vis.Sts.ErrorHide := TRUE;	
+	
+	(************* Alarm text guide for manual mode *************)
+	//Timer for manual command guide
+	TON_Guide.PT := TIMER_GUIDE;
+	TON_Guide();
+	
+	IF EDGEPOS(Station.Output.CommandRejected) THEN
+		Vis.Sts.CmdRejected := TRUE;
 	END_IF
+	
+	IF Vis.Sts.CmdRejected = TRUE THEN
+		Vis.Sts.ManualGuide := SHOW;
+		Vis.Sts.ManualGuideString := Station.Output.RejectionCode;
+		TON_Guide.IN := TRUE;
+		IF TON_Guide.Q = TRUE THEN
+			Vis.Sts.ManualGuide := HIDE;
+			Vis.Sts.CmdRejected := FALSE;
+			TON_Guide.IN := FALSE;
+		END_IF
+	END_IF 
 	 
 END_PROGRAM

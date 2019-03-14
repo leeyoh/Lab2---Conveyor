@@ -179,7 +179,7 @@
       <Property Name="SimulationValue" Value="0"/>
       <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.Sorting.Visualization.VisCtrl.Vis.Sts.ErrorHide]"/>
       <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
-      <Property Name="Top" Value="441"/>
+      <Property Name="Top" Value="438"/>
       <Property Name="Width" Value="32"/>
     </Control>
   </Controls>
