@@ -24,6 +24,7 @@ PROGRAM _CYCLIC
 	
 	IF Vis.Cmd.Stop = TRUE THEN
 		MachineState[2] := 0;
+		MachineState[0] := 0;
 		Vis.Cmd.Stop    := FALSE;
 	END_IF
 	
@@ -39,6 +40,7 @@ PROGRAM _CYCLIC
 	
 	IF Vis.Cmd.Home = TRUE THEN
 		Station.Input.CMD.Home := Vis.Cmd.Home;
+		Vis.Sts.Homing 	:= SHOW;
 		Vis.Cmd.Home 		   := FALSE;
 	END_IF
 	
@@ -112,7 +114,7 @@ PROGRAM _CYCLIC
 	//Homing pop-up
 	IF Vis.Cmd.Home = TRUE THEN
 		Vis.Sts.Homing  := SHOW;
-	ELSE Vis.Sts.Homing := HIDE;
+	//ELSE Vis.Sts.Homing := HIDE;
 	END_IF
 	
 	//Distributing station set automatic mode
@@ -252,9 +254,9 @@ PROGRAM _CYCLIC
 		
 	//Alarm page button error present 
 	IF MachineState[6] = 1 THEN
-		Vis.Sts.ErrorPresent := TRUE;
+		Vis.Sts.ErrorHide := FALSE;
 	ELSIF MachineState[6] = 0 THEN
-		Vis.Sts.ErrorPresent := FALSE;	
+		Vis.Sts.ErrorHide := TRUE;	
 	END_IF
 	 
 END_PROGRAM

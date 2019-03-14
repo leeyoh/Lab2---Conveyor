@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.5.2.102"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="Manual_CmdGuide">
+  <Property Name="Description" Value="Alarm text guide for manual mode"/>
+  <Property Name="Index" Value="7"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="230831" Value="Failure message:"/>
+    <Text ID="230832" Value="Failure message:"/>
+    <Text ID="230833" Value="Failure message:"/>
+    <Text ID="230834" Value="Failure message:"/>
+    <Text ID="230835" Value="Failure message:"/>
+    <Text ID="230836" Value="Failure message:"/>
+    <Text ID="230837" Value="Failure message:"/>
+    <Text ID="230838" Value="Failure message:"/>
+    <Text ID="230839" Value="Failure message:"/>
+    <Text ID="230840" Value="Failure message:"/>
+    <Text ID="230841" Value="Failure message:"/>
+    <Text ID="230842" Value="Failure message:"/>
+    <Text ID="230843" Value="Failure message:"/>
+    <Text ID="230844" Value="Failure message:"/>
+    <Text ID="230845" Value="Failure message:"/>
+    <Text ID="230846" Value="Failure message:"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="230831" Value=""/>
+    <Text ID="230832" Value=""/>
+    <Text ID="230833" Value=""/>
+    <Text ID="230834" Value=""/>
+    <Text ID="230835" Value=""/>
+    <Text ID="230836" Value=""/>
+    <Text ID="230837" Value=""/>
+    <Text ID="230838" Value=""/>
+    <Text ID="230839" Value=""/>
+    <Text ID="230840" Value=""/>
+    <Text ID="230841" Value=""/>
+    <Text ID="230842" Value=""/>
+    <Text ID="230843" Value=""/>
+    <Text ID="230844" Value=""/>
+    <Text ID="230845" Value=""/>
+    <Text ID="230846" Value=""/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="230831" Value="0"/>
+    <Index ID="230832" Value="1"/>
+    <Index ID="230833" Value="2"/>
+    <Index ID="230834" Value="3"/>
+    <Index ID="230835" Value="4"/>
+    <Index ID="230836" Value="5"/>
+    <Index ID="230837" Value="6"/>
+    <Index ID="230838" Value="7"/>
+    <Index ID="230839" Value="8"/>
+    <Index ID="230840" Value="9"/>
+    <Index ID="230841" Value="10"/>
+    <Index ID="230842" Value="11"/>
+    <Index ID="230843" Value="12"/>
+    <Index ID="230844" Value="13"/>
+    <Index ID="230845" Value="14"/>
+    <Index ID="230846" Value="15"/>
+  </IndexMap>
+</TextGroup>

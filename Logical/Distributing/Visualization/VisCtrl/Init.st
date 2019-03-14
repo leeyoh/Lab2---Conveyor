@@ -6,5 +6,7 @@ PROGRAM _INIT
 	Vis.Par.Velocity 	 := DEFAULT_VEL;
 	Vis.Par.Acceleration := DEFAULT_ACCEL;
 	Vis.Par.Deceleration := DEFAULT_DECEL;
-	 
+	
+	Vis.Sts.AutoSorting := HIDE;
+	Vis.Sts.Homing := HIDE;
 END_PROGRAM

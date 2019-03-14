@@ -534,7 +534,7 @@
       <Property Name="OutlineHatched" Value="False"/>
       <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.Sorting.Visualization.VisCtrl.Vis.Sts.Homing]"/>
       <Property Name="Top" Value="0"/>
-      <Property Name="VisibilityMode" Value="Hidden"/>
+      <Property Name="VisibilityMode" Value="Normal"/>
       <Property Name="Width" Value="640"/>
       <Property Name="Z-Order" Value="2"/>
       <TextGroup>
@@ -543,6 +543,16 @@
         <IndexMap/>
       </TextGroup>
       <Controls>
+        <Control ClassId="0x00001001" Name="Shape_1">
+          <Property Name="BackColor" Value="251"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Height" Value="480"/>
+          <Property Name="Left" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="Top" Value="0"/>
+          <Property Name="Width" Value="640"/>
+        </Control>
         <Control ClassId="0x00001004" Name="Text_1">
           <Property Name="AlignmentHorizontal" Value="Center"/>
           <Property Name="ControlID" Value="0"/>
@@ -697,12 +707,14 @@
           <Property Name="Description" Value=""/>
           <Property Name="VirtualKey_LED" Value="False"/>
           <KeyActions>
-            <KeyAction ClassId="0x00000160">
+            <KeyAction ClassId="0x00000161">
+              <Property Name="CompletionDatapoint" Value="None"/>
+              <Property Name="CompletionValue" Value="0"/>
               <Property Name="Description" Value=""/>
               <Property Name="Locking" Value="Never"/>
               <Property Name="Name" Value="Action_0"/>
-              <Property Name="Page" Value="Source[local].Page[MainPage]"/>
-              <Property Name="Target" Value="Page"/>
+              <Property Name="SetValue" Value="1"/>
+              <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Sorting.Visualization.VisCtrl.Vis.Sts.Homing]"/>
             </KeyAction>
           </KeyActions>
         </VirtualKey>
@@ -720,7 +732,7 @@
       <Property Name="OutlineHatched" Value="False"/>
       <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.Sorting.Visualization.VisCtrl.Vis.Sts.AutoDistributing]"/>
       <Property Name="Top" Value="0"/>
-      <Property Name="VisibilityMode" Value="Hidden"/>
+      <Property Name="VisibilityMode" Value="Normal"/>
       <Property Name="Width" Value="640"/>
       <Property Name="Z-Order" Value="3"/>
       <TextGroup>
@@ -729,20 +741,30 @@
         <IndexMap/>
       </TextGroup>
       <Controls>
+        <Control ClassId="0x00001001" Name="Shape_1">
+          <Property Name="BackColor" Value="251"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Height" Value="480"/>
+          <Property Name="Left" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="Top" Value="0"/>
+          <Property Name="Width" Value="640"/>
+        </Control>
         <Control ClassId="0x00001004" Name="Text_1">
           <Property Name="AlignmentHorizontal" Value="Center"/>
           <Property Name="ControlID" Value="0"/>
           <Property Name="Description" Value=""/>
           <Property Name="Font" Value="Source[local].Font[MpHeader2]"/>
           <Property Name="Height" Value="56"/>
-          <Property Name="Left" Value="76"/>
+          <Property Name="Left" Value="73"/>
           <Property Name="SimulationIndex" Value="0"/>
           <Property Name="SimulationValue" Value=""/>
           <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
           <Property Name="TextGroup" Value="Source[local].TextGroup[Labels_PageTexts]"/>
           <Property Name="TextIndexOffset" Value="31"/>
           <Property Name="TextSource" Value="SingleText"/>
-          <Property Name="Top" Value="173"/>
+          <Property Name="Top" Value="165"/>
           <Property Name="Width" Value="494"/>
         </Control>
       </Controls>

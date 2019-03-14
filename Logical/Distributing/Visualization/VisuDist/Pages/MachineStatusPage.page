@@ -683,7 +683,7 @@
       <Property Name="OutlineHatched" Value="False"/>
       <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.Distributing.Visualization.VisCtrl.Vis.Sts.AutoSorting]"/>
       <Property Name="Top" Value="0"/>
-      <Property Name="VisibilityMode" Value="Hidden"/>
+      <Property Name="VisibilityMode" Value="Normal"/>
       <Property Name="Width" Value="640"/>
       <Property Name="Z-Order" Value="2"/>
       <TextGroup>
@@ -692,6 +692,16 @@
         <IndexMap/>
       </TextGroup>
       <Controls>
+        <Control ClassId="0x00001001" Name="Shape_1">
+          <Property Name="BackColor" Value="251"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Height" Value="480"/>
+          <Property Name="Left" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+          <Property Name="Top" Value="0"/>
+          <Property Name="Width" Value="640"/>
+        </Control>
         <Control ClassId="0x00001004" Name="Text_1">
           <Property Name="AlignmentHorizontal" Value="Center"/>
           <Property Name="ControlID" Value="0"/>

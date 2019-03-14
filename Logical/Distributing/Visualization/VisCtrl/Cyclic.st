@@ -24,17 +24,20 @@ PROGRAM _CYCLIC
 		
 	IF Vis.Cmd.Start = TRUE THEN
 		MainCtrl.Input.Cmd.StartAuto := TRUE;
+		OpcUaComm[0] := 1;
 		Vis.Cmd.Start 				 := FALSE;
 	END_IF
 	
 	IF Vis.Cmd.Stop = TRUE THEN
 		MainCtrl.Input.Cmd.StopAuto := TRUE;
 		MainCtrl.Input.Par.Mode := DISTCTRL_MANUAL;
+		OpcUaComm[0] := 0;
 		Vis.Cmd.Stop 				:= FALSE;
 	END_IF
 	
 	IF Vis.Cmd.Home = TRUE THEN
 		MainCtrl.Input.Cmd.Home := TRUE;
+		Vis.Sts.Homing 	:= SHOW;
 		Vis.Cmd.Home 			:= FALSE;
 	END_IF
 	
@@ -180,9 +183,9 @@ PROGRAM _CYCLIC
 	
 	//Alarm page button error present 
 	IF OpcUaComm[6] = 1 THEN
-		Vis.Sts.ErrorPresent := TRUE;
+		Vis.Sts.ErrorHide := FALSE;
 	ELSIF OpcUaComm[6] = 0 THEN
-		Vis.Sts.ErrorPresent := FALSE;
+		Vis.Sts.ErrorHide := TRUE;
 	END_IF
 	
 END_PROGRAM

@@ -1,3 +1,10 @@
 VAR
 	gSortHW : gSortHW_type; (*Control variable for hardware IO types for sorter*)
+	MpAlarmXCore_Sort : MpAlarmXCore; (*Function block for MpAlarmXCore*)
+	MpAlarmXListUI_Sort : MpAlarmXListUI; (*Function block for MpAlarmXListUI*)
+	AlarmXListUIConnect_Sort : MpAlarmXListUIConnectType; (*MpAlarmXListUIConnect type*)
+	MpAlarmXHistory_Sort : MpAlarmXHistory; (*Function block for MpAlarmXHistory*)
+	MpAlarmXHistoryUI_Sort : MpAlarmXHistoryUI; (*Function block for MpAlarmXHistoryUI*)
+	AlarmXHistoryUIConnect_Sort : MpAlarmXHistoryUIConnectType; (*MpAlarmXHistoryUIConnect type*)
+	gSorttModuleOK : gSortModuleOK_type; (*Control variable for sorter module statuses*)
 END_VAR
