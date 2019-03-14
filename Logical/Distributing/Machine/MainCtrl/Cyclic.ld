@@ -60,8 +60,26 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
+	<network label="" comment="" row="3" column="0" commented="0">
+		<row>
+			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Speed"/>
+			<function position="top" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="Conveyor.Input.Par.Speed"/>
+		</row>
+		<row>
+			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Accel"/>
+			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="Conveyor.Input.Par.Accel"/>
+		</row>
+		<row>
+			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Decel"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="Conveyor.Input.Par.Decel"/>
+		</row>
+	</network>
 </networks>
 END_PROGRAM
+
 
 
 

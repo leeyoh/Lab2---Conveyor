@@ -1,4 +1,4 @@
 VAR
-	MainCtrl : MainCtrl_typ := (Input:=(Par:=(Mode:=DISTCTRL_MANUAL,Conveyor:=(Speed:=100.0,Accel:=100.0,Decel:=100.0))));
+	MainCtrl : MainCtrl_typ := (Input:=(Par:=(Mode:=DISTCTRL_MANUAL,Conveyor:=(Speed:=50.0,Accel:=50.0,Decel:=50.0))));
 	OpcUaComm : ARRAY[0..7] OF USINT;
 END_VAR

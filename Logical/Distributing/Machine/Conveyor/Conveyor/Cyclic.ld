@@ -73,10 +73,16 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="ConveyorState.Init"/>
 		</row>
 	</network>
-	<network label="" comment="Handle RunCycle commands" row="3" column="0" commented="0">
+	<network label="" comment="Handle RunCycle commands" row="4" column="0" commented="0">
 		<row>
 			<contact type="open" name="ConveyorState.Wait"/>
 			<contact type="open" name="Conveyor.Input.Cmd.RunCycle"/>
+			<line/>
+			<coil type="reset" name="Conveyor.Input.Cmd.RunCycle"/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
 			<line/>
 			<coil type="reset" name="Conveyor.Output.Status.CycleDone"/>
 		</row>
@@ -361,6 +367,7 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
 
 
 
