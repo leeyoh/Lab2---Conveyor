@@ -30,7 +30,14 @@
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<contact type="open" name="SorterState.3"/>
+			<actionblock position="topbottom"><input qualifier="N"/><output name="Error"/></actionblock>
+			<empty/>
+		</row>
+	</network>
+	<network label="" comment="Change State to Auto Mode" row="4" column="0" commented="0">
 		<row>
 			<contact type="closed" name="Sorter.Output.Status.Error"/>
 			<contact type="open" name="Sorter.AutoMode"/>
@@ -56,7 +63,7 @@
 			<coil type="reset" name="SorterState.3"/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="" row="5" column="0" commented="0">
 		<row>
 			<contact type="closed" name="Sorter.Output.Status.Error"/>
 			<contact type="closed" name="Sorter.AutoMode"/>
@@ -80,6 +87,52 @@
 			<empty or="true"/>
 			<line/>
 			<coil type="reset" name="SorterState.3"/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<contact type="open" name="Sorter.Conveyor.MoveVelocity"/>
+			<coil type="reset" name="Sorter.Conveyor.MoveVelocity"/>
+		</row>
+	</network>
+	<network label="" comment="" row="5" column="0" commented="0">
+		<row>
+			<contact type="open" name="Sorter.Output.Status.Error"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="SorterState.0"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="SorterState.1"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="SorterState.2"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="set" name="SorterState.3"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="Sorter.Conveyor.MoveVelocity"/>
+		</row>
+	</network>
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<contact type="closed" name="Sorter.Output.Status.Error"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="Station.Input.CMD.ErrorReset"/>
 		</row>
 	</network>
 	<network label="" comment="" row="1" column="0" commented="0">
@@ -131,8 +184,20 @@
 			<empty/>
 		</row>
 	</network>
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<actionblock position="topbottom"><input qualifier="N"/><output name="CheckError"/></actionblock>
+			<empty/>
+			<empty/>
+		</row>
+	</network>
 </networks>
 END_PROGRAM
+
+
+
+
+
 
 
 

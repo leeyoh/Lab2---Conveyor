@@ -23,7 +23,7 @@ PROGRAM _CYCLIC
 	</network>
 	<network label="" comment="" row="2" column="0" commented="0">
 		<row>
-			<contact type="open" name="MachineState[AUTO].0"/>
+			<contact type="open" name="MachineState[0].0"/>
 			<contact type="open" name="Sorter.Output.Status.IsHomed"/>
 			<line/>
 			<coil type="set" name="Sorter.AutoMode"/>
@@ -37,7 +37,7 @@ PROGRAM _CYCLIC
 	</network>
 	<network label="" comment="" row="1" column="0" commented="0">
 		<row>
-			<contact type="closed" name="MachineState[AUTO].0"/>
+			<contact type="closed" name="MachineState[0].0"/>
 			<line/>
 			<line/>
 			<coil type="reset" name="Sorter.AutoMode"/>
@@ -161,6 +161,7 @@ Timer gets reset only when reset command is issued. " row="2" column="0" comment
 	</network>
 </networks>
 END_PROGRAM
+
 
 
 

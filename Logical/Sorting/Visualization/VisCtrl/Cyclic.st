@@ -6,6 +6,10 @@
 				visualization.
  *********************************************************************************)
 PROGRAM _CYCLIC
+	IF EDGEPOS(Station.Output.CommandRejected) THEN 
+		ErrorCode := Station.Output.RejectionCode;
+	END_IF
+	
 	
 	(************* Conveyor parameters *************)
 	Station.Conveyor.Velocity := Vis.Par.Velocity;

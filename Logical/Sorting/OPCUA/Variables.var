@@ -1,7 +1,7 @@
 VAR
 	READ_VAR : {REDUND_UNREPLICABLE} STRING[255] := '::MainCtrl:OpcUaComm'; (*Read variable*)
 	WRITE_VAR : {REDUND_UNREPLICABLE} STRING[255] := '::MainCtrl:MachineState'; (*Write variable*)
-	SERVER_URL : {REDUND_UNREPLICABLE} STRING[255] := 'opc.tcp://10.1.16.113:4840'; (*Server Endpoint Url*)
+	SERVER_URL : {REDUND_UNREPLICABLE} STRING[255] := 'opc.tcp://192.168.1.109:4840'; (*Server Endpoint Url*)
 	NS_URI : {REDUND_UNREPLICABLE} STRING[255] := 'urn:B&R/pv/'; (*NamespaceUri*)
 	NODE_IDENTIFIER : {REDUND_UNREPLICABLE} STRING[255] := '::AsGlobalPV:OpcUaComm'; (*Node identifier*)
 	UaWrite_0 : UA_Write; (*Function block for UA_Write*)

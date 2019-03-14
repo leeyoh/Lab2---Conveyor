@@ -15,7 +15,11 @@ TYPE
 		SWIVEL_VAC_ON_NO_PRODUCT := 5, (*Rejection Code thrown when the user attempts to activate the swivel arm vacuum when there is no product under the suction cup.*)
 		SWIVEL_VAC_OFF_PUCK_IN_TRANSIT := 6, (*Rejection Code thrown when the user attempts to deactivate the swivel arm vacuum while a puck is held and the swivel arm is in an intermediate position.*)
 		CONV_JOG_BACK_PUCK_AT_START := 7, (*Rejection Code thrown when the user attempts to jog the conveyor backwards such that a puck falls off the conveyor.*)
-		DIST_REJECT_PLACEHOLDER
+		DIST_REJECT_PLACEHOLDER := 999,
+		EJECTOR_EXTEND_ALREADY_IN_POS := 8, (*Rejection Code thrown when the user attempts to extend the ejection cylinder when it is already in the extended position.*)
+		EJECTOR_RETRACT_ALREADY_IN_POS := 9, (*Rejection Code thrown when the user attempts to retract the ejection cylinder when it is already in the retracted position.*)
+		SWIVEL_TO_MAG_ALREADY_IN_POS := 10, (*Rejection Code thrown when the user attempts to move the Swivel Arm to the magazine while to Swivel arm is already in that position.*)
+		SWIVEL_TO_CONV_ALREADY_IN_POS := 11 (*Rejection Code thrown when the user attempts to move the Swivel Arm to the conveyor while to Swivel arm is already in that position.*)
 		);
 	MainCtrl_typ : 	STRUCT  (*Top-level interface structure for the MainCtrl task*)
 		Input : MainCtrlInput_typ;

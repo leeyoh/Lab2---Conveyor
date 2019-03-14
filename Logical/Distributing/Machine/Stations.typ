@@ -64,7 +64,7 @@ TYPE
 		Par : {REDUND_UNREPLICABLE} SwivelArmPar_typ; (*Parameters for the Ejector Station.*)
 	END_STRUCT;
 	SwivelArmPar_typ : 	STRUCT  (*Ejector Parameters*)
-		Placeholder : USINT; (*Placeholder for parameters*)
+		PuckReadyToBeGrabbed : BOOL; (*True if there is a puck in position, ready to be grabbed by the Swivel Arm.*)
 	END_STRUCT;
 	SwivelArmCmd_typ : 	STRUCT  (*Ejector Commands*)
 		MoveToMagazine : BOOL := FALSE; (*Command to extend the ejector cylinder*)

@@ -192,15 +192,7 @@ ACTION StateWait:
 		</row>
 		<row>
 			<empty/>
-			<empty/>
 			<empty or="true"/>
-			<line/>
-			<line/>
-			<coil type="reset" name="Ejector.Input.Cmd.Home"/>
-		</row>
-		<row>
-			<empty/>
-			<empty/>
 			<empty or="true"/>
 			<line/>
 			<line/>
@@ -208,15 +200,24 @@ ACTION StateWait:
 		</row>
 		<row>
 			<empty/>
-			<empty/>
+			<empty or="true"/>
 			<empty or="true"/>
 			<line/>
 			<line/>
 			<coil type="reset" name="EjectorState.Wait"/>
 		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="Ejector.Input.Cmd.Home"/>
+		</row>
 	</network>
 </networks>
 END_ACTION
+
 
 
 
