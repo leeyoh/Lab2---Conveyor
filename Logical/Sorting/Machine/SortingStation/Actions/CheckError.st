@@ -153,6 +153,8 @@ ACTION CheckError:
 		Sorter.Output.Status.ErrorID := 7;
 	END_IF
 	
+	IF NOT gSortModuleOK.BusController THEN 
+	END_IF
 	
 	IF TON_10ms_AutoTicker.Q THEN 
 		
@@ -168,7 +170,6 @@ ACTION CheckError:
 			16:
 		 		Sorter.Output.Status.ErrorID := 6;  // 404 Puck
 		END_CASE;
-		
 	END_IF
 	
 	

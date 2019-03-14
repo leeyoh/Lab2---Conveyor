@@ -133,9 +133,9 @@ PROGRAM _CYCLIC
 	END_IF
 	
 	//Alarm page button error present 
-	IF MachineState[6] = 1 THEN
+	IF MachineState[7] = 1 THEN
 		Vis.Sts.ErrorHide := FALSE;
-	ELSIF MachineState[6] = 0 THEN
+	ELSIF MachineState[7] = 0 THEN
 		Vis.Sts.ErrorHide := TRUE;	
 	END_IF
 	
@@ -288,7 +288,19 @@ PROGRAM _CYCLIC
 		END_IF
 	END_IF 
 	
+	IF Station.Output.Status.Error AND (NOT Station.Input.CMD.ErrorReset) THEN 
+		MachineState[7] := 1;
+	
+	END_IF
+	
 	//Acknowledge alarms
-	Station.Input.CMD.ErrorReset := AlarmXListUIConnect_Sort.AcknowledgeAll;
+	IF EDGEPOS(MpAlarmXCore_Sort.PendingAlarms = 0) THEN 
+		IF Station.Output.Status.Error THEN 
+			Station.Input.CMD.ErrorReset := TRUE;
+				MachineState[7] := 0;
+		END_IF
+	END_IF
+	
+
 	 
 END_PROGRAM

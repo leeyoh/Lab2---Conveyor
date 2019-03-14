@@ -173,7 +173,7 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="Enables user-defined alarms." row="3" column="0" commented="0">
+	<network label="" comment="Enables user-defined alarms." row="3" column="0" commented="1">
 		<row>
 			<contact type="positive transition" name="Station.Output.Status.Error"/>
 			<function position="top" type="MpAlarmXSet"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
@@ -199,6 +199,7 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
 
 
 

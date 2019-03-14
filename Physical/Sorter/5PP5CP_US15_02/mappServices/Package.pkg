@@ -2,15 +2,11 @@
 <?AutomationStudio Version=4.5.2.102?>
 <Package SubType="mappServices" PackageType="mappServices" xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-<<<<<<< HEAD
-    <Object Type="File" Description=" MpAlarmX configuration">Config_1.mpalarmxcore</Object>
-    <Object Type="File" Description="MpAlarmXHistory configuration">Config_2.mpalarmxhistory</Object>
-=======
 
 
     <Object Type="File">Config_1.mpalarmxcore</Object>
     <Object Type="File">Config_2.mpalarmxhistory</Object>
 
->>>>>>> ee85ed507a07e7812168283efcaf371700104e62
+
   </Objects>
 </Package>

@@ -103,9 +103,9 @@ PROGRAM _CYCLIC
 	END_IF
 	
 	//Alarm page button error present 
-	IF OpcUaComm[6] = 1 THEN
+	IF OpcUaComm[7] = 1 THEN
 		Vis.Sts.ErrorHide := FALSE;
-	ELSIF OpcUaComm[6] = 0 THEN
+	ELSIF OpcUaComm[7] = 0 THEN
 		Vis.Sts.ErrorHide := TRUE;
 	END_IF
 	
