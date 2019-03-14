@@ -6,5 +6,7 @@ VAR
 	MpAlarmXHistory_Sort : MpAlarmXHistory; (*Function block for MpAlarmXHistory*)
 	MpAlarmXHistoryUI_Sort : MpAlarmXHistoryUI; (*Function block for MpAlarmXHistoryUI*)
 	AlarmXHistoryUIConnect_Sort : MpAlarmXHistoryUIConnectType; (*MpAlarmXHistoryUIConnect type*)
-	gSorttModuleOK : gSortModuleOK_type; (*Control variable for sorter module statuses*)
+	gSortModuleOK : gSortModuleOK_type; (*Control variable for sorter module statuses*)
+	ErrorString : STRING[255]; (*String for MpAlarmXSet*)
+	AlarmXSetStatus : UDINT; (*Output status for AlarmXSet*)
 END_VAR

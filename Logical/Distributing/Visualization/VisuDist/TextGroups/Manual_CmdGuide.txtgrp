@@ -13,10 +13,10 @@
     <Text ID="232393" Value="Failure message: No product available."/>
     <Text ID="232394" Value="Failure message: Place product."/>
     <Text ID="232395" Value="Failure message: Keep product on conveyor."/>
-    <Text ID="232396" Value="Failure message:"/>
-    <Text ID="232397" Value="Failure message:"/>
-    <Text ID="232398" Value="Failure message:"/>
-    <Text ID="232399" Value="Failure message:"/>
+    <Text ID="232396" Value="Failure message: Ejection cylinder already extended."/>
+    <Text ID="232397" Value="Failure message: Ejection cylinder already retracted."/>
+    <Text ID="232398" Value="Failure message: Swivel arm already in magazine position."/>
+    <Text ID="232399" Value="Failure message: Swivel arm already in conveyor position."/>
     <Text ID="232400" Value="Failure message:"/>
     <Text ID="232401" Value="Failure message:"/>
     <Text ID="232402" Value="Failure message:"/>

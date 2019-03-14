@@ -173,7 +173,33 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
+	<network label="" comment="" row="3" column="0" commented="1">
+		<row>
+			<empty/>
+			<function position="top" type="MpAlarmXSet"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<analog type="input" name="gAlarmXCore_Dist"/>
+			<function position="middle" type="MpAlarmXSet"><input name="MpLink"/><output name="7"/></function>
+			<analog type="output" name="AlarmXSetStatus"/>
+		</row>
+		<row>
+			<analog type="input" name="ErrorString"/>
+			<function position="bottom" type="MpAlarmXSet"><input name="Name"/></function>
+			<empty/>
+		</row>
+	</network>
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<actionblock position="topbottom"><input qualifier="N"/><output name="Alarm_DistString"/></actionblock>
+			<empty/>
+			<empty/>
+		</row>
+	</network>
 </networks>
 END_PROGRAM
+
+
 
 

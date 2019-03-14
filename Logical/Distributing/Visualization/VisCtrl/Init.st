@@ -10,4 +10,5 @@ PROGRAM _INIT
 	Vis.Sts.AutoSorting := HIDE;
 	Vis.Sts.Homing := HIDE;
 	Vis.Sts.ManualGuide := HIDE;
+	Vis.Sts.ErrorHide := TRUE;
 END_PROGRAM

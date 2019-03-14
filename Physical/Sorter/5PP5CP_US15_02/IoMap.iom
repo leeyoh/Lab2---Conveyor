@@ -26,13 +26,13 @@ VAR_CONFIG
 	::gSortHW.di.Switch1Extended AT %IX."X20DI9371".DigitalInput06; (* *) (*Switch 1 extended*)
 	::gSortHW.di.Switch2Retracted AT %IX."X20DI9371".DigitalInput07; (* *) (*Switch 2 retracted*)
 	::gSortHW.di.Switch2Extended AT %IX."X20DI9371".DigitalInput08; (* *) (*Switch 2 extended*)
-	::gSorttModuleOK.Interface AT %IX."5PP5IF.FPLM-00".ModuleOk;
-	::gSorttModuleOK.BusController AT %IX."X20BC0083".ModuleOk;
-	::gSorttModuleOK.PowerSupply AT %IX."X20PS9400a".ModuleOk;
-	::gSorttModuleOK.DigitalInput AT %IX."X20DI9371".ModuleOk;
-	::gSorttModuleOK.PotentialDist0012 AT %IX."X20PD0012".ModuleOk;
-	::gSorttModuleOK.PotentialDist0011 AT %IX."X20PD0011".ModuleOk;
-	::gSorttModuleOK.DigitalOutput AT %IX."X20DO9322".ModuleOk;
-	::gSorttModuleOK.BusTransmitter AT %IX."X20BT9100".ModuleOk;
-	::gSorttModuleOK.StepperMotor AT %IX."X67SM2436".ModuleOk;
+	::gSortModuleOK.Interface AT %IX."5PP5IF.FPLM-00".ModuleOk;
+	::gSortModuleOK.BusController AT %IX."X20BC0083".ModuleOk;
+	::gSortModuleOK.PowerSupply AT %IX."X20PS9400a".ModuleOk;
+	::gSortModuleOK.DigitalInput AT %IX."X20DI9371".ModuleOk;
+	::gSortModuleOK.PotentialDist0012 AT %IX."X20PD0012".ModuleOk;
+	::gSortModuleOK.PotentialDist0011 AT %IX."X20PD0011".ModuleOk;
+	::gSortModuleOK.DigitalOutput AT %IX."X20DO9322".ModuleOk;
+	::gSortModuleOK.BusTransmitter AT %IX."X20BT9100".ModuleOk;
+	::gSortModuleOK.StepperMotor AT %IX."X67SM2436".ModuleOk;
 END_VAR
