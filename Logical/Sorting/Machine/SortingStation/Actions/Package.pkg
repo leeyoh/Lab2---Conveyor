@@ -3,8 +3,8 @@
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
     <Object Type="File">Home.ld</Object>
-    <Object Type="File">CheckError.ld</Object>
     <Object Type="File">AxisBasic.ld</Object>
     <Object Type="File">Collector.ld</Object>
+    <Object Type="File">CheckError.st</Object>
   </Objects>
 </Package>

@@ -5,6 +5,12 @@ ACTION Linker:
 	Station.Output.Status.Switch1Extended := Sorter.Output.Status.Switch1Extended;
 	Station.Output.Status.Switch1Retracted := Sorter.Output.Status.Switch1Retracted;
 	
+	Station.Output.Status.Error := Sorter.Output.Status.Error;
+	Station.Output.Status.ErrorID := Sorter.Output.Status.Error;
+	
+	Station.Output.RejectionCode := Sorter.Output.RejectionCode;
+	Station.Output.CommandRejected := Sorter.Output.CommandRejected;
+	
 	//Index of Slot Array 
 	Station.ColorCount[0] := 0;
 	Station.ColorCount[1] := 0;

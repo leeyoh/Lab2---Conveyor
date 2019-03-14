@@ -27,12 +27,20 @@ ACTION AxisBasic:
 			<coil type="reset" name="MpAxisBasicConveyor.Home"/>
 		</row>
 	</network>
-	<network label="" comment="" row="5" column="0" commented="0">
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<contact type="open" name="MpAxisBasicConveyor.Error"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MpAxisBasicConveyor.Power"/>
+		</row>
+	</network>
+	<network label="" comment="" row="6" column="0" commented="0">
 		<row>
 			<contact type="open" name="MpAxisBasicConveyor.ErrorReset"/>
 			<line/>
 			<line/>
-			<coil type="reset" name="MpAxisBasicConveyor.MoveAbsolute"/>
+			<coil type="reset" name="MpAxisBasicConveyor.MoveAdditive"/>
 		</row>
 		<row>
 			<empty or="true"/>
@@ -57,6 +65,12 @@ ACTION AxisBasic:
 			<line/>
 			<line/>
 			<coil type="reset" name="MpAxisBasicConveyor.JogPositive"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<contact type="open" name="MpAxisBasicConveyor.Active"/>
+			<line/>
+			<coil type="set" name="MpAxisBasicConveyor.Power"/>
 		</row>
 	</network>
 	<network label="" comment="" row="1" column="0" commented="0">
@@ -197,6 +211,8 @@ ACTION AxisBasic:
 	</network>
 </networks>
 END_ACTION
+
+
 
 
 

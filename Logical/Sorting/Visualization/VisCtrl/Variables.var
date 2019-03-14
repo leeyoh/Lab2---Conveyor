@@ -25,3 +25,6 @@ VAR CONSTANT
 	SHOW : UINT := 0; (*Show layer on vis*)
 	HIDE : UINT := 1; (*Hide layer on vis*)
 END_VAR
+VAR
+	ErrorCode : UDINT;
+END_VAR

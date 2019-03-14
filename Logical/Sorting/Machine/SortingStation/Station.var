@@ -4,4 +4,8 @@ VAR
 	EqLeft : BOOL;
 	EqRight : BOOL;
 	EqMiddle : BOOL;
+	TON_10ms_Switch1 : TON_10ms;
+	TON_10ms_Switch2 : TON_10ms;
+	TON_10ms_AutoTicker : TON_10ms;
+	TON_10ms_Convey : TON_10ms;
 END_VAR
