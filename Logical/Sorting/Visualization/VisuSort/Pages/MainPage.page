@@ -280,6 +280,9 @@
           <Property Name="Height" Value="80"/>
           <Property Name="KeyMatrixOffset" Value="None"/>
           <Property Name="Left" Value="58"/>
+          <Property Name="Locking" Value="Datapoint &gt;= Level"/>
+          <Property Name="LockingDatapoint" Value="Source[global].Variable[DataSource.Sorting.Visualization.VisCtrl.Vis.Sts.AutoLock]"/>
+          <Property Name="LockingLevel" Value="1"/>
           <Property Name="PressedBitmapSource" Value="Source[embedded].Property[BitmapSource]"/>
           <Property Name="PressedTextSource" Value="Source[embedded].Property[TextSource]"/>
           <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpButtonUp]"/>
@@ -304,6 +307,9 @@
           <Property Name="Height" Value="55"/>
           <Property Name="KeyMatrixOffset" Value="None"/>
           <Property Name="Left" Value="187"/>
+          <Property Name="Locking" Value="Datapoint &gt;= Level"/>
+          <Property Name="LockingDatapoint" Value="Source[global].Variable[DataSource.Sorting.Visualization.VisCtrl.Vis.Sts.AutoLock]"/>
+          <Property Name="LockingLevel" Value="1"/>
           <Property Name="PressedBitmapSource" Value="Source[embedded].Property[BitmapSource]"/>
           <Property Name="PressedTextSource" Value="Source[embedded].Property[TextSource]"/>
           <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpButtonUp]"/>
@@ -469,12 +475,13 @@
           <Property Name="Description" Value=""/>
           <Property Name="VirtualKey_LED" Value="False"/>
           <KeyActions>
-            <KeyAction ClassId="0x00000161">
+            <KeyAction ClassId="0x0000016A">
               <Property Name="CompletionDatapoint" Value="None"/>
               <Property Name="CompletionValue" Value="0"/>
               <Property Name="Description" Value=""/>
               <Property Name="Locking" Value="Never"/>
               <Property Name="Name" Value="Action_0"/>
+              <Property Name="ResetValue" Value="0"/>
               <Property Name="SetValue" Value="1"/>
               <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Sorting.Visualization.VisCtrl.Vis.Cmd.Automatic]"/>
             </KeyAction>

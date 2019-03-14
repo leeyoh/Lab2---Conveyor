@@ -9,4 +9,5 @@ PROGRAM _INIT
 	
 	Vis.Sts.AutoSorting := HIDE;
 	Vis.Sts.Homing := HIDE;
+	Vis.Sts.ManualGuide := HIDE;
 END_PROGRAM

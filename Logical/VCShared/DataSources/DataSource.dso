@@ -5919,7 +5919,7 @@
                 <Property Name="ConnectedBySharedResource" Value="False"/>
                 <Property Name="ConnectingVisus" Value="Distributing\Visualization\VisuDist"/>
                 <Property Name="Description" Value=""/>
-                <Property Name="PLCType" Value="UINT"/>
+                <Property Name="PLCType" Value="UDINT"/>
                 <Property Name="UpdateTime" Value="Default"/>
                 <Property Name="UserID" Value="None"/>
                 <Property Name="VCType" Value="INTEGER"/>
@@ -5932,6 +5932,15 @@
                 <Property Name="UpdateTime" Value="Default"/>
                 <Property Name="UserID" Value="None"/>
                 <Property Name="VCType" Value="INTEGER"/>
+              </DataPoint>
+              <DataPoint Name="AutoLock">
+                <Property Name="ConnectedBySharedResource" Value="False"/>
+                <Property Name="ConnectingVisus" Value="Distributing\Visualization\VisuDist"/>
+                <Property Name="Description" Value=""/>
+                <Property Name="PLCType" Value="BOOL"/>
+                <Property Name="UpdateTime" Value="Default"/>
+                <Property Name="UserID" Value="None"/>
+                <Property Name="VCType" Value="BOOL"/>
               </DataPoint>
             </Folder>
           </Folder>
@@ -7342,10 +7351,19 @@
                 <Property Name="ConnectedBySharedResource" Value="False"/>
                 <Property Name="ConnectingVisus" Value="Sorting\Visualization\VisuSort"/>
                 <Property Name="Description" Value=""/>
-                <Property Name="PLCType" Value="UINT"/>
+                <Property Name="PLCType" Value="UDINT"/>
                 <Property Name="UpdateTime" Value="Default"/>
                 <Property Name="UserID" Value="None"/>
                 <Property Name="VCType" Value="INTEGER"/>
+              </DataPoint>
+              <DataPoint Name="AutoLock">
+                <Property Name="ConnectedBySharedResource" Value="False"/>
+                <Property Name="ConnectingVisus" Value="Sorting\Visualization\VisuSort"/>
+                <Property Name="Description" Value=""/>
+                <Property Name="PLCType" Value="BOOL"/>
+                <Property Name="UpdateTime" Value="Default"/>
+                <Property Name="UserID" Value="None"/>
+                <Property Name="VCType" Value="BOOL"/>
               </DataPoint>
             </Folder>
           </Folder>

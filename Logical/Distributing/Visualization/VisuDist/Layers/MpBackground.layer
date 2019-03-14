@@ -182,6 +182,19 @@
       <Property Name="Top" Value="438"/>
       <Property Name="Width" Value="32"/>
     </Control>
+    <Control ClassId="0x00001003" Name="HotSpot_1">
+      <Property Name="ControlID" Value="0"/>
+      <Property Name="Description" Value=""/>
+      <Property Name="EmbVirtualKey" Value="Source[local].VirtualKey[%embVirtualKey_10]"/>
+      <Property Name="Height" Value="40"/>
+      <Property Name="KeyMatrixOffset" Value="None"/>
+      <Property Name="Left" Value="537"/>
+      <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.Distributing.Visualization.VisCtrl.Vis.Sts.ErrorHide]"/>
+      <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
+      <Property Name="Top" Value="436"/>
+      <Property Name="VirtualKey" Value="Source[local].VirtualKey[%embVirtualKey_10]"/>
+      <Property Name="Width" Value="45"/>
+    </Control>
   </Controls>
   <KeyMapping>
     <VirtualKey Name="%embVirtualKey_28">
@@ -211,6 +224,19 @@
       </KeyActions>
     </VirtualKey>
     <VirtualKey Name="%embVirtualKey_30">
+      <Property Name="Description" Value=""/>
+      <Property Name="VirtualKey_LED" Value="False"/>
+      <KeyActions>
+        <KeyAction ClassId="0x00000160">
+          <Property Name="Description" Value=""/>
+          <Property Name="Locking" Value="Never"/>
+          <Property Name="Name" Value="Action_0"/>
+          <Property Name="Page" Value="Source[local].Page[AlarmPage]"/>
+          <Property Name="Target" Value="Page"/>
+        </KeyAction>
+      </KeyActions>
+    </VirtualKey>
+    <VirtualKey Name="%embVirtualKey_10">
       <Property Name="Description" Value=""/>
       <Property Name="VirtualKey_LED" Value="False"/>
       <KeyActions>

@@ -19,18 +19,23 @@ PROGRAM _CYCLIC
 	IF Vis.Cmd.Automatic = TRUE THEN
 		MachineState[0]   := 1;
 		MachineState[1]   := 1;
-		Vis.Cmd.Automatic := FALSE;
+		//Vis.Cmd.Automatic := FALSE;
 	END_IF
 	
 	IF Vis.Cmd.Stop = TRUE THEN
 		MachineState[2] := 0;
 		MachineState[0] := 0;
+		(**)Vis.Cmd.Automatic := FALSE;
+		Vis.Sts.AutoLock := FALSE;
 		Vis.Cmd.Stop    := FALSE;
 	END_IF
 	
-	IF Vis.Cmd.Start = TRUE THEN
+	IF Vis.Cmd.Start = TRUE  AND Vis.Cmd.Automatic = TRUE THEN
 		MachineState[2] := 1;
+		Vis.Sts.AutoLock := TRUE;
 		Vis.Cmd.Start   := FALSE;
+	ELSIF Vis.Cmd.Start = TRUE  AND Vis.Cmd.Automatic = FALSE THEN
+		Vis.Cmd.Start := FALSE;
 	END_IF
 	
 	IF Vis.Cmd.Reset = TRUE THEN

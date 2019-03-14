@@ -19,19 +19,24 @@ PROGRAM _CYCLIC
 	IF Vis.Cmd.Automatic = TRUE THEN
 		MainCtrl.Input.Par.Mode  := DISTCTRL_AUTO;
 		OpcUaComm[1] 			 := 0;
-		Vis.Cmd.Automatic 		 := FALSE;
+		//Vis.Cmd.Automatic 		 := FALSE;
 	END_IF
 		
-	IF Vis.Cmd.Start = TRUE THEN
+	IF Vis.Cmd.Start = TRUE AND Vis.Cmd.Automatic = TRUE THEN
 		MainCtrl.Input.Cmd.StartAuto := TRUE;
 		OpcUaComm[0] 				 := 1;
+		Vis.Sts.AutoLock := TRUE;
 		Vis.Cmd.Start 				 := FALSE;
+	ELSIF Vis.Cmd.Start = TRUE AND Vis.Cmd.Automatic = FALSE THEN
+		Vis.Cmd.Start := FALSE;
 	END_IF
 	
 	IF Vis.Cmd.Stop = TRUE THEN
 		MainCtrl.Input.Cmd.StopAuto := TRUE;
 		MainCtrl.Input.Par.Mode 	:= DISTCTRL_MANUAL;
 		OpcUaComm[0] 		   		:= 0;
+		(**)Vis.Cmd.Automatic := FALSE;
+		Vis.Sts.AutoLock := FALSE;
 		Vis.Cmd.Stop 				:= FALSE;
 	END_IF
 	
