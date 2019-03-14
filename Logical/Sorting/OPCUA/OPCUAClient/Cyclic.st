@@ -2,8 +2,8 @@
  * Copyright: 	Hartfiel Automation
  * Author:    	cashley
  * Created:   	March 8, 2019/12:40 PM 
- * Description: This file details the process for establishing a client connection
-				to the OPCUA server.
+ * Description: This file contains a state machine for the client that details 
+				the process of establishing a client connection to the OPCUA server.
  *********************************************************************************)
 PROGRAM _CYCLIC
 	
@@ -44,7 +44,7 @@ PROGRAM _CYCLIC
 		CLIENT_CHECK_NH: //Get handle for required node and check for error
 			IF EDGEPOS(UaNodeGetHandle_0.Done) THEN 
 				IF NOT UaNodeGetHandle_0.Error THEN 
-					ClientState := CLIENT_IDLE;
+					ClientState 		  := CLIENT_IDLE;
 					Station.OpcUa.Connect := FALSE;
 				ELSE
 					ClientState := CLIENT_ERROR;
@@ -85,14 +85,13 @@ PROGRAM _CYCLIC
 				ELSE
 					ClientState := CLIENT_ERROR;
 				END_IF
-				ExecuteRead := FALSE;
+				ExecuteRead 	   := FALSE;
 				Station.OpcUa.Read := FALSE;
 			END_IF
 			
 		CLIENT_WRITE: //Write plc variable to server
 			ExecuteWrite := TRUE;
 			ClientState  := CLIENT_CHECK_WRITE;
-			
 			
 		CLIENT_CHECK_WRITE: //Write variable to required node from OPCUA Server and check for error
 			IF EDGEPOS(UaWrite_0.Done) THEN 
@@ -101,7 +100,7 @@ PROGRAM _CYCLIC
 				ELSE
 					ClientState := CLIENT_ERROR;
 				END_IF
-				ExecuteWrite := FALSE;
+				ExecuteWrite 	    := FALSE;
 				Station.OpcUa.Write := FALSE;
 			END_IF
 		
@@ -131,7 +130,7 @@ PROGRAM _CYCLIC
 					ClientState := CLIENT_ERROR;
 				END_IF
 				Station.OpcUa.Disconnect := FALSE;
-				ExecuteDisconnect := FALSE;
+				ExecuteDisconnect 		 := FALSE;
 			END_IF
 			
 		CLIENT_ERROR: //An error has been detected

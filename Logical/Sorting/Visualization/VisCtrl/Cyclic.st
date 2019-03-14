@@ -283,5 +283,8 @@ PROGRAM _CYCLIC
 			TON_Guide.IN := FALSE;
 		END_IF
 	END_IF 
+	
+	//Acknowledge alarms
+	Station.Input.CMD.ErrorReset := AlarmXListUIConnect_Sort.AcknowledgeAll;
 	 
 END_PROGRAM
