@@ -239,7 +239,7 @@ ACTION StateAuto:
 			<analog type="output" name="MainAutoStep"/>
 		</row>
 	</network>
-	<network label="" comment="" row="6" column="0" commented="0">
+	<network label="" comment="" row="5" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
@@ -283,20 +283,11 @@ ACTION StateAuto:
 			<empty/>
 			<empty/>
 			<analog type="input" name="DIST_CYCLE_EJECTOR"/>
-			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
 			<analog type="output" name="MainAutoStep"/>
 		</row>
-		<row>
-			<empty/>
-			<empty/>
-			<empty/>
-			<empty/>
-			<analog type="input" name="PUCKPOS_IN_MAG"/>
-			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="56"/></function>
-			<analog type="output" name="PuckPosition"/>
-		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="" row="3" column="0" commented="0">
 		<row>
 			<line/>
 			<function position="top" type="Compare!"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
@@ -319,20 +310,11 @@ ACTION StateAuto:
 			<function position="bottom" type="Compare!"><input name="&lt;!MainAutoStep = DIST_CYCLE_EJECTOR"/></function>
 			<empty/>
 			<analog type="input" name="DIST_CYCLE_SWIVEL"/>
-			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
 			<analog type="output" name="MainAutoStep"/>
 		</row>
-		<row>
-			<empty/>
-			<empty/>
-			<empty/>
-			<empty/>
-			<analog type="input" name="PUCKPOS_IN_TRAY"/>
-			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="56"/></function>
-			<analog type="output" name="PuckPosition"/>
-		</row>
 	</network>
-	<network label="" comment="" row="5" column="0" commented="0">
+	<network label="" comment="" row="3" column="0" commented="0">
 		<row>
 			<line/>
 			<function position="top" type="Compare!"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
@@ -340,64 +322,23 @@ ACTION StateAuto:
 			<contact type="positive transition" name="SwivelStep"/>
 			<line/>
 			<line/>
-			<line/>
-			<line/>
-			<line/>
-			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
-			<empty/>
+			<coil type="set" name="SwivelArm.Input.Cmd.RunCycle"/>
 		</row>
 		<row>
 			<empty/>
 			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
 			<analog type="output" name="SwivelStep" or="true"/>
 			<contact type="positive transition" name="SwivelArm.Output.Status.CycleDone"/>
-			<contact type="closed" name="gDistHW.di.ConvStartVacant"/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
-			<empty or="true"/>
-			<analog type="input" name="PUCKPOS_IN_SWIVEL"/>
-			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
-			<analog type="output" name="PuckPosition"/>
+			<empty/>
 		</row>
 		<row>
 			<empty/>
 			<function position="bottom" type="Compare!"><input name="&lt;!MainAutoStep = DIST_CYCLE_SWIVEL"/></function>
 			<empty/>
-			<empty or="true"/>
-			<analog type="input" name="PUCKPOS_CONV_START"/>
-			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
-			<analog type="output" name="PuckPosition" or="true"/>
-			<line/>
-			<line/>
-			<line/>
-			<coil type="set" name="SwivelArm.Input.Cmd.RunCycle"/>
-		</row>
-		<row>
-			<empty/>
-			<empty/>
-			<empty/>
-			<empty/>
-			<empty or="true"/>
-			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
-			<empty/>
-			<empty/>
-			<empty/>
-			<empty/>
-			<empty/>
-			<empty/>
-		</row>
-		<row>
-			<empty/>
-			<empty/>
-			<empty/>
-			<empty/>
 			<analog type="input" name="DIST_CYCLE_CONVEYOR"/>
 			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
 			<analog type="output" name="MainAutoStep"/>
-			<empty/>
-			<empty/>
-			<empty/>
-			<empty/>
-			<empty/>
 		</row>
 	</network>
 	<network label="" comment="" row="4" column="0" commented="0">
@@ -409,13 +350,17 @@ ACTION StateAuto:
 			<line/>
 			<line/>
 			<line/>
+			<line/>
+			<line/>
 			<coil type="set" name="Conveyor.Input.Cmd.RunCycle"/>
 		</row>
 		<row>
 			<empty/>
-			<function position="middle" type="Compare!"><input name=""/><output name="40"/></function>
+			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
 			<analog type="output" name="ConveyorStep" or="true"/>
+			<contact type="open" name="ConveyorStep"/>
 			<contact type="open" name="gDistHW.di.ConvStartVacant"/>
+			<line/>
 			<line/>
 			<line/>
 			<line/>
@@ -425,12 +370,16 @@ ACTION StateAuto:
 			<empty/>
 			<function position="bottom" type="Compare!"><input name="&lt;!MainAutoStep = DIST_CYCLE_CONVEYOR"/></function>
 			<empty or="true"/>
-			<contact type="positive transition" name="Conveyor.Output.Status.CycleDone"/>
+			<contact type="open" name="ConveyorStep"/>
+			<contact type="closed" name="Conveyor.Input.Cmd.RunCycle"/>
+			<contact type="open" name="Conveyor.Output.Status.CycleDone"/>
 			<contact type="open" name="SwivelArm.Output.Status.IsHomed"/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty/>
 		</row>
 		<row>
+			<empty/>
+			<empty/>
 			<empty/>
 			<empty/>
 			<empty/>
@@ -477,6 +426,10 @@ ACTION StateAuto:
 	</network>
 </networks>
 END_ACTION
+
+
+
+
 
 
 

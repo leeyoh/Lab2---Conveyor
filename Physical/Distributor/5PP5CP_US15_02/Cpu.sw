@@ -14,7 +14,7 @@
     <Task Name="AlarmCtrl" Source="Distributing.AlarmCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="MainCtrl" Source="Distributing.Machine.MainCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Conveyor" Source="Distributing.Machine.Conveyor.Conveyor.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="VisCtrl" Source="Distributing.Visualization.VisCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
+    <Task Name="VisCtrl" Source="Distributing.Visualization.VisCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />
@@ -46,17 +46,13 @@
     <BinaryObject Name="vcgclass" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vcdsint" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vcnet" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="vcptelo" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vccline" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="vcpdihd" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="vcpfpp50" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vcshared" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vcclbox" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vccscale" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="arialbd" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vccnum" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vcpdvnc" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="vcpdi855" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vcpdsw" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="VisuDi01" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vccshape" Source="" Memory="UserROM" Language="Binary" />
@@ -65,23 +61,30 @@
     <BinaryObject Name="vcfntttf" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vccovl" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vcalarm" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="vcpdi815" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="VisuDi03" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vcdsloc" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="vcpfmtcx" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vctcal" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="arconfig" Source="" Memory="SystemROM" Language="Binary" />
-    <BinaryObject Name="User" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="Config" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="ashwd" Source="" Memory="SystemROM" Language="Binary" />
-    <BinaryObject Name="sysconf" Source="" Memory="SystemROM" Language="Binary" />
-    <BinaryObject Name="ashwac" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="Role" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="asfw" Source="" Memory="SystemROM" Language="Binary" />
-    <BinaryObject Name="iomap" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="vcpfar00" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="Config_2" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="Config_1" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="OpcUaMap" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="Acp10map" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="iomap" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="asfw" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="Role" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="ashwac" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="sysconf" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="ashwd" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="Config" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="User" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="arconfig" Source="" Memory="SystemROM" Language="Binary" />
     <BinaryObject Name="acp10cfg" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="Acp10map" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="vcptelo" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="vcpdihd" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="vcpfpp50" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="vcpdi855" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="vcpdi815" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="vcpfmtcx" Source="" Memory="UserROM" Language="Binary" />
   </Binaries>
   <Libraries>
     <LibraryObject Name="AsOpcUac" Source="Libraries.AsOpcUac.lby" Memory="UserROM" Language="binary" Debugging="true" />
@@ -100,11 +103,13 @@
     <LibraryObject Name="Acp10_MC" Source="Libraries.Acp10_MC.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="AsBrStr" Source="Libraries.AsBrStr.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="MpAxis" Source="Libraries.MpAxis.lby" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="MpAlarmX" Source="Libraries.MpAlarmX.lby" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="astime" Source="Libraries.astime.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="asieccon" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="fileio" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
-    <LibraryObject Name="astime" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="dataobj" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="powerlnk" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="vcresman" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="areventlog" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
   </Libraries>
 </SwConfiguration>

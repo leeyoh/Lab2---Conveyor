@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.5.2.102"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="Manual_CmdGuide">
+  <Property Name="Description" Value="Alarm text guide for manual mode"/>
+  <Property Name="Index" Value="7"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="232388" Value="Failure message: Machine is in automatic mode."/>
+    <Text ID="232389" Value="Failure message: Product already in ejector tray."/>
+    <Text ID="232390" Value="Failure message: Swivel arm is in magazine position."/>
+    <Text ID="232391" Value="Failure message: Product present. Release before returning to magazine."/>
+    <Text ID="232392" Value="Failure message: Product already present at conveyor."/>
+    <Text ID="232393" Value="Failure message: No product available."/>
+    <Text ID="232394" Value="Failure message: Place product."/>
+    <Text ID="232395" Value="Failure message: Keep product on conveyor."/>
+    <Text ID="232396" Value="Failure message: Ejection cylinder already extended."/>
+    <Text ID="232397" Value="Failure message: Ejection cylinder already retracted."/>
+    <Text ID="232398" Value="Failure message: Swivel arm already in magazine position."/>
+    <Text ID="232399" Value="Failure message: Swivel arm already in conveyor position."/>
+    <Text ID="232400" Value="Failure message:"/>
+    <Text ID="232401" Value="Failure message:"/>
+    <Text ID="232402" Value="Failure message:"/>
+    <Text ID="232403" Value="Failure message:"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="232388" Value=""/>
+    <Text ID="232389" Value=""/>
+    <Text ID="232390" Value=""/>
+    <Text ID="232391" Value=""/>
+    <Text ID="232392" Value=""/>
+    <Text ID="232393" Value=""/>
+    <Text ID="232394" Value=""/>
+    <Text ID="232395" Value=""/>
+    <Text ID="232396" Value=""/>
+    <Text ID="232397" Value=""/>
+    <Text ID="232398" Value=""/>
+    <Text ID="232399" Value=""/>
+    <Text ID="232400" Value=""/>
+    <Text ID="232401" Value=""/>
+    <Text ID="232402" Value=""/>
+    <Text ID="232403" Value=""/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="232388" Value="0"/>
+    <Index ID="232389" Value="1"/>
+    <Index ID="232390" Value="2"/>
+    <Index ID="232391" Value="3"/>
+    <Index ID="232392" Value="4"/>
+    <Index ID="232393" Value="5"/>
+    <Index ID="232394" Value="6"/>
+    <Index ID="232395" Value="7"/>
+    <Index ID="232396" Value="8"/>
+    <Index ID="232397" Value="9"/>
+    <Index ID="232398" Value="10"/>
+    <Index ID="232399" Value="11"/>
+    <Index ID="232400" Value="12"/>
+    <Index ID="232401" Value="13"/>
+    <Index ID="232402" Value="14"/>
+    <Index ID="232403" Value="15"/>
+  </IndexMap>
+</TextGroup>

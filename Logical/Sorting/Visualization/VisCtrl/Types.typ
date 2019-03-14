@@ -40,7 +40,11 @@ TYPE
 		StatusIndex : UDINT; (*Machine status index*)
 		StatusString : UINT; (*Control variable for machine status string*)
 		InHomePos : BOOL; (*In home position*)
-		ErrorPresent : UINT; (*An error has been detected*)
+		ErrorHide : UINT; (*Show / hide error alarm*)
+		AutoLock : BOOL; (*Automatic button locked*)
 		Locked : BOOL; (*Button locked*)
+		ManualGuide : UINT; (*Control variable for show/hide manual guide*)
+		ManualGuideString : UDINT; (*Control variable for manual command guide*)
+		CmdRejected : BOOL; (*Command has been rejected*)
 	END_STRUCT;
 END_TYPE

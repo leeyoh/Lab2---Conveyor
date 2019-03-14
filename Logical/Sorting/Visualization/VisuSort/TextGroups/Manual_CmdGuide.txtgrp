@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.5.2.102"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="Manual_CmdGuide">
+  <Property Name="Description" Value="Alarm text guide for manual mode"/>
+  <Property Name="Index" Value="7"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="230831" Value="Failure message:"/>
+    <Text ID="230832" Value="Failure message: Lane 3 is full."/>
+    <Text ID="230833" Value="Failure message: Switch 1 not retracted."/>
+    <Text ID="230834" Value="Failure message: Lane 1 is full."/>
+    <Text ID="230835" Value="Failure message: Switch 1 retracted."/>
+    <Text ID="230836" Value="Failure message: Switch 2 not retracted."/>
+    <Text ID="230837" Value="Failure message: Station is occupied."/>
+    <Text ID="230838" Value="Failure message: Lane 2 is full."/>
+    <Text ID="230839" Value="Failure message: No product detected."/>
+    <Text ID="230840" Value="Failure message: Switch 2 extended."/>
+    <Text ID="230841" Value="Failure message: Switch 2 retracted."/>
+    <Text ID="230842" Value="Failure message: Switch 1 extended."/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="230831" Value=""/>
+    <Text ID="230832" Value=""/>
+    <Text ID="230833" Value=""/>
+    <Text ID="230834" Value=""/>
+    <Text ID="230835" Value=""/>
+    <Text ID="230836" Value=""/>
+    <Text ID="230837" Value=""/>
+    <Text ID="230838" Value=""/>
+    <Text ID="230839" Value=""/>
+    <Text ID="230840" Value=""/>
+    <Text ID="230841" Value=""/>
+    <Text ID="230842" Value=""/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="230831" Value="0"/>
+    <Index ID="230832" Value="34"/>
+    <Index ID="230833" Value="20"/>
+    <Index ID="230834" Value="30"/>
+    <Index ID="230835" Value="31"/>
+    <Index ID="230836" Value="10"/>
+    <Index ID="230837" Value="36"/>
+    <Index ID="230838" Value="32"/>
+    <Index ID="230839" Value="37"/>
+    <Index ID="230840" Value="39"/>
+    <Index ID="230841" Value="33"/>
+    <Index ID="230842" Value="38"/>
+  </IndexMap>
+</TextGroup>

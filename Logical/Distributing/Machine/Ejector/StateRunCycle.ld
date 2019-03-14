@@ -3,10 +3,11 @@ ACTION StateRunCycle:
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks xmlns:dt="urn:schemas-microsoft-com:datatypes" maxcolumn="0">
-	<network label="" comment="" row="6" column="0" commented="0">
+	<network label="" comment="" row="8" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
+			<line/>
 			<line/>
 			<line/>
 			<line/>
@@ -27,6 +28,7 @@ ACTION StateRunCycle:
 			<empty/>
 			<empty/>
 			<empty/>
+			<empty/>
 			<functionblock position="header" name="EjectorExtendTimer" type="TON"/>
 			<empty/>
 			<empty/>
@@ -36,6 +38,7 @@ ACTION StateRunCycle:
 			<function position="bottom" type="Compare!" or="true"><input name="&lt;!AutoStep = EJECTOR_EXTEND"/></function>
 			<contact type="open" name="EjectorState.RunCycle"/>
 			<contact type="closed" name="gDistHW.di.MagEmpty"/>
+			<line/>
 			<line/>
 			<line/>
 			<line/>
@@ -50,6 +53,7 @@ ACTION StateRunCycle:
 			<empty/>
 			<empty or="true"/>
 			<contact type="open" name="gDistHW.di.EjCylExtended"/>
+			<line/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty or="true"/>
 			<analog type="input" name="EJECTOR_EXTEND_TIMEOUT"/>
@@ -62,6 +66,7 @@ ACTION StateRunCycle:
 			<empty/>
 			<empty/>
 			<empty/>
+			<empty or="true"/>
 			<analog type="input" name="EJECTOR_RETRACT"/>
 			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
 			<analog type="output" name="AutoStep" or="true"/>
@@ -76,15 +81,44 @@ ACTION StateRunCycle:
 			<empty/>
 			<empty/>
 			<empty/>
-			<empty/>
-			<empty/>
-			<empty/>
+			<empty or="true"/>
+			<contact type="open" name="CmpPuckinTransit"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty or="true"/>
 			<contact type="closed" name="EjectorExtendTimer.Q"/>
 			<line/>
 			<line/>
 			<line/>
 			<coil type="set" name="gDistHW.do.EjCylPushProduct"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<analog type="input" name="EJ_PUCK_POS_IN_TRAY"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="Ejector.Output.Status.PuckPosition"/>
+			<empty or="true"/>
+			<contact type="open" name="CmpPuckinMag"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<analog type="input" name="EJ_PUCK_POS_IN_TRANSIT"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="Ejector.Output.Status.PuckPosition"/>
 		</row>
 	</network>
 	<network label="" comment="" row="4" column="0" commented="0">
@@ -131,6 +165,7 @@ ACTION StateRunCycle:
 	</network>
 </networks>
 END_ACTION
+
 
 
 

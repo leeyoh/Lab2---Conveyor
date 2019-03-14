@@ -1,8 +1,10 @@
-
 VAR
-
-END_VAR
-
-VAR CONSTANT
-
+	MpAlarmXCore_Dist : MpAlarmXCore; (*Funciton block for MpAlarmXCore*)
+	MpAlarmXListUI_Dist : MpAlarmXListUI; (*Function block for MpAlarmXListUI*)
+	AlarmXListUIConnect_Dist : MpAlarmXListUIConnectType; (*MpAlarmXListUIConnect type*)
+	MpAlarmXHistory_Dist : MpAlarmXHistory; (*Function block for MpAlarmXHistory*)
+	MpAlarmXHistoryUI_Dist : MpAlarmXHistoryUI; (*Function block for MpAlarmXHistoryUI*)
+	AlarmXHistoryUIConnect_Dist : MpAlarmXHistoryUIConnectType; (*MpAlarmXHistoryUIConnect type*)
+	ErrorString : STRING[255]; (*String for MpAlarmXSet*)
+	AlarmXSetStatus : UDINT; (*Output status for AlarmXSet*)
 END_VAR

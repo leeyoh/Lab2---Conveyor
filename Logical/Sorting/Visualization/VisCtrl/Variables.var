@@ -27,4 +27,9 @@ VAR CONSTANT
 END_VAR
 VAR
 	ErrorCode : UDINT;
+	TON_Guide : TON; (*Timer for manual command guide*)
+END_VAR
+VAR CONSTANT
+	TIMER_GUIDE : TIME := T#3s; (*Timer value to hide manual command guide*)
+
 END_VAR

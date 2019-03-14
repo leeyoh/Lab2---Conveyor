@@ -7,4 +7,8 @@ PROGRAM _INIT
 	Vis.Par.Acceleration := DEFAULT_ACCEL;
 	Vis.Par.Deceleration := DEFAULT_DECEL;
 	 
+	Vis.Sts.AutoDistributing := HIDE;
+	Vis.Sts.Homing := HIDE;
+	Vis.Sts.ManualGuide := HIDE;
+	Vis.Sts.ErrorHide := TRUE;
 END_PROGRAM

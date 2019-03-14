@@ -37,7 +37,15 @@ TYPE
 		ErrorID : EjectorErrorID_Enum; (*Container for error information*)
 		IsHomed : BOOL; (*True if the station is in the home position*)
 		CycleDone : BOOL;
+		PuckPosition : EjectorPuckPosition_Enum;
 	END_STRUCT;
+	EjectorPuckPosition_Enum : 
+		(
+		EJ_PUCK_POS_STN_EMPTY := 0,
+		EJ_PUCK_POS_IN_MAG := 1,
+		EJ_PUCK_POS_IN_TRANSIT := 2,
+		EJ_PUCK_POS_IN_TRAY := 3
+		);
 	EjectorErrorID_Enum : 
 		( (*Information about Error status of the Ejector Task*)
 		EJECTOR_ERROR_EXTEND_BLOCKED
@@ -87,10 +95,18 @@ TYPE
 		ErrorID : SwivelArmErrorID_Enum; (*Container for error information*)
 		IsHomed : BOOL; (*True if the station is in the home position*)
 		CycleDone : BOOL;
+		PuckPosition : SwivelPuckPosition_Enum;
 	END_STRUCT;
 	SwivelArmErrorID_Enum : 
 		( (*Information about Error status of the Ejector Task*)
 		SWIVEL_ERROR
+		);
+	SwivelPuckPosition_Enum : 
+		(
+		SA_PUCK_POS_STN_EMPTY := 0,
+		SA_PUCK_POS_AT_TRAY := 1,
+		SA_PUCK_POS_IN_TRANSIT := 2,
+		SA_PUCK_POS_AT_CONV := 3
 		);
 END_TYPE
 
@@ -132,9 +148,17 @@ TYPE
 		ErrorID : ConveyorErrorID_typ; (*Container for error information*)
 		IsHomed : BOOL; (*True if the station is in the home position*)
 		CycleDone : BOOL;
+		PuckPosition : ConveyorPuckPosition_Enum;
 	END_STRUCT;
 	ConveyorErrorID_typ : 
 		( (*Information about Error status of the Ejector Task*)
 		CONV_ERROR
+		);
+	ConveyorPuckPosition_Enum : 
+		(
+		CONV_PUCK_POS_STN_EMPTY := 0,
+		CONV_PUCK_POS_AT_START := 1,
+		CONV_PUCK_POS_IN_TRANSIT := 2,
+		CONV_PUCK_POS_AT_END := 3
 		);
 END_TYPE

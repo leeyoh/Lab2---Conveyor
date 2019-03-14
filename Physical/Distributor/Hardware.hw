@@ -4,9 +4,6 @@
   <Module Name="5PP520.1043-00" Type="5PP520.1043-00" Version="2.0.3.1">
     <Connector Name="IF3">
       <Parameter ID="ActivateDevice" Value="1" />
-      <Parameter ID="Mode" Value="Manual" />
-      <Parameter ID="InternetAddress" Value="10.10.10.99" />
-      <Parameter ID="SubnetMask" Value="255.255.255.0" />
       <Group ID="Vnc1" />
       <Parameter ID="VncVcObjectName1" Value="VisuDi" />
       <Parameter ID="VncKeyMappingFile1" Value="" />
@@ -17,6 +14,8 @@
   <Module Name="5PP5CP_US15_02" Type="5PP5CP.US15-02" Version="2.0.6.0">
     <Connection Connector="SY" TargetModule="5PP520.1043-00" TargetConnector="SY1" />
     <Parameter ID="ConfigurationID" Value="Lab2_Conveyor_Distributor" />
+    <Parameter ID="UserRamDevice" Value="PCI.1.PP5IF3.SRAM" />
+    <Parameter ID="VolatileGlobalPvSize" Value="232024" />
     <Parameter ID="TimerDeviceType" Value="EPLX2X" />
     <Parameter ID="TimerDevice" Value="5PP5IF.FPLM-00.IF1" />
     <Parameter ID="TaskClassIdleTime" Value="2000" />

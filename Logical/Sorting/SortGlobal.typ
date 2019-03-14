@@ -19,4 +19,15 @@ TYPE
 		ExtendSwitch2 : BOOL; (*Extend switch 2*)
 		RetractStopper : BOOL; (*Retract stopper*)
 	END_STRUCT;
+	gSortModuleOK_type : 	STRUCT  (*Sorter module statuses*)
+		Interface : BOOL; (*5PP5IF.FPLM-00 status*)
+		BusController : BOOL; (*X20BC0083 status*)
+		PowerSupply : BOOL; (*X20PS9400 status*)
+		DigitalInput : BOOL; (*X20DI9371 status*)
+		PotentialDist0012 : BOOL; (*X20PD0012 status*)
+		PotentialDist0011 : BOOL; (*X20PD0011 status*)
+		DigitalOutput : BOOL; (*X20DO9322 status*)
+		BusTransmitter : BOOL; (*X20BT9100 status*)
+		StepperMotor : BOOL; (*X67SM2436 status*)
+	END_STRUCT;
 END_TYPE
