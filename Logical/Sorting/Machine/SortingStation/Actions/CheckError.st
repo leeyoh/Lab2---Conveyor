@@ -153,7 +153,16 @@ ACTION CheckError:
 		Sorter.Output.Status.ErrorID := 7;
 	END_IF
 	
-	IF NOT gSortModuleOK.BusController THEN 
+	IF  NOT gSortModuleOK.BusController 	OR
+		NOT gSortModuleOK.BusTransmitter 	OR
+		NOT gSortModuleOK.DigitalInput 		OR
+		NOT gSortModuleOK.DigitalOutput 	OR
+		NOT gSortModuleOK.Interface 		OR
+		NOT gSortModuleOK.PotentialDist0011 OR 
+		NOT gSortModuleOK.PotentialDist0012 OR 
+		NOT gSortModuleOK.PowerSupply 		OR 
+		NOT gSortModuleOK.StepperMotor 		THEN 
+		Sorter.Output.Status.ErrorID := 8;
 	END_IF
 	
 	IF TON_10ms_AutoTicker.Q THEN 

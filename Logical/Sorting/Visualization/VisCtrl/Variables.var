@@ -16,7 +16,7 @@ VAR CONSTANT
 	MAI_COLOURS : USINT := NUMBER_OF_COLOURS - 1; (*Master array index for colors*)
 END_VAR
 VAR
-	RTRIG : ARRAY[0..2,0..2] OF R_TRIG; (*Function block for R_TRIG*)
+	RTRIG : ARRAY[0..2,0..2] OF BOOL; (*Function block for R_TRIG*)
 END_VAR
 VAR CONSTANT
 	DEFAULT_VEL : REAL := 2000.0; (*Initialize velocity*)
@@ -31,5 +31,4 @@ VAR
 END_VAR
 VAR CONSTANT
 	TIMER_GUIDE : TIME := T#3s; (*Timer value to hide manual command guide*)
-
 END_VAR

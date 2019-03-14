@@ -212,53 +212,76 @@ PROGRAM _CYCLIC
 				
 		END_CASE
 	END_IF	
-		
-		//Buttons lanes
-		
-		FOR Colour := 0 TO MAI_COLOURS BY 1 DO
-			FOR Lane := 0 TO MAI_LANES BY 1 DO
-				RTRIG[Colour,Lane].CLK := ButtonPressed[Colour,Lane];
-			END_FOR
-		END_FOR
-	
-	
-		FOR Colour := 0 TO MAI_COLOURS BY 1 DO 
-			ColourAssigned := FALSE;
-			FOR Lane := 0 TO MAI_LANES BY 1 DO
-				IF ButtonPressed[Colour,Lane] THEN
-					ColourAssigned := TRUE;
-					FOR i := 0 TO MAI_LANES BY 1 DO
-						IF i <> Lane THEN
-							ButtonLocked[Colour,i] := TRUE;
-						END_IF
-					END_FOR
-				END_IF
-			END_FOR
-		
-			IF ColourAssigned = FALSE THEN
-				FOR Lane := 0 TO MAI_LANES BY 1 DO
-					ButtonLocked[Colour,Lane] := FALSE;
-				END_FOR
-			END_IF
-		END_FOR
-	
-	
+
+	FOR Colour := 0 TO MAI_COLOURS BY 1 DO
 		FOR Lane := 0 TO MAI_LANES BY 1 DO
-			FOR Colour := 0 TO MAI_COLOURS BY 1 DO
-				IF RTRIG[Colour,Lane].Q THEN
-					FOR i := 0 TO MAI_COLOURS BY 1 DO
-						ButtonPressed[i,Lane] := FALSE;
-					END_FOR
-				END_IF
-			END_FOR
+			ButtonLocked[Colour,Lane] := FALSE;
 		END_FOR
+	END_FOR
 	
-		FOR Colour := 0 TO MAI_COLOURS BY 1 DO
-			FOR Lane := 0 TO MAI_LANES BY 1 DO
-				RTRIG[Colour,Lane]();
-			END_FOR
-		END_FOR
-		
+	IF ButtonPressed[0,0] THEN 
+		ButtonLocked[0,1] := TRUE;
+		ButtonLocked[0,2] := TRUE;
+		ButtonLocked[1,0] := TRUE;
+		ButtonLocked[2,0] := TRUE;
+	END_IF
+
+	IF ButtonPressed[0,1] THEN 
+		ButtonLocked[0,0] := TRUE;
+		ButtonLocked[0,2] := TRUE;
+		ButtonLocked[1,1] := TRUE;
+		ButtonLocked[2,1] := TRUE;
+	END_IF
+	
+	IF ButtonPressed[0,2] THEN 
+		ButtonLocked[0,0] := TRUE;
+		ButtonLocked[0,1] := TRUE;
+		ButtonLocked[2,2] := TRUE;
+		ButtonLocked[1,2] := TRUE;
+	END_IF
+	
+	IF ButtonPressed[1,0] THEN 
+		ButtonLocked[0,0] := TRUE;
+		ButtonLocked[2,0] := TRUE;
+		ButtonLocked[1,1] := TRUE;
+		ButtonLocked[1,2] := TRUE;
+	END_IF
+	
+	IF ButtonPressed[1,1] THEN 
+		ButtonLocked[0,1] := TRUE;
+		ButtonLocked[1,0] := TRUE;
+		ButtonLocked[2,1] := TRUE;
+		ButtonLocked[1,2] := TRUE;
+	END_IF
+	
+	IF ButtonPressed[1,2] THEN 
+		ButtonLocked[0,2] := TRUE;
+		ButtonLocked[1,0] := TRUE;
+		ButtonLocked[1,1] := TRUE;
+		ButtonLocked[2,2] := TRUE;
+	END_IF
+	
+	IF ButtonPressed[2,0] THEN 
+		ButtonLocked[0,0] := TRUE;
+		ButtonLocked[1,0] := TRUE;
+		ButtonLocked[2,1] := TRUE;
+		ButtonLocked[2,2] := TRUE;
+	END_IF
+	
+	IF ButtonPressed[2,1] THEN 
+		ButtonLocked[2,0] := TRUE;
+		ButtonLocked[1,1] := TRUE;
+		ButtonLocked[0,1] := TRUE;
+		ButtonLocked[2,2] := TRUE;
+	END_IF
+	
+	IF ButtonPressed[2,2] THEN 
+		ButtonLocked[2,0] := TRUE;
+		ButtonLocked[2,1] := TRUE;
+		ButtonLocked[0,2] := TRUE;
+		ButtonLocked[1,2] := TRUE;
+	END_IF
+	
 	(************* Button locking *************)
 	
 	//Lock out manual buttons when in automatic mode
