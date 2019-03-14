@@ -65,6 +65,43 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
+	<network label="" comment="" row="2" column="0" commented="0">
+		<row>
+			<empty/>
+			<function position="top" type="Compare!"><input name=""/><output name="1"/></function>
+			<analog type="output" name="CmpPuckAtTray"/>
+		</row>
+		<row>
+			<empty/>
+			<function position="bottom" type="Compare!"><input name="&lt;!SwivelArm.Output.Status.PuckPosition = SA_PUCK_POS_AT_TRAY"/></function>
+			<empty/>
+		</row>
+	</network>
+	<network label="" comment="" row="2" column="0" commented="0">
+		<row>
+			<empty/>
+			<function position="top" type="Compare!"><input name=""/><output name="1"/></function>
+			<analog type="output" name="CmpPuckInTransit"/>
+		</row>
+		<row>
+			<empty/>
+			<function position="bottom" type="Compare!"><input name="&lt;!SwivelArm.Output.Status.PuckPosition = SA_PUCK_POS_IN_TRANSIT"/></function>
+			<empty/>
+		</row>
+	</network>
+	<network label="" comment="" row="2" column="0" commented="0">
+		<row>
+			<empty/>
+			<function position="top" type="Compare!"><input name=""/><output name="1"/></function>
+			<analog type="output" name="CmpPuckAtConv"/>
+		</row>
+		<row>
+			<empty/>
+			<function position="bottom" type="Compare!"><input name="&lt;!SwivelArm.Output.Status.PuckPosition = SA_PUCK_POS_AT_CONV"/></function>
+			<empty/>
+		</row>
+	</network>
 </networks>
 END_PROGRAM
+
 
