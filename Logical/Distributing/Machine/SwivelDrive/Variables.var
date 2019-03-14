@@ -12,3 +12,8 @@ END_VAR
 VAR CONSTANT
 	DROPOFF_TIMER_DELAY : TIME := T#1s;
 END_VAR
+VAR
+	CmpPuckAtTray : BOOL;
+	CmpPuckInTransit : BOOL;
+	CmpPuckAtConv : BOOL;
+END_VAR

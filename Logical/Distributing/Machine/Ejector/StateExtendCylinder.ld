@@ -3,7 +3,7 @@ ACTION StateExtendCylinder:
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks xmlns:dt="urn:schemas-microsoft-com:datatypes" maxcolumn="0">
-	<network label="" comment="" row="9" column="0" commented="0">
+	<network label="" comment="" row="14" column="0" commented="0">
 		<row>
 			<empty/>
 			<empty/>
@@ -78,6 +78,37 @@ ACTION StateExtendCylinder:
 		</row>
 		<row>
 			<empty or="true"/>
+			<empty or="true"/>
+			<contact type="open" name="CmpPuckinMag"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<empty/>
+			<analog type="input" name="EJ_PUCK_POS_IN_TRANSIT"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="Ejector.Output.Status.PuckPosition"/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<contact type="open" name="EjectorExtendTimer.Q"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="gDistHW.do.EjCylPushProduct"/>
+		</row>
+		<row>
+			<empty or="true"/>
 			<contact type="open" name="gDistHW.di.EjCylExtended"/>
 			<line/>
 			<line/>
@@ -98,8 +129,29 @@ ACTION StateExtendCylinder:
 			<line/>
 			<coil type="set" name="EjectorState.Wait"/>
 		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<contact type="open" name="CmpPuckinTransit"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<analog type="input" name="EJ_PUCK_POS_IN_TRAY"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="Ejector.Output.Status.PuckPosition"/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
 	</network>
 </networks>
 END_ACTION
+
 
 

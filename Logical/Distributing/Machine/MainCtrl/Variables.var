@@ -6,6 +6,5 @@ VAR
 	DispensedPuckTaken : BOOL;
 	EjectorStep : BOOL;
 	SwivelStep : BOOL;
-	PuckPosition : PuckPosition_Enum;
 	ConveyorStep : BOOL;
 END_VAR

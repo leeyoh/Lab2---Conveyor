@@ -14,6 +14,7 @@
   <Module Name="5PP5CP_US15_02" Type="5PP5CP.US15-02" Version="2.0.6.0">
     <Connection Connector="SY" TargetModule="5PP520.1043-00" TargetConnector="SY1" />
     <Parameter ID="ConfigurationID" Value="Lab2_Conveyor_Sorter" />
+    <Parameter ID="Simulation" Value="1" />
     <Parameter ID="TimerDeviceType" Value="EPLX2X" />
     <Parameter ID="TimerDevice" Value="5PP5IF.FPLM-00.IF1" />
     <Parameter ID="TaskClassIdleTime" Value="2000" />
