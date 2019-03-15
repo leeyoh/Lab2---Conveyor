@@ -8,20 +8,25 @@
 
 PROGRAM _CYCLIC
 	
-	(************* Conveyor parameters *************)
+	(******************************* CONVEYOR parameters ********************************)
+	
 	MainCtrl.Input.Par.Conveyor.Speed 	:= Vis.Par.Velocity;
 	MainCtrl.Input.Par.Conveyor.Accel 	:= Vis.Par.Acceleration;
 	MainCtrl.Input.Par.Conveyor.Decel 	:= Vis.Par.Deceleration;
 	MainCtrl.Input.Cmd.Conveyor.JogBack := Vis.Cmd.JogBackward;
 	MainCtrl.Input.Cmd.Conveyor.JogFwd  := Vis.Cmd.JogForward;
 	
-	(************* Main page commands *************)
+	
+	(******************************* MAIN page commands ********************************)
+	
+	//Automatic mode
 	IF Vis.Cmd.Automatic = TRUE THEN
 		MainCtrl.Input.Par.Mode  := DISTCTRL_AUTO;
 		OpcUaComm[1] 			 := 0;
-		//Vis.Cmd.Automatic 		 := FALSE;
+		Vis.Cmd.Automatic 		 := FALSE;
 	END_IF
 		
+	//Start automatic
 	IF Vis.Cmd.Start = TRUE AND Vis.Cmd.Automatic = TRUE THEN
 		MainCtrl.Input.Cmd.StartAuto := TRUE;
 		OpcUaComm[0] 				 := 1;
@@ -31,6 +36,7 @@ PROGRAM _CYCLIC
 		Vis.Cmd.Start := FALSE;
 	END_IF
 	
+	//Stop automatic
 	IF Vis.Cmd.Stop = TRUE THEN
 		MainCtrl.Input.Cmd.StopAuto := TRUE;
 		MainCtrl.Input.Par.Mode 	:= DISTCTRL_MANUAL;
@@ -40,18 +46,21 @@ PROGRAM _CYCLIC
 		Vis.Cmd.Stop 				:= FALSE;
 	END_IF
 	
+	//Home
 	IF Vis.Cmd.Home = TRUE THEN
 		MainCtrl.Input.Cmd.Home := TRUE;
 		Vis.Sts.Homing 			:= SHOW;
 		Vis.Cmd.Home 			:= FALSE;
 	END_IF
 	
+	//Reset
 	IF Vis.Cmd.Reset = TRUE THEN
 		MainCtrl.Input.Cmd.Reset := TRUE;
 		Vis.Cmd.Reset 			 := FALSE;
 	END_IF
 	
-	(************* Manual mode commands set/reset *************)
+	
+	(*************************** MANUAL mode commands set/reset *************************)
 	
 	//Extend ejection cylinder
 	IF Vis.Cmd.EjCylExtend = TRUE THEN
@@ -89,40 +98,42 @@ PROGRAM _CYCLIC
 		Vis.Cmd.Vacuum 								 := FALSE;
 	END_IF
 	
-	(************* Layers / Pop-ups *************)
 	
-	//Homing pop-up
+	(******************************* Layers / Pop-ups *******************************)
+	
+	//Homing acknowledge
 	IF Vis.Cmd.Home = TRUE THEN
 		Vis.Sts.Homing 	:= SHOW;
 	END_IF
 	
-	//Sorting station set automatic mode
+	//Sorting station has controls in automatic mode
 	IF OpcUaComm[0] = 1 AND OpcUaComm[1] = 1 THEN
 		Vis.Sts.AutoSorting  := SHOW;
 	ELSE Vis.Sts.AutoSorting := HIDE;
 	END_IF
 	
-	//Alarm page button error present 
+	//Alarm error present 
 	IF OpcUaComm[7] = 1 THEN
 		Vis.Sts.ErrorHide := FALSE;
 	ELSIF OpcUaComm[7] = 0 THEN
 		Vis.Sts.ErrorHide := TRUE;
 	END_IF
 	
-	(************* Machine status *************)
 	
-	//Timer updating machine status information
+	(******************************* Machine STATUS ********************************)
+	
+	//Timer to update machine status information
 	TON_Sts.PT := TIMER_CHANGE_STS;
 	TON_Sts();
 	TON_Sts.IN := TRUE;
 	IF TON_Sts.Q = TRUE THEN
 		TON_Sts.IN := FALSE;
-		//Index through state machine
-		IF Vis.Sts.StatusIndex <= 8 THEN
+		IF Vis.Sts.StatusIndex <= 8 THEN //Index through machine status
 			Vis.Sts.StatusIndex := Vis.Sts.StatusIndex + 1; 
 		ELSIF Vis.Sts.StatusIndex > 8 THEN
 			Vis.Sts.StatusIndex := 0;
 		END_IF
+		
 		CASE Vis.Sts.StatusIndex OF 
 			
 			//Ejection cylinder extended
@@ -175,7 +186,7 @@ PROGRAM _CYCLIC
 				END_IF
 				
 			//Not at home position	
-			8: IF Vis.Cmd.Start = TRUE (*AND Vis.Sts.InHomePos = FALSE*) THEN
+			8: IF Vis.Cmd.Start = TRUE AND MainCtrl.Output.Status.IsHomed = FALSE THEN
 					Vis.Sts.StatusString  := 9;
 				ELSE Vis.Sts.StatusString := 10;
 				END_IF
@@ -183,32 +194,36 @@ PROGRAM _CYCLIC
 		END_CASE
 	END_IF	
 	
-	(************* Button locking *************)
 	
-	//Lock out manual buttons when in automatic mode
+	(******************************* Button locking ********************************)
+	
+	//Manual command buttons locked in automatic mode
 	IF OpcUaComm[0] = 1 THEN
 		Vis.Sts.Locked := TRUE;
 	ELSIF OpcUaComm[0] = 0 THEN
 		Vis.Sts.Locked := FALSE;
 	END_IF
+
 	
-	(************* Alarm text guide for manual mode *************)
+	(********************** Alarm text GUIDE for manual mode *************************)
+	
 	//Timer for manual command guide
 	TON_Guide.PT := TIMER_GUIDE;
 	TON_Guide();
 	
+	//If command is rejected, show failure message
 	IF EDGEPOS(MainCtrl.Output.CommandRejected) THEN
-		Vis.Sts.CmdRejected := TRUE;
+		Vis.Sts.CmdRejected 	  := TRUE;
 		Vis.Sts.ManualGuideString := MainCtrl.Output.RejectionCode;
 	END_IF
 	
 	IF Vis.Sts.CmdRejected = TRUE THEN
 		Vis.Sts.ManualGuide := SHOW;
-		TON_Guide.IN := TRUE;
+		TON_Guide.IN 	    := TRUE;
 		IF TON_Guide.Q = TRUE THEN
 			Vis.Sts.ManualGuide := HIDE;
 			Vis.Sts.CmdRejected := FALSE;
-			TON_Guide.IN := FALSE;
+			TON_Guide.IN 		:= FALSE;
 		END_IF
 	END_IF 
 	

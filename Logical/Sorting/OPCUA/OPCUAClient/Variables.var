@@ -1,4 +1,4 @@
 VAR
-	UAConnected : BOOL;
+	UAConnected : BOOL; (*Connection is established between client and server*)
 	ClientState : ClientState_enum; (*State of OPCUA client*)
 END_VAR

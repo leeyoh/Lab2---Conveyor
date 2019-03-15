@@ -55,12 +55,10 @@ PROGRAM _CYCLIC
 		
 		CLIENT_IDLE: //Idle - waiting for command to read, write, disconnect, or reconnect 
 			IF Station.OpcUa.Connect = TRUE THEN
-				ClientState := CLIENT_INIT;	
-				
+				ClientState 		  := CLIENT_INIT;	
 				Station.OpcUa.Connect := FALSE;
 			ELSIF Station.OpcUa.Disconnect THEN 
-				ClientState := CLIENT_NH_RELEASE;
-				
+				ClientState 			 := CLIENT_NH_RELEASE;
 				Station.OpcUa.Disconnect := FALSE;
 			ELSIF Station.OpcUa.Read AND UAConnected THEN 
 				ClientState := CLIENT_READ;
@@ -68,36 +66,6 @@ PROGRAM _CYCLIC
 				ClientState := CLIENT_WRITE;
 			END_IF
 			
-//			//IF read GOTO CLIENT_ READ
-//			IF NOT Station.OpcUa.Disconnect THEN 
-//				IF Station.OpcUa.Read THEN 
-//					ClientState := CLIENT_READ;
-//				END_IF
-//			END_IF
-//			
-//			//IF write GOTO CLIENT_WRITE
-//			IF NOT Station.OpcUa.Disconnect THEN 
-//				IF Station.OpcUa.Write THEN 
-//					ClientState := CLIENT_WRITE;
-//				END_IF
-//			END_IF
-//			
-//			//IF connect GOTO CLIENT_INIT
-//			IF Station.OpcUa.Connect THEN 
-//				Station.OpcUa.Disconnect := FALSE;
-//				Station.OpcUa.Connect := FALSE;
-//				ClientState := CLIENT_INIT;	
-//			END_IF
-//			
-//			//IF disconnect GOTO CLIENT_NH_RELEASE
-//			IF Station.OpcUa.Disconnect THEN 
-//				Station.OpcUa.Connect := FALSE;
-//				Station.OpcUa.Disconnect := FALSE;
-//				ClientState := CLIENT_NH_RELEASE;
-//			END_IF
-//			
-
-
 		CLIENT_READ: //Read plc variable from server
 			ExecuteRead := TRUE;
 			ClientState := CLIENT_CHECK_READ;
@@ -142,7 +110,7 @@ PROGRAM _CYCLIC
 				ExecuteNodeReleaseHandle := FALSE;
 			END_IF
 			
-		CLIENT_DISCONNECT: //Disconnect from OPCUA server and check for error
+		CLIENT_DISCONNECT: //Disconnect from OPCUA server
 			ExecuteDisconnect := TRUE;
 			ClientState    	  := CLIENT_CHECK_DISCONNECT;
 			
@@ -166,6 +134,7 @@ PROGRAM _CYCLIC
 			ExecuteWrite 			 := FALSE;
 			ExecuteNodeReleaseHandle := FALSE;
 			ExecuteDisconnect 		 := FALSE;
+			ClientState 			 := CLIENT_IDLE;
 		
 	END_CASE
 	
