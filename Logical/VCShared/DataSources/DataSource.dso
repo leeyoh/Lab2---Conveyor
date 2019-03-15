@@ -5826,6 +5826,15 @@
                 <Property Name="UserID" Value="None"/>
                 <Property Name="VCType" Value="BOOL"/>
               </DataPoint>
+              <DataPoint Name="TakeControl">
+                <Property Name="ConnectedBySharedResource" Value="False"/>
+                <Property Name="ConnectingVisus" Value="Distributing\Visualization\VisuDist"/>
+                <Property Name="Description" Value=""/>
+                <Property Name="PLCType" Value="BOOL"/>
+                <Property Name="UpdateTime" Value="Default"/>
+                <Property Name="UserID" Value="None"/>
+                <Property Name="VCType" Value="BOOL"/>
+              </DataPoint>
             </Folder>
             <Folder Name="Par">
               <Property Name="Description" Value=""/>
@@ -7214,6 +7223,15 @@
                 <Property Name="VCType" Value="BOOL"/>
               </DataPoint>
               <DataPoint Name="OPCUADisconnect">
+                <Property Name="ConnectedBySharedResource" Value="False"/>
+                <Property Name="ConnectingVisus" Value="Sorting\Visualization\VisuSort"/>
+                <Property Name="Description" Value=""/>
+                <Property Name="PLCType" Value="BOOL"/>
+                <Property Name="UpdateTime" Value="Default"/>
+                <Property Name="UserID" Value="None"/>
+                <Property Name="VCType" Value="BOOL"/>
+              </DataPoint>
+              <DataPoint Name="TakeControl">
                 <Property Name="ConnectedBySharedResource" Value="False"/>
                 <Property Name="ConnectingVisus" Value="Sorting\Visualization\VisuSort"/>
                 <Property Name="Description" Value=""/>

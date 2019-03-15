@@ -36,7 +36,7 @@
     <Text ID="218489" Value="Red"/>
     <Text ID="218490" Value="Black"/>
     <Text ID="218491" Value="Metallic"/>
-    <Text ID="218492" Value=""/>
+    <Text ID="218492" Value="Take control"/>
   </TextLayer>
   <TextLayer LanguageId="de">
     <Text ID="89135" Value="Kontrast"/>

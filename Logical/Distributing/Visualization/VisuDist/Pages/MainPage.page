@@ -287,15 +287,15 @@
           <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
           <Property Name="ForeColor" Value="255"/>
           <Property Name="Height" Value="14"/>
-          <Property Name="Left" Value="245"/>
+          <Property Name="Left" Value="251"/>
           <Property Name="SimulationIndex" Value="0"/>
           <Property Name="SimulationValue" Value=""/>
           <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
           <Property Name="TextGroup" Value="Source[embedded].TextGroup"/>
           <Property Name="TextIndexOffset" Value="15"/>
           <Property Name="TextSource" Value="SingleText"/>
-          <Property Name="Top" Value="295"/>
-          <Property Name="Width" Value="18"/>
+          <Property Name="Top" Value="294"/>
+          <Property Name="Width" Value="13"/>
         </Control>
         <Control ClassId="0x00001001" Name="Shape_2">
           <Property Name="ControlID" Value="0"/>

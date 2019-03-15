@@ -313,6 +313,28 @@ ACTION Collector:
 			<empty/>
 		</row>
 		<row>
+			<analog type="input" name="NONE"/>
+			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="Sorter.Slot[3].Left"/>
+		</row>
+		<row>
+			<analog type="input" name="NONE"/>
+			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="Sorter.Slot[3].Middle"/>
+		</row>
+		<row>
+			<analog type="input" name="NONE"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40" ENO="true"/></function>
+			<analog type="output" name="Sorter.Slot[3].Right"/>
+		</row>
+	</network>
+	<network label="" comment="" row="4" column="0" commented="0">
+		<row>
+			<contact type="open" name="Sorter.Reset"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
 			<analog type="input" name="0"/>
 			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
 			<analog type="output" name="Sorter.SlotIndex.Left"/>
@@ -328,8 +350,26 @@ ACTION Collector:
 			<analog type="output" name="Sorter.SlotIndex.Middle"/>
 		</row>
 	</network>
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="Sorter.Reset"/>
+		</row>
+	</network>
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="Station.Reset"/>
+		</row>
+	</network>
 </networks>
 END_ACTION
+
+
 
 
 

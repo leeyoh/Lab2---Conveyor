@@ -1,9 +1,9 @@
 VAR
-	Sorter : Sorter_type; (*Sorter type*)
+	Sorter : Sorter_type; (*Sorter type for sorting station*)
 	MpAxisBasicConveyor : MpAxisBasic; (*Function block for MpAxisBasic*)
 	ConveyorParam : MpAxisBasicParType; (*MpAxisBasic parameters*)
 	TP_10ms_Start : TP_10ms; (*Automatic mode timer*)
-	TimeIn : UDINT; (*Time in*)
+	TimeIn : UDINT; (*Time in for mode*)
 	SlotIndex : USINT; (*Slot index for lane*)
 	TON_10ms_Opc : TON_10ms; (*Function block for TON timer *)
 	MIndex : INT; (*Machine index*)

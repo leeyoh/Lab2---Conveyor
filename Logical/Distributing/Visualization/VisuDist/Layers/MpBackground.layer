@@ -188,10 +188,10 @@
       <Property Name="EmbVirtualKey" Value="Source[local].VirtualKey[%embVirtualKey_10]"/>
       <Property Name="Height" Value="40"/>
       <Property Name="KeyMatrixOffset" Value="None"/>
-      <Property Name="Left" Value="537"/>
+      <Property Name="Left" Value="539"/>
       <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.Distributing.Visualization.VisCtrl.Vis.Sts.ErrorHide]"/>
       <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
-      <Property Name="Top" Value="436"/>
+      <Property Name="Top" Value="435"/>
       <Property Name="VirtualKey" Value="Source[local].VirtualKey[%embVirtualKey_10]"/>
       <Property Name="Width" Value="45"/>
     </Control>

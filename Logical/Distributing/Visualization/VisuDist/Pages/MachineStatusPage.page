@@ -186,11 +186,11 @@
           <Property Name="InputTouchpad" Value="Source[local].TouchPad[MpNumPad]"/>
           <Property Name="Left" Value="125"/>
           <Property Name="MaxDatapoint" Value="None"/>
-          <Property Name="MaxValue" Value="50"/>
+          <Property Name="MaxValue" Value="20"/>
           <Property Name="MinDatapoint" Value="None"/>
           <Property Name="MinIntegerDigits" Value="2"/>
           <Property Name="MinValue" Value="0"/>
-          <Property Name="SimulationValue" Value="50"/>
+          <Property Name="SimulationValue" Value="20"/>
           <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpInput]"/>
           <Property Name="TeachDatapoint" Value="None"/>
           <Property Name="Top" Value="150"/>
@@ -208,11 +208,11 @@
           <Property Name="InputTouchpad" Value="Source[local].TouchPad[MpNumPad]"/>
           <Property Name="Left" Value="321"/>
           <Property Name="MaxDatapoint" Value="None"/>
-          <Property Name="MaxValue" Value="50"/>
+          <Property Name="MaxValue" Value="400"/>
           <Property Name="MinDatapoint" Value="None"/>
           <Property Name="MinIntegerDigits" Value="2"/>
-          <Property Name="MinValue" Value="0"/>
-          <Property Name="SimulationValue" Value="50"/>
+          <Property Name="MinValue" Value="200"/>
+          <Property Name="SimulationValue" Value="200"/>
           <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpInput]"/>
           <Property Name="TeachDatapoint" Value="None"/>
           <Property Name="Top" Value="150"/>
@@ -230,11 +230,11 @@
           <Property Name="InputTouchpad" Value="Source[local].TouchPad[MpNumPad]"/>
           <Property Name="Left" Value="530"/>
           <Property Name="MaxDatapoint" Value="None"/>
-          <Property Name="MaxValue" Value="50"/>
+          <Property Name="MaxValue" Value="400"/>
           <Property Name="MinDatapoint" Value="None"/>
           <Property Name="MinIntegerDigits" Value="2"/>
-          <Property Name="MinValue" Value="0"/>
-          <Property Name="SimulationValue" Value="50"/>
+          <Property Name="MinValue" Value="200"/>
+          <Property Name="SimulationValue" Value="200"/>
           <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpInput]"/>
           <Property Name="TeachDatapoint" Value="None"/>
           <Property Name="Top" Value="150"/>

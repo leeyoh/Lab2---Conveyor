@@ -1,8 +1,8 @@
 VAR CONSTANT
-	PUCK_PAST : REAL := 400;
+	PUCK_PAST : REAL := 400; (*The product has passed*)
 END_VAR
 VAR
-	Update_Accel : BOOL;
-	Update_Decel : BOOL;
-	Update_Vel : BOOL;
+	Update_Accel : BOOL; (*Update acceleration parameter*)
+	Update_Decel : BOOL; (*Update deceleration parameter*)
+	Update_Vel : BOOL; (*Update velocity*)
 END_VAR

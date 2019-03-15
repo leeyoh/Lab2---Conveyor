@@ -199,11 +199,11 @@ PROGRAM _CYCLIC
 	
 	IF EDGEPOS(MainCtrl.Output.CommandRejected) THEN
 		Vis.Sts.CmdRejected := TRUE;
+		Vis.Sts.ManualGuideString := MainCtrl.Output.RejectionCode;
 	END_IF
 	
 	IF Vis.Sts.CmdRejected = TRUE THEN
 		Vis.Sts.ManualGuide := SHOW;
-		Vis.Sts.ManualGuideString := MainCtrl.Output.RejectionCode;
 		TON_Guide.IN := TRUE;
 		IF TON_Guide.Q = TRUE THEN
 			Vis.Sts.ManualGuide := HIDE;
