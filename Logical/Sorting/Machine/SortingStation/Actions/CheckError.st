@@ -7,14 +7,12 @@ ACTION CheckError:
 	
 
 	Sorter.Output.RejectionCode := 0;
+	Sorter.Output.CommandRejected := FALSE;
 	
 	CASE SorterState OF
 		
 		2:  // Manual Mode Error Check 
-			
-			Sorter.Output.CommandRejected := FALSE;
-			
-			IF Sorter.Input.CMD.ExtendSwitch1 THEN 
+			IF Station.Input.CMD.ExtendSwitch1 THEN 
 				IF Sorter.Output.Status.Switch1Extended THEN 
 					TON_10ms_Switch1.IN := FALSE;
 				ELSIF Sorter.Output.Status.Switch2Extended THEN 
@@ -25,7 +23,7 @@ ACTION CheckError:
 				END_IF			
 			END_IF
 			
-			IF Sorter.Input.CMD.ExtendSwitch2 THEN 
+			IF Station.Input.CMD.ExtendSwitch2 THEN 
 				IF Sorter.Output.Status.Switch2Extended THEN 
 					TON_10ms_Switch2.IN := FALSE;
 				ELSIF Sorter.Output.Status.Switch1Extended THEN 
@@ -36,7 +34,7 @@ ACTION CheckError:
 				END_IF			
 			END_IF	
 			
-			IF Sorter.Input.CMD.RetractStopper THEN 
+			IF Station.Input.CMD.RetractStopper THEN 
 				IF Sorter.NewPuck = Sorter.Input.Par.ParID[0] THEN 
 					IF Sorter.Output.Status.SlotFull[0] THEN 
 						Sorter.Output.RejectionCode := 30;    		//Left Slow Full

@@ -95,12 +95,12 @@ Timer gets reset only when reset command is issued. " row="2" column="0" comment
 		<row>
 			<contact type="closed" name="MachineState[2].1"/>
 			<functionblock position="middle" type="TP_10ms"><input name="IN"/><output name="Q"/></functionblock>
-			<analog type="output" name="Station.Output.Time"/>
+			<empty/>
 		</row>
 		<row>
 			<analog type="input" name="TimeIn"/>
 			<functionblock position="bottom" type="TP_10ms"><input name="PT"/><output name="ET"/></functionblock>
-			<empty/>
+			<analog type="output" name="Station.Output.Time"/>
 		</row>
 	</network>
 	<network label="" comment="" row="1" column="0" commented="0">
@@ -109,6 +109,34 @@ Timer gets reset only when reset command is issued. " row="2" column="0" comment
 			<line/>
 			<line/>
 			<coil type="set" name="Sorter.Input.CMD.RunCycle"/>
+		</row>
+	</network>
+	<network label="" comment="" row="2" column="0" commented="0">
+		<row>
+			<contact type="closed" name="Station.Output.Status.Error"/>
+			<contact type="open" name="Sorter.Output.Status.Occupied"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<analog type="input" name="1"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40" ENO="true"/></function>
+			<analog type="output" name="MachineState[6]"/>
+		</row>
+	</network>
+	<network label="" comment="" row="2" column="0" commented="0">
+		<row>
+			<contact type="closed" name="Station.Output.Status.Error"/>
+			<contact type="closed" name="Sorter.Output.Status.Occupied"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<analog type="input" name="0"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40" ENO="true"/></function>
+			<analog type="output" name="MachineState[6]"/>
 		</row>
 	</network>
 	<network label="" comment="" row="4" column="0" commented="0">
@@ -161,6 +189,8 @@ Timer gets reset only when reset command is issued. " row="2" column="0" comment
 	</network>
 </networks>
 END_PROGRAM
+
+
 
 
 
