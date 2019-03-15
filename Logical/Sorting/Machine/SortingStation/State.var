@@ -1,11 +1,11 @@
 VAR
-	AutoState : USINT := 1;
-	SorterState : USINT;
-	EqLeft : BOOL;
-	EqRight : BOOL;
-	EqMiddle : BOOL;
-	TON_10ms_Switch1 : TON_10ms;
-	TON_10ms_Switch2 : TON_10ms;
-	TON_10ms_AutoTicker : TON_10ms;
-	TON_10ms_Convey : TON_10ms;
+	AutoState : USINT := 1; (*Automatic state*)
+	SorterState : USINT; (*Sorter state*)
+	EqLeft : BOOL; (*Equal to left*)
+	EqRight : BOOL; (*Equal to right*)
+	EqMiddle : BOOL; (*Equal to middle*)
+	TON_10ms_Switch1 : TON_10ms; (*Timer value for switch 1*)
+	TON_10ms_Switch2 : TON_10ms; (*Timer value for switch 2*)
+	TON_10ms_AutoTicker : TON_10ms; (*Auto-ticker timer*)
+	TON_10ms_Convey : TON_10ms; (*Timer for convey*)
 END_VAR

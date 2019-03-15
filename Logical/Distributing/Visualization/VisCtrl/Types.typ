@@ -20,6 +20,7 @@ TYPE
 		SwDrToMag : BOOL; (*Swivel drive to magazine position*)
 		SwDrToConv : BOOL; (*Swivel drive to conveyor position*)
 		EjImpulse : BOOL; (*Ejection impulse on*)
+		TakeControl : BOOL; (*Take control of automatic mode*)
 		Automatic : BOOL; (*Automatic mode*)
 	END_STRUCT;
 	VisParDist_type : 	STRUCT  (*Visualization parameters*)

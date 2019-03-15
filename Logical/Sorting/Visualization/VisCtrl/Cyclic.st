@@ -153,6 +153,12 @@ PROGRAM _CYCLIC
 	ELSE Vis.Sts.AutoDistributing := HIDE;
 	END_IF
 	
+	//Take control
+	IF Vis.Cmd.TakeControl = TRUE THEN
+		MachineState[1] := 1;
+		Vis.Cmd.TakeControl := FALSE;
+	END_IF
+	
 	//Alarm page button error present 
 	IF MachineState[7] = 1 THEN
 		Vis.Sts.ErrorHide := FALSE;
