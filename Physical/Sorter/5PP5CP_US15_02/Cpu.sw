@@ -4,17 +4,18 @@
   <TaskClass Name="Cyclic#1">
     <Task Name="ncsdcctrl" Source="ncsdcctrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
-  <TaskClass Name="Cyclic#2" />
-  <TaskClass Name="Cyclic#3" />
-  <TaskClass Name="Cyclic#4">
-    <Task Name="MainCtrl" Source="Sorting.Machine.MainCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+  <TaskClass Name="Cyclic#2">
+    <Task Name="IOCtrl" Source="Sorting.Machine.IOCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+  </TaskClass>
+  <TaskClass Name="Cyclic#3">
     <Task Name="OPCUAClien" Source="Sorting.OPCUA.OPCUAClient.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="OPCUAConne" Source="Sorting.OPCUA.OPCUAConnect.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="IOCtrl" Source="Sorting.Machine.IOCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="MainCtrl" Source="Sorting.Machine.MainCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="SortingSta" Source="Sorting.Machine.SortingStation.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="AlarmCtrl" Source="Sorting.AlarmCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="VisCtrl" Source="Sorting.Visualization.VisCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
+  <TaskClass Name="Cyclic#4" />
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />
   <TaskClass Name="Cyclic#7" />

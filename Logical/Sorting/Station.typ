@@ -67,8 +67,10 @@ TYPE
 		Output : Output_type; (*Output type*)
 		Input : Input_type; (*Input type*)
 		ColorCount : ARRAY[0..2]OF USINT; (*Puck Color Count [Red, Black, Metallic]*)
+		Reset : BOOL;
 		Conveyor : Conveyor_type; (*Conveyor type*)
 		OpcUa : OpcUa_type; (*OpcUa type*)
+
 	END_STRUCT;
 	Status_type : 	STRUCT  (*Status type for sorting station*)
 		Switch1Extended : BOOL; (*Switch 1 extended*)

@@ -1,4 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Configuration>
-  <Element ID="gAlarmXCore_Dist" Type="mpalarmxcore" />
+  <Element ID="gAlarmXCore_Dist" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="Ejector Station - Cylinder Blocked" />
+        <Property ID="Message" Value="Check for a backup in the ejector tray or a puck jammed in the magazine." />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="Swivel Arm - Motion Blocked" />
+        <Property ID="Message" Value="The Swivel Arm could not reach the requested position. Check for blockages." />
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="Conveyor - Puck Lost" />
+        <Property ID="Message" Value="A puck is taking too long to reach the conveyor's end. Check for a lost puck or a sideways puck on the conveyor." />
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="Conveyor - Product Backlog" />
+        <Property ID="Message" Value="There are too many unsorted pucks on the conveyor. Please remove excess pucks." />
+      </Group>
+    </Group>
+  </Element>
 </Configuration>

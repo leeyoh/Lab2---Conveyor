@@ -1,0 +1,33 @@
+VAR
+	MainAutoStep : MainAutoStep_typ := (DIST_INIT:=TRUE,DIST_EXTEND_EJECTOR:=FALSE,DIST_RETRACT_EJECTOR:=FALSE,DIST_SWIVEL_TO_PICKUP:=FALSE,DIST_SWIVEL_PICKUP:=FALSE,DIST_SWIVEL_TO_CONV:=FALSE,DIST_SWIVEL_DROP:=FALSE,DIST_SWIVEL_TO_MAG:=FALSE,DIST_CONV_START:=FALSE,DIST_CONV_MOVING:=FALSE,DIST_CONV_END:=FALSE,DIST_WAIT:=FALSE);
+	MainMode : MainMode_typ;
+	ModeSwitched : BOOL;
+	PickupTimer : TON;
+END_VAR
+VAR CONSTANT
+	PICKUP_TIMER_DELAY : TIME := T#0.5s;
+END_VAR
+VAR
+	PickupDone : BOOL;
+	DropDone : BOOL;
+	DropoffTimer : TON;
+END_VAR
+VAR CONSTANT
+	DROPOFF_TIMER_DELAY : TIME := T#0.5s;
+END_VAR
+VAR
+	MpAxisBasic_0 : MpAxisBasic; (*Function block for MpAxisBasic*)
+	AxisPars : MpAxisBasicParType := (Acceleration:=50.0,Deceleration:=50.0,Velocity:=50.0);
+	SortStateSet : BOOL;
+	PuckPosition : PuckPosition_Enum := PUCKPOS_IN_MAG;
+	PuckInTray : BOOL;
+	CmpPuckInTray : BOOL;
+	CmpPuckGrippedAtConv : BOOL;
+	CmpPuckInSwivel : BOOL;
+	CmpPuckAtConvStart : BOOL;
+	CmpPuckNotInTray : BOOL;
+	CmpPuckNotInConvStart : BOOL;
+	ManualPickupTimer : TON;
+	CmpPuckInTransit : BOOL;
+	ManualDropoffTimer : TON;
+END_VAR
