@@ -7,4 +7,5 @@ VAR
 	AlarmXHistoryUIConnect_Dist : MpAlarmXHistoryUIConnectType; (*MpAlarmXHistoryUIConnect type*)
 	ErrorString : STRING[255]; (*String for MpAlarmXSet*)
 	AlarmXSetStatus : UDINT; (*Output status for AlarmXSet*)
+	NoAlarms : BOOL;
 END_VAR

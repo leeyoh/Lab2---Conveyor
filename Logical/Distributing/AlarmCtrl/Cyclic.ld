@@ -173,6 +173,33 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
+	<network label="" comment="" row="3" column="0" commented="0">
+		<row>
+			<line/>
+			<function position="top" type="Compare!"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<contact type="positive transition" name="NoAlarms"/>
+			<line/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<function position="middle" type="Compare!"><input name=""/><output name="40"/></function>
+			<analog type="output" name="NoAlarms"/>
+			<analog type="input" name="0"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="OpcUaComm[7]"/>
+		</row>
+		<row>
+			<empty/>
+			<function position="bottom" type="Compare!"><input name="&lt;!MpAlarmXCore_Dist.ActiveAlarms = 0"/></function>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+	</network>
 	<network label="" comment="" row="3" column="0" commented="1">
 		<row>
 			<empty/>
@@ -199,6 +226,7 @@ PROGRAM _CYCLIC
 	</network>
 </networks>
 END_PROGRAM
+
 
 
 

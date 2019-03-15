@@ -10,6 +10,38 @@ PROGRAM _CYCLIC
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks maxcolumn="0">
+	<network label="" comment="" row="6" column="0" commented="0">
+		<row>
+			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Accel"/>
+			<function position="top" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="AxisPars.Acceleration"/>
+		</row>
+		<row>
+			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Decel"/>
+			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="AxisPars.Deceleration"/>
+		</row>
+		<row>
+			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Speed"/>
+			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="AxisPars.Velocity"/>
+		</row>
+		<row>
+			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Accel"/>
+			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="AxisPars.Jog.Acceleration"/>
+		</row>
+		<row>
+			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Decel"/>
+			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="AxisPars.Jog.Deceleration"/>
+		</row>
+		<row>
+			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Speed"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="AxisPars.Jog.Velocity"/>
+		</row>
+	</network>
 	<network label="" comment="" row="4" column="0" commented="0">
 		<row>
 			<empty/>
@@ -1778,7 +1810,7 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty/>
 			<empty or="true"/>
-			<function position="middle" type="Compare!"><input name=""/><output name="1"/></function>
+			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
 			<analog type="output" name="CmpPuckAtConvStart" or="true"/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty/>
@@ -1856,7 +1888,7 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty or="true"/>
 			<empty/>
-			<function position="middle" type="Compare!"><input name=""/><output name="1"/></function>
+			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
 			<analog type="output" name="CmpPuckNotInTray"/>
 			<function position="middle" type="OR"/>
 			<function position="middle" type="OR" or="true"/>
@@ -1899,7 +1931,7 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty or="true"/>
 			<empty/>
-			<function position="middle" type="Compare!"><input name=""/><output name="1"/></function>
+			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
 			<analog type="output" name="CmpPuckNotInConvStart"/>
 			<empty/>
 			<empty/>
@@ -2075,7 +2107,7 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty/>
 			<empty or="true"/>
-			<function position="middle" type="Compare!"><input name=""/><output name="40"/></function>
+			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
 			<analog type="output" name="CmpPuckInTransit" or="true"/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty/>
@@ -2222,8 +2254,27 @@ PROGRAM _CYCLIC
 			<coil type="open" name="MpAxisBasic_0.JogNegative"/>
 		</row>
 	</network>
+	<network label="" comment="" row="3" column="0" commented="0">
+		<row>
+			<contact type="open" name="SetAlarm"/>
+			<function position="top" type="MpAlarmXSet"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<analog type="input" name="gAlarmXCore_Dist"/>
+			<function position="middle" type="MpAlarmXSet"><input name="MpLink"/><output name="7"/></function>
+			<analog type="output" name="DummyDint"/>
+		</row>
+		<row>
+			<analog type="input" name="'Swivel Arm - Motion Blocked'"/>
+			<function position="bottom" type="MpAlarmXSet"><input name="Name"/></function>
+			<empty/>
+		</row>
+	</network>
 </networks>
 END_PROGRAM
+
+
 
 
 

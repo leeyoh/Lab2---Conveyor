@@ -11,7 +11,7 @@
   <TaskClass Name="Cyclic#4">
     <Task Name="Ejector" Source="Distributing.Machine.Ejector.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="SwivelDriv" Source="Distributing.Machine.SwivelDrive.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="AlarmCtrl" Source="Distributing.AlarmCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
+    <Task Name="AlarmCtrl" Source="Distributing.AlarmCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="MainCtrl" Source="Distributing.Machine.MainCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="Conveyor" Source="Distributing.Machine.Conveyor.Conveyor.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="VisCtrl" Source="Distributing.Visualization.VisCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
@@ -72,20 +72,20 @@
     <BinaryObject Name="vcpdi815" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vcpfmtcx" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vcchspot" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="Config_2" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="Config_1" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="OpcUaMap" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="iomap" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="asfw" Source="" Memory="SystemROM" Language="Binary" />
-    <BinaryObject Name="Role" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="ashwac" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="sysconf" Source="" Memory="SystemROM" Language="Binary" />
-    <BinaryObject Name="ashwd" Source="" Memory="SystemROM" Language="Binary" />
-    <BinaryObject Name="Config" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="User" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="arconfig" Source="" Memory="SystemROM" Language="Binary" />
-    <BinaryObject Name="acp10cfg" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="User" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="Config" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="ashwd" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="sysconf" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="ashwac" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="Role" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="asfw" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="iomap" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="OpcUaMap" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="Config_1" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="Config_2" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Acp10map" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="acp10cfg" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vcpfar00" Source="" Memory="UserROM" Language="Binary" />
   </Binaries>
   <Libraries>
