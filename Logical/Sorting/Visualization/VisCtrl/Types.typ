@@ -22,7 +22,6 @@ TYPE
 		Switch2Extend : BOOL; (*Extend switch 2*)
 		Switch2Retract : BOOL; (*Retract switch 2*)
 		Automatic : BOOL; (*Automatic mode*)
-		TakeControl : BOOL; (*Take control of automatic mode*)
 	END_STRUCT;
 	VisParSort_type : 	STRUCT  (*Visualization parameters*)
 		Velocity : REAL; (*Conveyor velocity*)

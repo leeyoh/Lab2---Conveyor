@@ -102,12 +102,6 @@ PROGRAM _CYCLIC
 	ELSE Vis.Sts.AutoSorting := HIDE;
 	END_IF
 	
-	//Take control
-	IF Vis.Cmd.TakeControl = TRUE THEN
-		OpcUaComm[1] := 0;
-		Vis.Cmd.TakeControl := FALSE;
-	END_IF
-	
 	//Alarm page button error present 
 	IF OpcUaComm[7] = 1 THEN
 		Vis.Sts.ErrorHide := FALSE;
