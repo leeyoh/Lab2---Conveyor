@@ -4,6 +4,6 @@
   <Objects>
     <Object Type="Program" Language="IEC" Description="OPCUA Client">OPCUAClient</Object>
     <Object Type="Program" Language="IEC" Description="OPCUA Connection">OPCUAConnect</Object>
-    <Object Type="File" Description="Local variables" Private="true">Variables.var</Object>
+    <Object Type="File" Description="Local variables" Private="true">OPCUA.var</Object>
   </Objects>
 </Package>

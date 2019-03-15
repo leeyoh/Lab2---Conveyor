@@ -17,6 +17,7 @@ PROGRAM _CYCLIC
 			IF EDGEPOS(UaConnect_0.Done) THEN 
 				IF NOT UaConnect_0.Error THEN //Check for error
 					ClientState := CLIENT_GET_NS;
+					UAConnected := TRUE;
 				ELSE
 					ClientState := CLIENT_ERROR;
 				END_IF
@@ -53,27 +54,50 @@ PROGRAM _CYCLIC
 			END_IF
 		
 		CLIENT_IDLE: //Idle - waiting for command to read, write, disconnect, or reconnect 
-			
-			//IF connect GOTO CLIENT_INIT
-			IF Station.OpcUa.Connect THEN 
-				ClientState := CLIENT_INIT;
-			END_IF
-			
-			//IF disconnect GOTO CLIENT_NH_RELEASE
-			IF Station.OpcUa.Disconnect THEN 
+			IF Station.OpcUa.Connect = TRUE THEN
+				ClientState := CLIENT_INIT;	
+				
+				Station.OpcUa.Connect := FALSE;
+			ELSIF Station.OpcUa.Disconnect THEN 
 				ClientState := CLIENT_NH_RELEASE;
-			END_IF
-			
-			//IF read GOTO CLIENT_READ
-			IF Station.OpcUa.Read THEN 
+				
+				Station.OpcUa.Disconnect := FALSE;
+			ELSIF Station.OpcUa.Read AND UAConnected THEN 
 				ClientState := CLIENT_READ;
-			END_IF
-			
-			//IF write GOTO CLIENT_WRITE
-			IF Station.OpcUa.Write THEN 
+			ELSIF Station.OpcUa.Write AND UAConnected THEN 
 				ClientState := CLIENT_WRITE;
 			END_IF
 			
+//			//IF read GOTO CLIENT_ READ
+//			IF NOT Station.OpcUa.Disconnect THEN 
+//				IF Station.OpcUa.Read THEN 
+//					ClientState := CLIENT_READ;
+//				END_IF
+//			END_IF
+//			
+//			//IF write GOTO CLIENT_WRITE
+//			IF NOT Station.OpcUa.Disconnect THEN 
+//				IF Station.OpcUa.Write THEN 
+//					ClientState := CLIENT_WRITE;
+//				END_IF
+//			END_IF
+//			
+//			//IF connect GOTO CLIENT_INIT
+//			IF Station.OpcUa.Connect THEN 
+//				Station.OpcUa.Disconnect := FALSE;
+//				Station.OpcUa.Connect := FALSE;
+//				ClientState := CLIENT_INIT;	
+//			END_IF
+//			
+//			//IF disconnect GOTO CLIENT_NH_RELEASE
+//			IF Station.OpcUa.Disconnect THEN 
+//				Station.OpcUa.Connect := FALSE;
+//				Station.OpcUa.Disconnect := FALSE;
+//				ClientState := CLIENT_NH_RELEASE;
+//			END_IF
+//			
+
+
 		CLIENT_READ: //Read plc variable from server
 			ExecuteRead := TRUE;
 			ClientState := CLIENT_CHECK_READ;
@@ -126,6 +150,7 @@ PROGRAM _CYCLIC
 			IF EDGEPOS(UaDisconnect_0.Done) THEN 
 				IF NOT UaDisconnect_0.Error THEN
 					ClientState := CLIENT_IDLE;
+					UAConnected := FALSE;
 				ELSE
 					ClientState := CLIENT_ERROR;
 				END_IF

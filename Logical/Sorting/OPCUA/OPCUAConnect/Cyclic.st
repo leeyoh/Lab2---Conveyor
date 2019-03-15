@@ -87,7 +87,7 @@ PROGRAM _CYCLIC
 		NodeAddInfo   := UaNodeAddInfo,
 		Timeout 	  := READ_TIMEOUT,
 		Variable 	  := Variable_Rd0
-		);
+	);
 	
 	//Check for error
 	IF (UaRead_0.Busy = 0) THEN

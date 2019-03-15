@@ -11,6 +11,10 @@ ACTION Linker:
 	Station.Output.RejectionCode := Sorter.Output.RejectionCode;
 	Station.Output.CommandRejected := Sorter.Output.CommandRejected;
 	
+	Sorter.Conveyor.Velocity := Station.Conveyor.Velocity;
+	Sorter.Conveyor.Accel := Station.Conveyor.Accel;
+	Sorter.Conveyor.Decel := Station.Conveyor.Decel;
+	
 	//Index of Slot Array 
 	Station.ColorCount[0] := 0;
 	Station.ColorCount[1] := 0;

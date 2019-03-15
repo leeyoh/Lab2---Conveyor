@@ -66,34 +66,59 @@ PROGRAM _CYCLIC
 	IF Vis.Cmd.Switch1Extend = TRUE THEN
 		Station.Input.CMD.ExtendSwitch1 := TRUE;
 		Vis.Cmd.Switch1Extend 			:= FALSE;
+		IF Station.Output.Status.Switch1Extended THEN 
+			Station.Output.CommandRejected := TRUE;
+			Station.Output.RejectionCode := 38;
+		END_IF
 	END_IF
 	
 	//Retract switch 1
 	IF Vis.Cmd.Switch1Retract = TRUE THEN
 		Station.Input.CMD.ExtendSwitch1 := FALSE;
 		Vis.Cmd.Switch1Retract 			:= FALSE;
+		IF Station.Output.Status.Switch1Retracted THEN 
+			Station.Output.CommandRejected := TRUE;
+			Station.Output.RejectionCode := 31;
+		END_IF
 	END_IF
 	
 	//Extend switch 2
 	IF Vis.Cmd.Switch2Extend = TRUE THEN
 		Station.Input.CMD.ExtendSwitch2 := TRUE;
 		Vis.Cmd.Switch2Extend 			:= FALSE;
+		IF Station.Output.Status.Switch2Extended THEN 
+			Station.Output.CommandRejected := TRUE;
+			Station.Output.RejectionCode := 39;
+		END_IF
 	END_IF
 	
 	//Retract switch 2
 	IF Vis.Cmd.Switch2Retract = TRUE THEN
 		Station.Input.CMD.ExtendSwitch2 := FALSE;
 		Vis.Cmd.Switch2Retract 			:= FALSE;
+		IF Station.Output.Status.Switch2Retracted THEN 
+			Station.Output.CommandRejected := TRUE;
+			Station.Output.RejectionCode := 10;
+		END_IF
 	END_IF
 	
 	//Retract stopper
 	IF Vis.Cmd.StopperRetract = TRUE THEN
+		IF Station.Input.CMD.RetractStopper THEN 
+			Station.Output.CommandRejected := TRUE;
+			Station.Output.RejectionCode := 40;
+		END_IF
+		
 		Station.Input.CMD.RetractStopper := TRUE;
 		Vis.Cmd.StopperRetract 			 := FALSE;
 	END_IF
 	
 	//Extend stopper
 	IF Vis.Cmd.StopperExtend = TRUE THEN
+		IF Station.Input.CMD.RetractStopper = FALSE THEN 
+			Station.Output.CommandRejected := TRUE;
+			Station.Output.RejectionCode := 41;
+		END_IF
 		Station.Input.CMD.RetractStopper := FALSE;
 		Vis.Cmd.StopperExtend 			 := FALSE;
 	END_IF
@@ -208,53 +233,85 @@ PROGRAM _CYCLIC
 				
 		END_CASE
 	END_IF	
-		
-		//Buttons lanes
-		
-		FOR Colour := 0 TO MAI_COLOURS BY 1 DO
-			FOR Lane := 0 TO MAI_LANES BY 1 DO
-				RTRIG[Colour,Lane].CLK := ButtonPressed[Colour,Lane];
-			END_FOR
-		END_FOR
-	
-	
-		FOR Colour := 0 TO MAI_COLOURS BY 1 DO 
-			ColourAssigned := FALSE;
-			FOR Lane := 0 TO MAI_LANES BY 1 DO
-				IF ButtonPressed[Colour,Lane] THEN
-					ColourAssigned := TRUE;
-					FOR i := 0 TO MAI_LANES BY 1 DO
-						IF i <> Lane THEN
-							ButtonLocked[Colour,i] := TRUE;
-						END_IF
-					END_FOR
-				END_IF
-			END_FOR
-		
-			IF ColourAssigned = FALSE THEN
-				FOR Lane := 0 TO MAI_LANES BY 1 DO
-					ButtonLocked[Colour,Lane] := FALSE;
-				END_FOR
-			END_IF
-		END_FOR
-	
-	
+
+	FOR Colour := 0 TO MAI_COLOURS BY 1 DO
 		FOR Lane := 0 TO MAI_LANES BY 1 DO
-			FOR Colour := 0 TO MAI_COLOURS BY 1 DO
-				IF RTRIG[Colour,Lane].Q THEN
-					FOR i := 0 TO MAI_COLOURS BY 1 DO
-						ButtonPressed[i,Lane] := FALSE;
-					END_FOR
-				END_IF
-			END_FOR
+			ButtonLocked[Colour,Lane] := FALSE;
 		END_FOR
+	END_FOR
 	
-		FOR Colour := 0 TO MAI_COLOURS BY 1 DO
-			FOR Lane := 0 TO MAI_LANES BY 1 DO
-				RTRIG[Colour,Lane]();
-			END_FOR
-		END_FOR
-		
+	IF ButtonPressed[0,0] THEN 
+		Station.Input.Par.ParID[0] := RED;
+		ButtonLocked[0,1] := TRUE;
+		ButtonLocked[0,2] := TRUE;
+		ButtonLocked[1,0] := TRUE;
+		ButtonLocked[2,0] := TRUE;
+	END_IF
+
+	IF ButtonPressed[0,1] THEN 
+		Station.Input.Par.ParID[1] := RED;
+		ButtonLocked[0,0] := TRUE;
+		ButtonLocked[0,2] := TRUE;
+		ButtonLocked[1,1] := TRUE;
+		ButtonLocked[2,1] := TRUE;
+	END_IF
+	
+	IF ButtonPressed[0,2] THEN 
+		Station.Input.Par.ParID[2] := RED;
+		ButtonLocked[0,0] := TRUE;
+		ButtonLocked[0,1] := TRUE;
+		ButtonLocked[2,2] := TRUE;
+		ButtonLocked[1,2] := TRUE;
+	END_IF
+	
+	IF ButtonPressed[1,0] THEN 
+		Station.Input.Par.ParID[0] := BLACK;
+		ButtonLocked[0,0] := TRUE;
+		ButtonLocked[2,0] := TRUE;
+		ButtonLocked[1,1] := TRUE;
+		ButtonLocked[1,2] := TRUE;
+	END_IF
+	
+	IF ButtonPressed[1,1] THEN 
+		Station.Input.Par.ParID[1] := BLACK;
+		ButtonLocked[0,1] := TRUE;
+		ButtonLocked[1,0] := TRUE;
+		ButtonLocked[2,1] := TRUE;
+		ButtonLocked[1,2] := TRUE;
+	END_IF
+	
+	IF ButtonPressed[1,2] THEN 
+		Station.Input.Par.ParID[2] := BLACK;
+		ButtonLocked[0,2] := TRUE;
+		ButtonLocked[1,0] := TRUE;
+		ButtonLocked[1,1] := TRUE;
+		ButtonLocked[2,2] := TRUE;
+	END_IF
+	
+	IF ButtonPressed[2,0] THEN 
+		Station.Input.Par.ParID[0] := METALLIC;
+		ButtonLocked[0,0] := TRUE;
+		ButtonLocked[1,0] := TRUE;
+		ButtonLocked[2,1] := TRUE;
+		ButtonLocked[2,2] := TRUE;
+	END_IF
+	
+	IF ButtonPressed[2,1] THEN 
+		Station.Input.Par.ParID[1] := METALLIC;
+		ButtonLocked[2,0] := TRUE;
+		ButtonLocked[1,1] := TRUE;
+		ButtonLocked[0,1] := TRUE;
+		ButtonLocked[2,2] := TRUE;
+	END_IF
+	
+	IF ButtonPressed[2,2] THEN 
+		Station.Input.Par.ParID[2] := METALLIC;
+		ButtonLocked[2,0] := TRUE;
+		ButtonLocked[2,1] := TRUE;
+		ButtonLocked[0,2] := TRUE;
+		ButtonLocked[1,2] := TRUE;
+	END_IF
+	
 	(************* Button locking *************)
 	
 	//Lock out manual buttons when in automatic mode
@@ -271,11 +328,11 @@ PROGRAM _CYCLIC
 	
 	IF EDGEPOS(Station.Output.CommandRejected) THEN
 		Vis.Sts.CmdRejected := TRUE;
+		Vis.Sts.ManualGuideString := Station.Output.RejectionCode;
 	END_IF
 	
 	IF Vis.Sts.CmdRejected = TRUE THEN
 		Vis.Sts.ManualGuide := SHOW;
-		Vis.Sts.ManualGuideString := Station.Output.RejectionCode;
 		TON_Guide.IN := TRUE;
 		IF TON_Guide.Q = TRUE THEN
 			Vis.Sts.ManualGuide := HIDE;
@@ -286,7 +343,7 @@ PROGRAM _CYCLIC
 	
 	IF Station.Output.Status.Error AND (NOT Station.Input.CMD.ErrorReset) THEN 
 		MachineState[7] := 1;
-	
+		MachineState[6] := 3;
 	END_IF
 	
 	//Acknowledge alarms
