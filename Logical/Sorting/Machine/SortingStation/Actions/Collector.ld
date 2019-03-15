@@ -3,7 +3,7 @@ ACTION Collector:
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks xmlns:dt="urn:schemas-microsoft-com:datatypes" maxcolumn="0">
-	<network label="" comment="" row="2" column="0" commented="0">
+	<network label="" comment="Evals New Puck" row="2" column="0" commented="0">
 		<row>
 			<contact type="open" name="Sorter.Output.Status.ProductAvailable"/>
 			<contact type="open" name="Sorter.Output.Status.ProductNotBlack"/>
@@ -67,7 +67,7 @@ ACTION Collector:
 			<analog type="output" name="Sorter.NewPuck"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Evals Occupied State" row="1" column="0" commented="0">
 		<row>
 			<contact type="positive transition" name="Sorter.Input.CMD.RetractStopper"/>
 			<line/>
@@ -83,7 +83,7 @@ ACTION Collector:
 			<coil type="reset" name="Sorter.Output.Status.Occupied"/>
 		</row>
 	</network>
-	<network label="" comment="" row="2" column="0" commented="0">
+	<network label="" comment="Evals Current Puck" row="2" column="0" commented="0">
 		<row>
 			<contact type="positive transition" name="Sorter.Input.CMD.RetractStopper"/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
@@ -95,7 +95,7 @@ ACTION Collector:
 			<analog type="output" name="Sorter.CurrentPuck"/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="Calculates Puck Count an" row="3" column="0" commented="0">
 		<row>
 			<contact type="open" name="Sorter.Output.Status.Switch1Extended"/>
 			<contact type="positive transition" name="Sorter.Output.Status.LaneFull"/>
@@ -191,7 +191,7 @@ ACTION Collector:
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="2" column="0" commented="0">
+	<network label="" comment="Empty Current Puck when sorted" row="2" column="0" commented="0">
 		<row>
 			<contact type="positive transition" name="Sorter.Output.Status.LaneFull"/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
@@ -203,7 +203,7 @@ ACTION Collector:
 			<analog type="output" name="Sorter.CurrentPuck"/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="Evals Full Status" row="3" column="0" commented="0">
 		<row>
 			<line/>
 			<function position="top" type="GE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
@@ -254,7 +254,7 @@ ACTION Collector:
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="10" column="0" commented="0">
+	<network label="" comment="Flushes Arrays" row="10" column="0" commented="0">
 		<row>
 			<contact type="open" name="Sorter.Reset"/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
@@ -319,12 +319,12 @@ ACTION Collector:
 		</row>
 		<row>
 			<analog type="input" name="NONE"/>
-			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="56"/></function>
 			<analog type="output" name="Sorter.Slot[3].Middle"/>
 		</row>
 		<row>
 			<analog type="input" name="NONE"/>
-			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40" ENO="true"/></function>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="56" ENO="true"/></function>
 			<analog type="output" name="Sorter.Slot[3].Right"/>
 		</row>
 	</network>
@@ -368,6 +368,7 @@ ACTION Collector:
 	</network>
 </networks>
 END_ACTION
+
 
 
 

@@ -3,7 +3,7 @@ PROGRAM _INIT
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks maxcolumn="0">
-	<network label="" comment="" row="2" column="0" commented="0">
+	<network label="" comment="Sets Sorter State" row="2" column="0" commented="0">
 		<row>
 			<line/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
@@ -17,6 +17,7 @@ PROGRAM _INIT
 	</network>
 </networks>
 END_PROGRAM
+
 
 
 

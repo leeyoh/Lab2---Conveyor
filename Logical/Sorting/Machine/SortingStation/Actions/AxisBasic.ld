@@ -3,7 +3,7 @@ ACTION AxisBasic:
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks xmlns:dt="urn:schemas-microsoft-com:datatypes" maxcolumn="0">
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Power On Conditions in Boot and Error Reset" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="MpAxisBasicConveyor.Active"/>
 			<contact type="closed" name="MpAxisBasicConveyor.PowerOn"/>
@@ -12,7 +12,7 @@ ACTION AxisBasic:
 			<coil type="set" name="MpAxisBasicConveyor.Power"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Home Conditions" row="1" column="0" commented="0">
 		<row>
 			<contact type="closed" name="MpAxisBasicConveyor.IsHomed"/>
 			<contact type="open" name="MpAxisBasicConveyor.PowerOn"/>
@@ -42,7 +42,7 @@ ACTION AxisBasic:
 			<coil type="reset" name="MpAxisBasicConveyor.Home"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Evals when the axis is ready" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="MpAxisBasicConveyor.PowerOn"/>
 			<contact type="closed" name="MpAxisBasicConveyor.Error"/>
@@ -90,7 +90,7 @@ ACTION AxisBasic:
 			<coil type="reset" name="MpAxisBasicConveyor.ErrorReset"/>
 		</row>
 	</network>
-	<network label="" comment="" row="21" column="0" commented="0">
+	<network label="" comment="Functions block" row="21" column="0" commented="0">
 		<row>
 			<empty/>
 			<empty/>
@@ -220,6 +220,7 @@ ACTION AxisBasic:
 	</network>
 </networks>
 END_ACTION
+
 
 
 

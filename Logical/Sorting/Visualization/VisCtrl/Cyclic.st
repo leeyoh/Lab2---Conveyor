@@ -7,60 +7,74 @@
  *********************************************************************************)
 PROGRAM _CYCLIC
 
-	(************* Conveyor parameters *************)
+	(******************************* CONVEYOR parameters ********************************)
+	
 	Station.Conveyor.Velocity := Vis.Par.Velocity;
 	Station.Conveyor.Accel 	  := Vis.Par.Acceleration;
 	Station.Conveyor.Decel 	  := Vis.Par.Deceleration;
 	Station.Conveyor.JogNeg   := Vis.Cmd.JogBackward;
 	Station.Conveyor.JogPos   := Vis.Cmd.JogForward;
-	Vis.Par.ProductsSorted 	  := Station.ColorCount[0] + Station.ColorCount[1] + Station.ColorCount[2]; //Number of sorted products
+	//Total sorted products
+	Vis.Par.ProductsSorted 	  := Station.ColorCount[0] + Station.ColorCount[1] + Station.ColorCount[2]; 
 	
-	(************* Main page commands *************)
+	
+	(******************************* MAIN page commands ********************************)
+	
+	//Automatic mode
 	IF Vis.Cmd.Automatic = TRUE THEN
 		MachineState[0]   := 1;
 		MachineState[1]   := 1;
 		//Vis.Cmd.Automatic := FALSE;
 	END_IF
 	
+	//Stop automatic
 	IF Vis.Cmd.Stop = TRUE THEN
-		MachineState[2] := 0;
-		MachineState[0] := 0;
+		MachineState[2]   := 0;
+		MachineState[0]   := 0;
 		Vis.Cmd.Automatic := FALSE;
-		Vis.Sts.AutoLock := FALSE;
-		Vis.Cmd.Stop    := FALSE;
+		Vis.Sts.AutoLock  := FALSE;
+		Vis.Cmd.Stop      := FALSE;
 	END_IF
 	
+	//Start automatic
 	IF Vis.Cmd.Start = TRUE  AND Vis.Cmd.Automatic = TRUE THEN
-		MachineState[2] := 1;
+		MachineState[2]  := 1;
 		Vis.Sts.AutoLock := TRUE;
-		Vis.Cmd.Start   := FALSE;
+		Vis.Cmd.Start    := FALSE;
 	ELSIF Vis.Cmd.Start = TRUE  AND Vis.Cmd.Automatic = FALSE THEN
 		Vis.Cmd.Start := FALSE;
 	END_IF
 	
+	//Reset
 	IF Vis.Cmd.Reset = TRUE THEN
-		Station.Reset := TRUE;
+		Station.Reset   := TRUE;
 		Vis.Cmd.Reset   := FALSE;
 	END_IF
 	
+	//Home
 	IF Vis.Cmd.Home = TRUE THEN
 		Station.Input.CMD.Home := Vis.Cmd.Home;
-		Vis.Sts.Homing 	:= SHOW;
+		Vis.Sts.Homing 	       := SHOW;
 		Vis.Cmd.Home 		   := FALSE;
 	END_IF
 	
-	(************* OPCUA commands *************)
+	
+	(********************************* OPCUA commands **********************************)
+	
+	//Connect
 	IF Vis.Cmd.OPCUAConnect = TRUE THEN
 		Station.OpcUa.Connect 	 := Vis.Cmd.OPCUAConnect;
 		Vis.Cmd.OPCUAConnect 	 := FALSE;
 	END_IF
 	
+	//Disconnect
 	IF Vis.Cmd.OPCUADisconnect = TRUE THEN
 		Station.OpcUa.Disconnect := Vis.Cmd.OPCUADisconnect;
 		Vis.Cmd.OPCUADisconnect  := FALSE;
 	END_IF
 	
-	(************* Manual mode commands set/reset *************)
+	
+	(*************************** MANUAL mode commands set/reset **************************)
 	
 	//Extend switch 1
 	IF Vis.Cmd.Switch1Extend = TRUE THEN
@@ -68,7 +82,7 @@ PROGRAM _CYCLIC
 		Vis.Cmd.Switch1Extend 			:= FALSE;
 		IF Station.Output.Status.Switch1Extended THEN 
 			Station.Output.CommandRejected := TRUE;
-			Station.Output.RejectionCode := 38;
+			Station.Output.RejectionCode   := 38;
 		END_IF
 	END_IF
 	
@@ -78,7 +92,7 @@ PROGRAM _CYCLIC
 		Vis.Cmd.Switch1Retract 			:= FALSE;
 		IF Station.Output.Status.Switch1Retracted THEN 
 			Station.Output.CommandRejected := TRUE;
-			Station.Output.RejectionCode := 31;
+			Station.Output.RejectionCode   := 31;
 		END_IF
 	END_IF
 	
@@ -88,7 +102,7 @@ PROGRAM _CYCLIC
 		Vis.Cmd.Switch2Extend 			:= FALSE;
 		IF Station.Output.Status.Switch2Extended THEN 
 			Station.Output.CommandRejected := TRUE;
-			Station.Output.RejectionCode := 39;
+			Station.Output.RejectionCode   := 39;
 		END_IF
 	END_IF
 	
@@ -98,7 +112,7 @@ PROGRAM _CYCLIC
 		Vis.Cmd.Switch2Retract 			:= FALSE;
 		IF Station.Output.Status.Switch2Retracted THEN 
 			Station.Output.CommandRejected := TRUE;
-			Station.Output.RejectionCode := 10;
+			Station.Output.RejectionCode   := 10;
 		END_IF
 	END_IF
 	
@@ -106,7 +120,7 @@ PROGRAM _CYCLIC
 	IF Vis.Cmd.StopperRetract = TRUE THEN
 		IF Station.Input.CMD.RetractStopper THEN 
 			Station.Output.CommandRejected := TRUE;
-			Station.Output.RejectionCode := 40;
+			Station.Output.RejectionCode   := 40;
 		END_IF
 		
 		Station.Input.CMD.RetractStopper := TRUE;
@@ -117,7 +131,7 @@ PROGRAM _CYCLIC
 	IF Vis.Cmd.StopperExtend = TRUE THEN
 		IF Station.Input.CMD.RetractStopper = FALSE THEN 
 			Station.Output.CommandRejected := TRUE;
-			Station.Output.RejectionCode := 41;
+			Station.Output.RejectionCode   := 41;
 		END_IF
 		Station.Input.CMD.RetractStopper := FALSE;
 		Vis.Cmd.StopperExtend 			 := FALSE;
@@ -139,37 +153,38 @@ PROGRAM _CYCLIC
 		END_IF
 	END_IF
 	
-	(************* Layers / Pop-ups *************)
 	
-	//Homing pop-up
+	(******************************* Layers / Pop-ups ********************************)
+	
+	//Homing acknowledge
 	IF Vis.Cmd.Home = TRUE THEN
 		Vis.Sts.Homing  := SHOW;
 	//ELSE Vis.Sts.Homing := HIDE;
 	END_IF
 	
-	//Distributing station set automatic mode
+	//Distributing station has controls in automatic mode
 	IF MachineState[0] = 1 AND MachineState[1] = 0 THEN
 		Vis.Sts.AutoDistributing  := SHOW;
 	ELSE Vis.Sts.AutoDistributing := HIDE;
 	END_IF
 	
-	//Alarm page button error present 
+	//Alarm error present 
 	IF MachineState[7] = 1 THEN
 		Vis.Sts.ErrorHide := FALSE;
 	ELSIF MachineState[7] = 0 THEN
 		Vis.Sts.ErrorHide := TRUE;	
 	END_IF
 	
-	(************* Machine status *************)
 	
-	//Timer updating machine status information
+	(******************************* Machine STATUS ********************************)
+	
+	//Timer to update machine status information
 	TON_Sts.PT := TIMER_CHANGE_STS;
 	TON_Sts();
 	TON_Sts.IN := TRUE;
 	IF TON_Sts.Q = TRUE THEN
 		TON_Sts.IN := FALSE;
-		//Index through state machine
-		IF Vis.Sts.StatusIndex <= 8 THEN
+		IF Vis.Sts.StatusIndex <= 8 THEN //Index through machine status
 			Vis.Sts.StatusIndex := Vis.Sts.StatusIndex + 1;
 		ELSIF Vis.Sts.StatusIndex > 8 THEN
 			Vis.Sts.StatusIndex := 0;
@@ -234,85 +249,99 @@ PROGRAM _CYCLIC
 		END_CASE
 	END_IF	
 
+	
+	(******************************* LANE COLOR selector ********************************)
+	
+	//Lock and unlock available selections
 	FOR Colour := 0 TO MAI_COLOURS BY 1 DO
 		FOR Lane := 0 TO MAI_LANES BY 1 DO
 			ButtonLocked[Colour,Lane] := FALSE;
 		END_FOR
 	END_FOR
 	
+	//RED Lane 1
 	IF ButtonPressed[0,0] THEN 
 		Station.Input.Par.ParID[0] := RED;
-		ButtonLocked[0,1] := TRUE;
-		ButtonLocked[0,2] := TRUE;
-		ButtonLocked[1,0] := TRUE;
-		ButtonLocked[2,0] := TRUE;
+		ButtonLocked[0,1] 		   := TRUE;
+		ButtonLocked[0,2] 		   := TRUE;
+		ButtonLocked[1,0] 		   := TRUE;
+		ButtonLocked[2,0] 		   := TRUE;
 	END_IF
 
+	//RED Lane 2
 	IF ButtonPressed[0,1] THEN 
 		Station.Input.Par.ParID[1] := RED;
-		ButtonLocked[0,0] := TRUE;
-		ButtonLocked[0,2] := TRUE;
-		ButtonLocked[1,1] := TRUE;
-		ButtonLocked[2,1] := TRUE;
+		ButtonLocked[0,0] 		   := TRUE;
+		ButtonLocked[0,2] 		   := TRUE;
+		ButtonLocked[1,1] 		   := TRUE;
+		ButtonLocked[2,1] 		   := TRUE;
 	END_IF
 	
+	//RED Lane 3
 	IF ButtonPressed[0,2] THEN 
 		Station.Input.Par.ParID[2] := RED;
-		ButtonLocked[0,0] := TRUE;
-		ButtonLocked[0,1] := TRUE;
-		ButtonLocked[2,2] := TRUE;
-		ButtonLocked[1,2] := TRUE;
+		ButtonLocked[0,0] 		   := TRUE;
+		ButtonLocked[0,1] 		   := TRUE;
+		ButtonLocked[2,2] 		   := TRUE;
+		ButtonLocked[1,2] 		   := TRUE;
 	END_IF
 	
+	//BLACK Lane 1
 	IF ButtonPressed[1,0] THEN 
 		Station.Input.Par.ParID[0] := BLACK;
-		ButtonLocked[0,0] := TRUE;
-		ButtonLocked[2,0] := TRUE;
-		ButtonLocked[1,1] := TRUE;
-		ButtonLocked[1,2] := TRUE;
+		ButtonLocked[0,0] 		   := TRUE;
+		ButtonLocked[2,0] 		   := TRUE;
+		ButtonLocked[1,1] 		   := TRUE;
+		ButtonLocked[1,2] 		   := TRUE;
 	END_IF
 	
+	//BLACK Lane 2
 	IF ButtonPressed[1,1] THEN 
 		Station.Input.Par.ParID[1] := BLACK;
-		ButtonLocked[0,1] := TRUE;
-		ButtonLocked[1,0] := TRUE;
-		ButtonLocked[2,1] := TRUE;
-		ButtonLocked[1,2] := TRUE;
+		ButtonLocked[0,1] 		   := TRUE;
+		ButtonLocked[1,0] 		   := TRUE;
+		ButtonLocked[2,1] 		   := TRUE;
+		ButtonLocked[1,2] 		   := TRUE;
 	END_IF
 	
+	//BLACK Lane 3
 	IF ButtonPressed[1,2] THEN 
 		Station.Input.Par.ParID[2] := BLACK;
-		ButtonLocked[0,2] := TRUE;
-		ButtonLocked[1,0] := TRUE;
-		ButtonLocked[1,1] := TRUE;
-		ButtonLocked[2,2] := TRUE;
+		ButtonLocked[0,2] 		   := TRUE;
+		ButtonLocked[1,0] 		   := TRUE;
+		ButtonLocked[1,1] 		   := TRUE;
+		ButtonLocked[2,2] 		   := TRUE;
 	END_IF
 	
+	//METALLIC Lane 1
 	IF ButtonPressed[2,0] THEN 
 		Station.Input.Par.ParID[0] := METALLIC;
-		ButtonLocked[0,0] := TRUE;
-		ButtonLocked[1,0] := TRUE;
-		ButtonLocked[2,1] := TRUE;
-		ButtonLocked[2,2] := TRUE;
+		ButtonLocked[0,0] 		   := TRUE;
+		ButtonLocked[1,0] 		   := TRUE;
+		ButtonLocked[2,1] 		   := TRUE;
+		ButtonLocked[2,2] 		   := TRUE;
 	END_IF
 	
+	//METALLIC Lane 2
 	IF ButtonPressed[2,1] THEN 
 		Station.Input.Par.ParID[1] := METALLIC;
-		ButtonLocked[2,0] := TRUE;
-		ButtonLocked[1,1] := TRUE;
-		ButtonLocked[0,1] := TRUE;
-		ButtonLocked[2,2] := TRUE;
+		ButtonLocked[2,0] 		   := TRUE;
+		ButtonLocked[1,1] 		   := TRUE;
+		ButtonLocked[0,1] 		   := TRUE;
+		ButtonLocked[2,2] 		   := TRUE;
 	END_IF
 	
+	//METALLIC Lane 3
 	IF ButtonPressed[2,2] THEN 
 		Station.Input.Par.ParID[2] := METALLIC;
-		ButtonLocked[2,0] := TRUE;
-		ButtonLocked[2,1] := TRUE;
-		ButtonLocked[0,2] := TRUE;
-		ButtonLocked[1,2] := TRUE;
+		ButtonLocked[2,0] 		   := TRUE;
+		ButtonLocked[2,1] 		   := TRUE;
+		ButtonLocked[0,2] 		   := TRUE;
+		ButtonLocked[1,2] 		   := TRUE;
 	END_IF
 	
-	(************* Button locking *************)
+	
+	(******************************* Button locking ********************************)
 	
 	//Lock out manual buttons when in automatic mode
 	IF MachineState[0] = 1 THEN
@@ -321,39 +350,41 @@ PROGRAM _CYCLIC
 		Vis.Sts.Locked := FALSE;
 	END_IF
 	
-	(************* Alarm text guide for manual mode *************)
+	
+	(************************** Alarm text GUIDE for manual mode **************************)
+	
 	//Timer for manual command guide
 	TON_Guide.PT := TIMER_GUIDE;
 	TON_Guide();
 	
+	//If command is rejected, show failure message
 	IF EDGEPOS(Station.Output.CommandRejected) THEN
-		Vis.Sts.CmdRejected := TRUE;
+		Vis.Sts.CmdRejected 	  := TRUE;
 		Vis.Sts.ManualGuideString := Station.Output.RejectionCode;
 	END_IF
 	
 	IF Vis.Sts.CmdRejected = TRUE THEN
 		Vis.Sts.ManualGuide := SHOW;
-		TON_Guide.IN := TRUE;
+		TON_Guide.IN 		:= TRUE;
 		IF TON_Guide.Q = TRUE THEN
 			Vis.Sts.ManualGuide := HIDE;
 			Vis.Sts.CmdRejected := FALSE;
-			TON_Guide.IN := FALSE;
+			TON_Guide.IN 		:= FALSE;
 		END_IF
 	END_IF 
 	
+	//Acknowledge alarms and error reset
 	IF Station.Output.Status.Error AND (NOT Station.Input.CMD.ErrorReset) THEN 
 		MachineState[7] := 1;
 		MachineState[6] := 3;
 	END_IF
 	
-	//Acknowledge alarms
 	IF EDGEPOS(MpAlarmXCore_Sort.PendingAlarms = 0) THEN 
 		IF Station.Output.Status.Error THEN 
 			Station.Input.CMD.ErrorReset := TRUE;
-				MachineState[7] := 0;
+				MachineState[7] 		 := 0;
 		END_IF
 	END_IF
 	
 
-	 
 END_PROGRAM

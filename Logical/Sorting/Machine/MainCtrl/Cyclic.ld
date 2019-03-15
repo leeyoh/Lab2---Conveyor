@@ -1,27 +1,21 @@
 (*********************************************************************************
- * Copyright: 	
- * Author:    	
+ * Copyright: 	I-Automation
+ * Author:    	John Lee
  * Created:   	March 8, 2019/12:41 PM 
- * Description: 
+ * Description:   Main Ctrl task for Sorter Station
  *********************************************************************************)
 PROGRAM _CYCLIC
 <?xml version="1.0"?>
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks maxcolumn="0">
-	<network label="" comment="" row="2" column="0" commented="0">
-		<row>
-			<line/>
-			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
-			<empty/>
-		</row>
-		<row>
-			<analog type="input" name="Station"/>
-			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40" ENO="true"/></function>
-			<analog type="output" name="Station"/>
-		</row>
-	</network>
-	<network label="" comment="" row="2" column="0" commented="0">
+	<network label="" comment="MACHINESTATE[0...7]
+INDEX[0] = AUTO MODE   :  0 Manual   1 Auto
+INDEX[1] = In Charge           :  0 Dist          1 Sorter
+INDEX[2] = CMD                    :  0 Stop        1 Start        
+INDEX[3 - 5]  Dist Stations
+INDEX[6]    Sorter Station    : 0 Ready   1 Occupied 
+INDEX[7]  Error                       : 0 No Error    1 Error " row="2" column="0" commented="0">
 		<row>
 			<contact type="open" name="MachineState[0].0"/>
 			<contact type="open" name="Sorter.Output.Status.IsHomed"/>
@@ -96,7 +90,7 @@ Timer gets reset only when reset command is issued. " row="2" column="0" comment
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="If distributor conveyor done, run sorter" row="1" column="0" commented="0">
 		<row>
 			<contact type="negative transition" name="MachineState[5].0"/>
 			<line/>
@@ -104,7 +98,7 @@ Timer gets reset only when reset command is issued. " row="2" column="0" comment
 			<coil type="set" name="Sorter.Input.CMD.RunCycle"/>
 		</row>
 	</network>
-	<network label="" comment="" row="2" column="0" commented="0">
+	<network label="" comment="Mapping Station to OpcUA " row="2" column="0" commented="0">
 		<row>
 			<contact type="closed" name="Station.Output.Status.Error"/>
 			<contact type="open" name="Sorter.Output.Status.Occupied"/>
@@ -132,7 +126,7 @@ Timer gets reset only when reset command is issued. " row="2" column="0" comment
 			<analog type="output" name="MachineState[6]"/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="Map station input to sorter input" row="4" column="0" commented="0">
 		<row>
 			<contact type="open" name="Station.Input.CMD.Home"/>
 			<line/>
@@ -166,7 +160,7 @@ Timer gets reset only when reset command is issued. " row="2" column="0" comment
 			<coil type="reset" name="Station.Input.CMD.Home"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Maps user commands to machine commands" row="1" column="0" commented="0">
 		<row>
 			<actionblock position="topbottom"><input qualifier="N"/><output name="Linker"/></actionblock>
 			<empty/>
@@ -182,6 +176,7 @@ Timer gets reset only when reset command is issued. " row="2" column="0" comment
 	</network>
 </networks>
 END_PROGRAM
+
 
 
 

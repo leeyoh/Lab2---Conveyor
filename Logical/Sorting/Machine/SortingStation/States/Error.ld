@@ -3,7 +3,7 @@ ACTION Error:
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks xmlns:dt="urn:schemas-microsoft-com:datatypes" maxcolumn="0">
-	<network label="" comment="" row="6" column="0" commented="0">
+	<network label="" comment="Resets User commands and Sorter commands" row="6" column="0" commented="0">
 		<row>
 			<contact type="open" name="Station.Input.CMD.ErrorReset"/>
 			<contact type="open" name="Sorter.Output.Status.Error"/>
@@ -41,7 +41,7 @@ ACTION Error:
 			<coil type="reset" name="Sorter.Output.Status.Occupied"/>
 		</row>
 	</network>
-	<network label="" comment="" row="5" column="0" commented="0">
+	<network label="" comment="Resets Sorter State" row="5" column="0" commented="0">
 		<row>
 			<contact type="open" name="Station.Input.CMD.ErrorReset"/>
 			<contact type="open" name="Sorter.Output.Status.Error"/>
@@ -73,7 +73,7 @@ ACTION Error:
 			<coil type="reset" name="AutoState.4"/>
 		</row>
 	</network>
-	<network label="" comment="" row="2" column="0" commented="0">
+	<network label="" comment="Reset ErrorID" row="2" column="0" commented="0">
 		<row>
 			<contact type="open" name="Station.Input.CMD.ErrorReset"/>
 			<contact type="open" name="Sorter.Output.Status.Error"/>
@@ -87,7 +87,7 @@ ACTION Error:
 			<analog type="output" name="Sorter.Output.Status.ErrorID"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Stop Move if in Error State" row="1" column="0" commented="0">
 		<row>
 			<contact type="closed" name="MpAxisBasicConveyor.Error"/>
 			<line/>
@@ -97,6 +97,7 @@ ACTION Error:
 	</network>
 </networks>
 END_ACTION
+
 
 
 

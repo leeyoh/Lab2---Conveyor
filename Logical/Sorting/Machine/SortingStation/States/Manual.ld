@@ -3,7 +3,7 @@ ACTION Manual:
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks xmlns:dt="urn:schemas-microsoft-com:datatypes" maxcolumn="0">
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Manual Jog Commands" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="Station.Conveyor.JogPos"/>
 			<line/>
@@ -19,7 +19,7 @@ ACTION Manual:
 			<coil type="open" name="Sorter.Conveyor.JogNeg"/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="Product Lane Evaluate" row="3" column="0" commented="0">
 		<row>
 			<contact type="positive transition" name="Sorter.Output.Status.ProductAvailable"/>
 			<function position="top" type="EQ"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
@@ -70,7 +70,7 @@ ACTION Manual:
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Stopper Conditions" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="EqLeft"/>
 			<contact type="open" name="Station.Input.CMD.RetractStopper"/>
@@ -103,7 +103,7 @@ ACTION Manual:
 			<coil type="set" name="Sorter.Input.CMD.RetractStopper"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Stopper Conditions" row="1" column="0" commented="0">
 		<row>
 			<contact type="closed" name="Sorter.Input.CMD.RetractStopper"/>
 			<contact type="open" name="Station.Input.CMD.RetractStopper"/>
@@ -119,7 +119,7 @@ ACTION Manual:
 			<coil type="reset" name="Sorter.Input.CMD.RetractStopper"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Switch Conditions" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="Station.Input.CMD.ExtendSwitch2"/>
 			<contact type="closed" name="Sorter.Input.CMD.ExtendSwitch1"/>
@@ -169,6 +169,7 @@ ACTION Manual:
 	</network>
 </networks>
 END_ACTION
+
 
 
 

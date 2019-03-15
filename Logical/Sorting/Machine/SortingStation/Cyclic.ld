@@ -170,21 +170,21 @@
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Axis Basic " row="1" column="0" commented="0">
 		<row>
 			<actionblock position="topbottom"><input qualifier="N"/><output name="AxisBasic"/></actionblock>
 			<empty/>
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Updates variables dependant on puck position" row="1" column="0" commented="0">
 		<row>
 			<actionblock position="topbottom"><input qualifier="N"/><output name="Collector"/></actionblock>
 			<empty/>
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Checks for all error conditions" row="1" column="0" commented="0">
 		<row>
 			<actionblock position="topbottom"><input qualifier="N"/><output name="CheckError"/></actionblock>
 			<empty/>
@@ -193,6 +193,7 @@
 	</network>
 </networks>
 END_PROGRAM
+
 
 
 
