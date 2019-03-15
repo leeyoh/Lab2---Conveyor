@@ -249,7 +249,7 @@
           <Property Name="Font" Value="Source[local].Font[MpInfo]"/>
           <Property Name="ForeColor" Value="254"/>
           <Property Name="Height" Value="21"/>
-          <Property Name="Left" Value="68"/>
+          <Property Name="Left" Value="57"/>
           <Property Name="SimulationIndex" Value="0"/>
           <Property Name="SimulationValue" Value=""/>
           <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
@@ -260,32 +260,34 @@
           <Property Name="Width" Value="142"/>
         </Control>
         <Control ClassId="0x00001007" Name="Numeric_2">
-          <Property Name="AlignmentHorizontal" Value="Center"/>
           <Property Name="Border" Value="Source[local].Border[Mp_OutputBorder]"/>
           <Property Name="ControlID" Value="0"/>
           <Property Name="Description" Value=""/>
           <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
           <Property Name="Height" Value="25"/>
-          <Property Name="Left" Value="212"/>
+          <Property Name="Left" Value="189"/>
           <Property Name="MaxDatapoint" Value="None"/>
           <Property Name="MaxValue" Value="None"/>
           <Property Name="MinDatapoint" Value="None"/>
           <Property Name="MinValue" Value="None"/>
-          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="SimulationValue" Value="999999"/>
           <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpDefault]"/>
           <Property Name="TeachDatapoint" Value="None"/>
           <Property Name="Top" Value="290"/>
           <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Distributing.MainCtrl.Output.Status.AutoRunTime]"/>
           <Property Name="ValueMode" Value="Standard"/>
-          <Property Name="Width" Value="55"/>
+          <Property Name="Width" Value="78"/>
         </Control>
         <Control ClassId="0x00001004" Name="Text_3">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="BackColor" Value="16"/>
           <Property Name="ControlID" Value="0"/>
           <Property Name="Description" Value=""/>
+          <Property Name="FillStyle" Value="Opaque"/>
           <Property Name="Font" Value="Source[local].Font[MpHeader]"/>
           <Property Name="ForeColor" Value="255"/>
           <Property Name="Height" Value="14"/>
-          <Property Name="Left" Value="272"/>
+          <Property Name="Left" Value="245"/>
           <Property Name="SimulationIndex" Value="0"/>
           <Property Name="SimulationValue" Value=""/>
           <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[MpBubbleText]"/>
@@ -293,7 +295,7 @@
           <Property Name="TextIndexOffset" Value="15"/>
           <Property Name="TextSource" Value="SingleText"/>
           <Property Name="Top" Value="295"/>
-          <Property Name="Width" Value="17"/>
+          <Property Name="Width" Value="18"/>
         </Control>
         <Control ClassId="0x00001001" Name="Shape_2">
           <Property Name="ControlID" Value="0"/>

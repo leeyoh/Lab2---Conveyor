@@ -1,11 +1,11 @@
 VAR
-	Sorter : Sorter_type;
-	MpAxisBasicConveyor : MpAxisBasic;
-	ConveyorParam : MpAxisBasicParType;
-	TP_10ms_Start : TP_10ms;
-	TimeIn : UDINT;
-	SlotIndex : USINT;
-	TON_10ms_Opc : TON_10ms;
-	MIndex : INT;
-	MchUpdate : BOOL;
+	Sorter : Sorter_type; (*Sorter type*)
+	MpAxisBasicConveyor : MpAxisBasic; (*Function block for MpAxisBasic*)
+	ConveyorParam : MpAxisBasicParType; (*MpAxisBasic parameters*)
+	TP_10ms_Start : TP_10ms; (*Automatic mode timer*)
+	TimeIn : UDINT; (*Time in*)
+	SlotIndex : USINT; (*Slot index for lane*)
+	TON_10ms_Opc : TON_10ms; (*Function block for TON timer *)
+	MIndex : INT; (*Machine index*)
+	MchUpdate : BOOL; (*Machine update*)
 END_VAR

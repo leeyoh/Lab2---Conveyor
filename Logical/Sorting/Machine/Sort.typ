@@ -1,9 +1,9 @@
 
 TYPE
-	Sorter_type : 	STRUCT 
-		Output : Output_type;
-		Input : Input_type;
-		Conveyor : Conveyor_type;
+	Sorter_type : 	STRUCT  (*Sorter type*)
+		Output : Output_type; (*Output type*)
+		Input : Input_type; (*Input type*)
+		Conveyor : Conveyor_type; (*Conveyor type*)
 		AutoMode : BOOL;
 		NewPuck : Color_enum;
 		CurrentPuck : Color_enum;
