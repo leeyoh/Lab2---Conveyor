@@ -1,5 +1,0 @@
-VAR
-	Conveyor : Conveyor_typ := (Input:=(Par:=(Accel:=100.0,Speed:=100.0,Decel:=100.0)));
-	Ejector : Ejector_typ; (*Interface for the Ejector Station*)
-	SwivelArm : SwivelArm_typ;
-END_VAR

@@ -19,7 +19,7 @@ PROGRAM _CYCLIC
 	IF Vis.Cmd.Automatic = TRUE THEN
 		MainCtrl.Input.Par.Mode  := DISTCTRL_AUTO;
 		OpcUaComm[1] 			 := 0;
-		Vis.Cmd.Automatic 		 := FALSE;
+		//Vis.Cmd.Automatic 		 := FALSE;
 	END_IF
 		
 	IF Vis.Cmd.Start = TRUE AND Vis.Cmd.Automatic = TRUE THEN

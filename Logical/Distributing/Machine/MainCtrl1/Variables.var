@@ -17,19 +17,67 @@ VAR CONSTANT
 END_VAR
 VAR
 	MpAxisBasic_0 : MpAxisBasic; (*Function block for MpAxisBasic*)
-	AxisPars : MpAxisBasicParType := (Acceleration:=50.0,Deceleration:=50.0,Velocity:=50.0);
+	AxisPars : MpAxisBasicParType := (Acceleration:=50.0,Deceleration:=50.0,Velocity:=50.0); (*PArameters for the distributor axis*)
 	SortStateSet : BOOL;
-	PuckPosition : PuckPosition_Enum := PUCKPOS_IN_MAG;
-	PuckInTray : BOOL;
-	CmpPuckInTray : BOOL;
-	CmpPuckGrippedAtConv : BOOL;
-	CmpPuckInSwivel : BOOL;
-	CmpPuckAtConvStart : BOOL;
-	CmpPuckNotInTray : BOOL;
-	CmpPuckNotInConvStart : BOOL;
-	ManualPickupTimer : TON;
-	CmpPuckInTransit : BOOL;
-	ManualDropoffTimer : TON;
-	SetAlarm : BOOL;
-	DummyDint : UDINT;
+	PuckPosition : PuckPosition_Enum := PUCKPOS_IN_MAG; (*tracks the position of the puck through the machine*)
+	PuckInTray : BOOL; (*True if a puck is in the magazine tray*)
+	CmpPuckInTray : BOOL; (*True if a puck is in the magazine tray*)
+	CmpPuckGrippedAtConv : BOOL; (*True if a puck is held by the swivel over the conveyor*)
+	CmpPuckInSwivel : BOOL; (*true if puck is held by swivel in transit*)
+	CmpPuckAtConvStart : BOOL; (*true if puck is at conveyor start, not held*)
+	CmpPuckNotInTray : BOOL; (*true if there is no puck in the magazine tray*)
+	CmpPuckNotInConvStart : BOOL; (*true if there is no puck agt conveyor start*)
+	ManualPickupTimer : TON; (*Time delay to turn off vacuum pickup*)
+	CmpPuckInTransit : BOOL; (*true if puck is moving along the magazine tray*)
+	ManualDropoffTimer : TON; (*Time delay to turn off the ejection impulse*)
+	SetAlarm : BOOL; (*Intermediate variable for alarm reactions*)
+	DummyDint : UDINT; (*Varianle for output of the mpalarmxset function*)
+	AutoSelected : BOOL; (*true if automatic mode is selected*)
+	SorterInControl : BOOL; (*true if the sorter station is in control of the vis*)
+	Error6057Present : BOOL; (*true if error 6057 present*)
+	EjectorExtendTimer : TON; (*Timer for ejeectior extend*)
+END_VAR
+VAR CONSTANT
+	EJECTOR_EXTEND_TIMEOUT : TIME := T#5s; (*timeout const for ejector extend*)
+END_VAR
+VAR
+	PickupMoveTimer : TON; (*Timeout timer for swivel arm movement*)
+END_VAR
+VAR CONSTANT
+	PICKUP_MOVE_TIMEOUT : TIME := T#5s; (*Timeout timer for swivel arm movement - constant*)
+END_VAR
+VAR
+	ConvMoveTimer : TON; (*Timeout timer for swivel arm movement*)
+END_VAR
+VAR CONSTANT
+	CONV_MOVE_TIMEOUT : TIME := T#5s; (*Timeout timer for swivel arm movement - constant*)
+END_VAR
+VAR
+	MagMoveTimer : TON; (*Timeout timer for swivel arm movement*)
+END_VAR
+VAR CONSTANT
+	MAG_MOVE_TIMEOUT : TIME := T#5s; (*Timeout timer for swivel arm movement - constant*)
+END_VAR
+VAR
+	HomeMoveTimer : TON; (*Timeout timer for swivel arm movement*)
+END_VAR
+VAR CONSTANT
+	HOME_MOVE_TIMEOUT : TIME := T#5s; (*Timeout timer for swivel arm movement - constant*)
+END_VAR
+VAR
+	PuckLostTimer : TON; (*Timeout timer for conveyor*)
+END_VAR
+VAR CONSTANT
+	PUCK_LOST_TIMEOUT : TIME := T#15s; (*timeout timer constant for conveyor*)
+END_VAR
+VAR
+	BacklogTimer : TON; (*timeout timer for part passing end sensor*)
+END_VAR
+VAR CONSTANT
+	BACKLOG_TIMEOUT : TIME := T#10s; (*constant for timeout timer for part passing end sensor*)
+END_VAR
+VAR
+	SetErrorReaction : BOOL; (*Intermediate variable used for error reactions*)
+	StartAutoRequested : BOOL; (*Start auto is requested*)
+	ControlHeld : BOOL; (*True if distributor has control of the vis*)
 END_VAR

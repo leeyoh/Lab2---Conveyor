@@ -5,11 +5,7 @@
     <File Description="Cyclic code">Cyclic.ld</File>
     <File Description="Initialization code">Init.ld</File>
     <File Description="Exit code">Exit.ld</File>
-    <File Description="Local data types" Private="true">Types.typ</File>
-    <File Description="Local variables" Private="true">Variables.var</File>
-    <File>StateManual.ld</File>
-    <File>StateAuto.ld</File>
-    <File>ActivateVacuum.ld</File>
-    <File>DeactivateVacuum.ld</File>
+    <File Description="Local data types for MainCtrl" Private="true">Types.typ</File>
+    <File Description="Local variables for MainCtrl" Private="true">Variables.var</File>
   </Files>
 </Program>

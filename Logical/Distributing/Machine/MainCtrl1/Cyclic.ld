@@ -10,7 +10,295 @@ PROGRAM _CYCLIC
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks maxcolumn="0">
-	<network label="" comment="" row="6" column="0" commented="0">
+	<network label="" comment="Handle OpcUa manual/automatic selection" row="5" column="0" commented="0">
+		<row>
+			<empty/>
+			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
+			<line/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<function position="bottom" type="Compare!" or="true"><input name="&lt;!OpcUaComm[0] = 1"/></function>
+			<analog type="input" name="DISTCTRL_AUTO"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="MainCtrl.Input.Par.Mode"/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<function position="top" type="Compare!"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<contact type="open" name="SorterInControl"/>
+			<function position="top" type="Compare!"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<contact type="positive transition" name="StartAutoRequested"/>
+			<coil type="set" name="MainMode.Auto"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
+			<analog type="output" name="SorterInControl"/>
+			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
+			<analog type="output" name="StartAutoRequested" or="true"/>
+			<coil type="reset" name="MainMode.Manual"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<function position="bottom" type="Compare!"><input name="&lt;!OpcUaComm[1] = 1"/></function>
+			<empty/>
+			<function position="bottom" type="Compare!"><input name="&lt;!OpcUaComm[2] = 1"/></function>
+			<empty/>
+			<empty/>
+		</row>
+	</network>
+	<network label="" comment="Reset auto mode over opc ua" row="3" column="0" commented="0">
+		<row>
+			<contact type="open" name="MainCtrl.Input.Cmd.StopAuto"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainCtrl.Input.Cmd.StopAuto"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<analog type="input" name="0"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="OpcUaComm[0]"/>
+		</row>
+	</network>
+	<network label="" comment="Set manual mode based on opc ua" row="4" column="0" commented="0">
+		<row>
+			<empty/>
+			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
+			<line/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<function position="bottom" type="Compare!" or="true"><input name="&lt;!OpcUaComm[0] = 0"/></function>
+			<analog type="input" name="DISTCTRL_MANUAL"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="MainCtrl.Input.Par.Mode"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainMode.Auto"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="set" name="MainMode.Manual"/>
+		</row>
+	</network>
+	<network label="" comment="handle homing commands" row="23" column="0" commented="0">
+		<row>
+			<contact type="open" name="MainCtrl.Input.Cmd.Home"/>
+			<line/>
+			<line/>
+			<coil type="set" name="gDistHW.do.EjImpulse"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainMode.Auto"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="gDistHW.do.Vacuum"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="gDistHW.do.EjCylPushProduct"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="set" name="gDistHW.do.SwDrToConv"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<contact type="open" name="gDistHW.di.SwDrConvPos"/>
+			<line/>
+			<coil type="reset" name="gDistHW.do.EjImpulse"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<empty or="true"/>
+			<line/>
+			<coil type="reset" name="MainCtrl.Input.Cmd.Home"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<empty or="true"/>
+			<line/>
+			<coil type="reset" name="gDistHW.do.SwDrToConv"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="gDistHW.do.SwDrToMag"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MpAxisBasic_0.MoveVelocity"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="set" name="MainAutoStep.DIST_EXTEND_EJECTOR"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_CONV_END"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_CONV_MOVING"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_CONV_START"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_INIT"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_RETRACT_EJECTOR"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_DROP"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_PICKUP"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_TO_CONV"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_TO_HOME"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_TO_MAG"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_TO_PICKUP"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_WAIT"/>
+		</row>
+	</network>
+	<network label="" comment="Reset counter and timer" row="3" column="0" commented="0">
+		<row>
+			<contact type="open" name="MainCtrl.Input.Cmd.Reset"/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<coil type="reset" name="MainCtrl.Input.Cmd.Reset"/>
+		</row>
+		<row>
+			<analog type="input" name="0"/>
+			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="MainCtrl.Output.Status.DistProductCount"/>
+		</row>
+		<row>
+			<analog type="input" name="T#0s"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="56"/></function>
+			<analog type="output" name="MainCtrl.Output.Status.AutoRunTime"/>
+		</row>
+	</network>
+	<network label="" comment="Set opcua communication if auto selected" row="3" column="0" commented="0">
+		<row>
+			<line/>
+			<function position="top" type="Compare!"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<contact type="positive transition" name="AutoSelected"/>
+			<line/>
+			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
+			<analog type="output" name="AutoSelected"/>
+			<analog type="input" name="1"/>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="OpcUaComm[0]"/>
+		</row>
+		<row>
+			<empty/>
+			<function position="bottom" type="Compare!"><input name="&lt;!MainCtrl.Input.Par.Mode = DISTCTRL_AUTO"/></function>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+	</network>
+	<network label="" comment="move parameters to axis structure" row="6" column="0" commented="0">
 		<row>
 			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Accel"/>
 			<function position="top" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
@@ -18,31 +306,31 @@ PROGRAM _CYCLIC
 		</row>
 		<row>
 			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Decel"/>
-			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="56"/></function>
 			<analog type="output" name="AxisPars.Deceleration"/>
 		</row>
 		<row>
 			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Speed"/>
-			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="56"/></function>
 			<analog type="output" name="AxisPars.Velocity"/>
 		</row>
 		<row>
 			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Accel"/>
-			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="56"/></function>
 			<analog type="output" name="AxisPars.Jog.Acceleration"/>
 		</row>
 		<row>
 			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Decel"/>
-			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<function position="middle" type="MOVE"><input name="" extensible="true"/><output name="56"/></function>
 			<analog type="output" name="AxisPars.Jog.Deceleration"/>
 		</row>
 		<row>
 			<analog type="input" name="MainCtrl.Input.Par.Conveyor.Speed"/>
-			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
+			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="56"/></function>
 			<analog type="output" name="AxisPars.Jog.Velocity"/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="manual command handler" row="4" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
@@ -80,7 +368,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="MainCtrl.Input.Cmd.Ejector.Extend"/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="manual command handler" row="4" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
@@ -118,7 +406,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="MainCtrl.Input.Cmd.Ejector.Retract"/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="manual command handler" row="4" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
@@ -156,7 +444,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="MainCtrl.Input.Cmd.SwivelArm.MoveToConveyor"/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="manual command handler" row="4" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
@@ -194,7 +482,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="MainCtrl.Input.Cmd.SwivelArm.MoveToMagazine"/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="manual command handler" row="4" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
@@ -232,7 +520,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="MainCtrl.Input.Cmd.SwivelArm.VacuumOnImpulse"/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="manual command handler" row="4" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
@@ -270,7 +558,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="MainCtrl.Input.Cmd.SwivelArm.VacuumOffImpulse"/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="manual command handler" row="4" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
@@ -308,7 +596,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="MainCtrl.Input.Cmd.Conveyor.JogFwd"/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="manual command handler" row="4" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
@@ -346,7 +634,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="MainCtrl.Input.Cmd.Conveyor.JogBack"/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="manual command handler" row="3" column="0" commented="0">
 		<row>
 			<empty/>
 			<function position="top" type="Compare!"><input name=""/><output name="56"/></function>
@@ -367,18 +655,10 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="MainCtrl.Input.Cmd.StartAuto"/>
 		</row>
 	</network>
-	<network label="" comment="" row="8" column="0" commented="0">
+	<network label="" comment="init auto step" row="7" column="0" commented="0">
 		<row>
 			<contact type="open" name="MainMode.Auto"/>
 			<contact type="open" name="MainAutoStep.DIST_INIT"/>
-			<contact type="open" name="MpAxisBasic_0.Active"/>
-			<line/>
-			<line/>
-			<coil type="set" name="MpAxisBasic_0.Power"/>
-		</row>
-		<row>
-			<empty/>
-			<empty or="true"/>
 			<line/>
 			<line/>
 			<line/>
@@ -433,7 +713,7 @@ PROGRAM _CYCLIC
 			<coil type="reset" name="MainAutoStep.DIST_INIT"/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="extend ej auto step" row="3" column="0" commented="0">
 		<row>
 			<contact type="open" name="MainMode.Auto"/>
 			<contact type="positive transition" name="MainAutoStep.DIST_EXTEND_EJECTOR"/>
@@ -456,12 +736,18 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="7" column="0" commented="0">
+	<network label="" comment="" row="8" column="0" commented="0">
 		<row>
 			<contact type="open" name="MainMode.Auto"/>
 			<contact type="open" name="MainAutoStep.DIST_EXTEND_EJECTOR"/>
 			<line/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
 			<empty/>
 			<empty/>
 		</row>
@@ -472,10 +758,22 @@ PROGRAM _CYCLIC
 			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
 			<analog type="output" name="PuckPosition"/>
 			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
 		</row>
 		<row>
 			<empty/>
 			<empty or="true"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
 			<line/>
 			<line/>
 			<line/>
@@ -487,12 +785,35 @@ PROGRAM _CYCLIC
 			<empty or="true"/>
 			<contact type="open" name="gDistHW.di.EjCylExtended"/>
 			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty/>
 		</row>
 		<row>
 			<empty/>
+			<empty or="true"/>
 			<empty/>
+			<functionblock position="header" name="EjectorExtendTimer" type="TON"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<empty/>
+			<function position="middle" type="MOVE"/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<contact type="closed" name="gDistHW.di.EjCylExtended"/>
+			<functionblock position="top" type="TON"><input name="IN"/><output name="Q"/></functionblock>
+			<line/>
+			<function position="top" type="MpAlarmXSet"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty or="true"/>
 			<analog type="input" name="PUCKPOS_IN_TRAY"/>
 			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
@@ -501,7 +822,11 @@ PROGRAM _CYCLIC
 		<row>
 			<empty/>
 			<empty/>
-			<empty or="true"/>
+			<analog type="input" name="EJECTOR_EXTEND_TIMEOUT"/>
+			<functionblock position="bottom" type="TON"><input name="PT"/><output name="ET"/></functionblock>
+			<analog type="input" name="gAlarmXCore_Dist"/>
+			<function position="middle" type="MpAlarmXSet"><input name="MpLink"/><output name="7"/></function>
+			<analog type="output" name="DummyDint" or="true"/>
 			<line/>
 			<line/>
 			<line/>
@@ -510,6 +835,11 @@ PROGRAM _CYCLIC
 		<row>
 			<empty/>
 			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<analog type="input" name="'Ejector Station - Cylinder Blocked'"/>
+			<function position="bottom" type="MpAlarmXSet"><input name="Name"/></function>
 			<empty or="true"/>
 			<line/>
 			<line/>
@@ -583,10 +913,16 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="" row="6" column="0" commented="0">
 		<row>
 			<contact type="open" name="MainMode.Auto"/>
 			<contact type="open" name="MainAutoStep.DIST_SWIVEL_TO_PICKUP"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
 			<line/>
 			<coil type="set" name="gDistHW.do.SwDrToMag"/>
 		</row>
@@ -594,19 +930,55 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty or="true"/>
 			<contact type="open" name="gDistHW.di.SwDrMagPos"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
 			<coil type="reset" name="gDistHW.do.SwDrToMag"/>
 		</row>
 		<row>
 			<empty/>
+			<empty or="true"/>
 			<empty/>
+			<functionblock position="header" name="PickupMoveTimer" type="TON"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<contact type="closed" name="gDistHW.di.SwDrMagPos"/>
+			<functionblock position="top" type="TON"><input name="IN"/><output name="Q"/></functionblock>
+			<line/>
+			<function position="top" type="MpAlarmXSet"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty or="true"/>
 			<coil type="set" name="MainAutoStep.DIST_SWIVEL_PICKUP"/>
 		</row>
 		<row>
 			<empty/>
 			<empty/>
-			<empty or="true"/>
+			<analog type="input" name="PICKUP_MOVE_TIMEOUT"/>
+			<functionblock position="bottom" type="TON"><input name="PT"/><output name="ET"/></functionblock>
+			<analog type="input" name="gAlarmXCore_Dist"/>
+			<function position="middle" type="MpAlarmXSet"><input name="MpLink"/><output name="7"/></function>
+			<analog type="output" name="DummyDint" or="true"/>
 			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_TO_PICKUP"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<analog type="input" name="'Swivel Arm - Motion Blocked'"/>
+			<function position="bottom" type="MpAlarmXSet"><input name="Name"/></function>
+			<empty/>
+			<empty/>
 		</row>
 	</network>
 	<network label="" comment="" row="3" column="0" commented="0">
@@ -733,12 +1105,18 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="8" column="0" commented="0">
+	<network label="" comment="" row="9" column="0" commented="0">
 		<row>
 			<contact type="open" name="MainMode.Auto"/>
 			<contact type="open" name="MainAutoStep.DIST_SWIVEL_TO_CONV"/>
 			<line/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
 			<empty/>
 			<empty/>
 		</row>
@@ -749,10 +1127,22 @@ PROGRAM _CYCLIC
 			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
 			<analog type="output" name="PuckPosition"/>
 			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
 		</row>
 		<row>
 			<empty/>
 			<empty or="true"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
 			<line/>
 			<line/>
 			<line/>
@@ -764,12 +1154,35 @@ PROGRAM _CYCLIC
 			<empty or="true"/>
 			<contact type="open" name="gDistHW.di.SwDrConvPos"/>
 			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty/>
 		</row>
 		<row>
 			<empty/>
+			<empty or="true"/>
 			<empty/>
+			<functionblock position="header" name="ConvMoveTimer" type="TON"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<empty/>
+			<function position="middle" type="MOVE"/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<contact type="closed" name="gDistHW.di.SwDrConvPos"/>
+			<functionblock position="top" type="TON"><input name="IN"/><output name="Q"/></functionblock>
+			<line/>
+			<function position="top" type="MpAlarmXSet"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty or="true"/>
 			<analog type="input" name="PUCKPOS_GRIPPED_AT_TRAY"/>
 			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
@@ -778,7 +1191,11 @@ PROGRAM _CYCLIC
 		<row>
 			<empty/>
 			<empty/>
-			<empty or="true"/>
+			<analog type="input" name="CONV_MOVE_TIMEOUT"/>
+			<functionblock position="bottom" type="TON"><input name="PT"/><output name="ET"/></functionblock>
+			<analog type="input" name="gAlarmXCore_Dist"/>
+			<function position="middle" type="MpAlarmXSet"><input name="MpLink"/><output name="7"/></function>
+			<analog type="output" name="DummyDint" or="true"/>
 			<line/>
 			<line/>
 			<line/>
@@ -787,6 +1204,11 @@ PROGRAM _CYCLIC
 		<row>
 			<empty/>
 			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<analog type="input" name="'Swivel Arm - Motion Blocked'"/>
+			<function position="bottom" type="MpAlarmXSet"><input name="Name"/></function>
 			<empty or="true"/>
 			<line/>
 			<line/>
@@ -794,6 +1216,12 @@ PROGRAM _CYCLIC
 			<coil type="set" name="MainAutoStep.DIST_SWIVEL_DROP"/>
 		</row>
 		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
 			<empty/>
 			<empty/>
 			<empty or="true"/>
@@ -927,10 +1355,16 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="" row="6" column="0" commented="0">
 		<row>
 			<contact type="open" name="MainMode.Auto"/>
 			<contact type="open" name="MainAutoStep.DIST_SWIVEL_TO_MAG"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
 			<line/>
 			<coil type="set" name="gDistHW.do.SwDrToMag"/>
 		</row>
@@ -938,19 +1372,55 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty or="true"/>
 			<contact type="open" name="gDistHW.di.SwDrMagPos"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
 			<coil type="reset" name="gDistHW.do.SwDrToMag"/>
 		</row>
 		<row>
 			<empty/>
+			<empty or="true"/>
 			<empty/>
+			<functionblock position="header" name="MagMoveTimer" type="TON"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<contact type="closed" name="gDistHW.di.SwDrMagPos"/>
+			<functionblock position="top" type="TON"><input name="IN"/><output name="Q"/></functionblock>
+			<line/>
+			<function position="top" type="MpAlarmXSet"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty or="true"/>
 			<coil type="set" name="MainAutoStep.DIST_CONV_START"/>
 		</row>
 		<row>
 			<empty/>
 			<empty/>
-			<empty or="true"/>
+			<analog type="input" name="MAG_MOVE_TIMEOUT"/>
+			<functionblock position="bottom" type="TON"><input name="PT"/><output name="ET"/></functionblock>
+			<analog type="input" name="gAlarmXCore_Dist"/>
+			<function position="middle" type="MpAlarmXSet"><input name="MpLink"/><output name="7"/></function>
+			<analog type="output" name="DummyDint" or="true"/>
 			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_TO_MAG"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<analog type="input" name="'Swivel Arm - Motion Blocked'"/>
+			<function position="bottom" type="MpAlarmXSet"><input name="Name"/></function>
+			<empty/>
+			<empty/>
 		</row>
 	</network>
 	<network label="" comment="" row="3" column="0" commented="0">
@@ -1053,12 +1523,21 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="5" column="0" commented="0">
+	<network label="" comment="" row="10" column="0" commented="0">
 		<row>
 			<contact type="open" name="MainMode.Auto"/>
 			<contact type="open" name="MainAutoStep.DIST_CONV_MOVING"/>
 			<contact type="open" name="gDistHW.di.PuckAtConvEnd"/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
 			<empty/>
 		</row>
 		<row>
@@ -1067,6 +1546,15 @@ PROGRAM _CYCLIC
 			<analog type="input" name="PUCKPOS_CONV_END"/>
 			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
 			<analog type="output" name="PuckPosition"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
 		</row>
 		<row>
 			<empty/>
@@ -1074,11 +1562,43 @@ PROGRAM _CYCLIC
 			<contact type="negative transition" name="gDistHW.di.PuckAtConvEnd"/>
 			<line/>
 			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
 			<coil type="reset" name="MpAxisBasic_0.MoveVelocity"/>
 		</row>
 		<row>
 			<empty/>
+			<empty or="true"/>
 			<empty/>
+			<functionblock position="header" name="PuckLostTimer" type="TON"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<contact type="closed" name="gDistHW.di.PuckAtConvEnd"/>
+			<functionblock position="top" type="TON"><input name="IN"/><output name="Q"/></functionblock>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<function position="top" type="MpAlarmXSet"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty or="true"/>
 			<line/>
 			<line/>
@@ -1086,11 +1606,75 @@ PROGRAM _CYCLIC
 		</row>
 		<row>
 			<empty/>
-			<empty/>
 			<empty or="true"/>
+			<analog type="input" name="PUCK_LOST_TIMEOUT"/>
+			<functionblock position="bottom" type="TON"><input name="PT"/><output name="ET"/></functionblock>
+			<empty/>
+			<empty/>
+			<empty/>
+			<analog type="input" name="gAlarmXCore_Dist"/>
+			<function position="middle" type="MpAlarmXSet"><input name="MpLink"/><output name="7"/></function>
+			<analog type="output" name="DummyDint" or="true"/>
 			<line/>
 			<line/>
 			<coil type="reset" name="MainAutoStep.DIST_CONV_MOVING"/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<empty/>
+			<functionblock position="header" name="BacklogTimer" type="TON"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<function position="middle" type="MpAlarmXSet"/>
+			<empty or="true"/>
+			<empty/>
+			<empty/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<contact type="closed" name="gDistHW.di.PuckAtConvEnd"/>
+			<functionblock position="top" type="TON"><input name="IN"/><output name="Q"/></functionblock>
+			<line/>
+			<function position="top" type="MpAlarmXSet"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<analog type="input" name="'Conveyor - Puck Lost'"/>
+			<function position="bottom" type="MpAlarmXSet"><input name="Name"/></function>
+			<empty or="true"/>
+			<function position="top" type="ADD"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<analog type="input" name="BACKLOG_TIMEOUT"/>
+			<functionblock position="bottom" type="TON"><input name="PT"/><output name="ET"/></functionblock>
+			<analog type="input" name="gAlarmXCore_Dist"/>
+			<function position="middle" type="MpAlarmXSet"><input name="MpLink"/><output name="7"/></function>
+			<analog type="output" name="DummyDint"/>
+			<empty/>
+			<empty/>
+			<analog type="input" name="1"/>
+			<function position="middle" type="ADD"><input name="" extensible="true"/><output name="40"/></function>
+			<analog type="output" name="MainCtrl.Output.Status.DistProductCount"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<analog type="input" name="'Conveyor - Product Backlog'"/>
+			<function position="bottom" type="MpAlarmXSet"><input name="Name"/></function>
+			<empty/>
+			<empty/>
+			<empty/>
+			<analog type="input" name="MainCtrl.Output.Status.DistProductCount"/>
+			<function position="bottom" type="ADD"><input name="" extensible="true"/></function>
+			<empty/>
 		</row>
 	</network>
 	<network label="" comment="" row="3" column="0" commented="0">
@@ -1118,7 +1702,6 @@ PROGRAM _CYCLIC
 	</network>
 	<network label="" comment="" row="9" column="0" commented="0">
 		<row>
-			<contact type="open" name="MainMode.Auto"/>
 			<contact type="open" name="MainAutoStep.DIST_WAIT"/>
 			<line/>
 			<function position="top" type="MOVE"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
@@ -1126,7 +1709,6 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 		<row>
-			<empty/>
 			<empty or="true"/>
 			<analog type="input" name="0"/>
 			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
@@ -1134,7 +1716,6 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 		<row>
-			<empty/>
 			<empty or="true"/>
 			<function position="top" type="Compare!"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty/>
@@ -1142,7 +1723,6 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 		<row>
-			<empty/>
 			<empty or="true"/>
 			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
 			<analog type="output" name="SortStateSet"/>
@@ -1150,7 +1730,6 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 		<row>
-			<empty/>
 			<empty or="true"/>
 			<function position="bottom" type="Compare!"><input name="&lt;!OpcUaComm[6] = 1"/></function>
 			<empty/>
@@ -1158,7 +1737,6 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 		<row>
-			<empty/>
 			<empty or="true"/>
 			<contact type="negative transition" name="SortStateSet"/>
 			<line/>
@@ -1167,14 +1745,12 @@ PROGRAM _CYCLIC
 		</row>
 		<row>
 			<empty/>
-			<empty/>
 			<empty or="true"/>
 			<analog type="input" name="PUCKPOS_IN_MAG"/>
 			<function position="bottom" type="MOVE"><input name="" extensible="true"/><output name="40"/></function>
 			<analog type="output" name="PuckPosition"/>
 		</row>
 		<row>
-			<empty/>
 			<empty/>
 			<empty or="true"/>
 			<line/>
@@ -1183,7 +1759,6 @@ PROGRAM _CYCLIC
 			<coil type="set" name="MainAutoStep.DIST_SWIVEL_TO_HOME"/>
 		</row>
 		<row>
-			<empty/>
 			<empty/>
 			<empty or="true"/>
 			<line/>
@@ -1215,10 +1790,16 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="" row="6" column="0" commented="0">
 		<row>
 			<contact type="open" name="MainMode.Auto"/>
 			<contact type="open" name="MainAutoStep.DIST_SWIVEL_TO_HOME"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
 			<line/>
 			<coil type="set" name="gDistHW.do.SwDrToConv"/>
 		</row>
@@ -1226,19 +1807,75 @@ PROGRAM _CYCLIC
 			<empty/>
 			<empty or="true"/>
 			<contact type="open" name="gDistHW.di.SwDrConvPos"/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
+			<line/>
 			<coil type="reset" name="gDistHW.do.SwDrToConv"/>
 		</row>
 		<row>
 			<empty/>
+			<empty or="true"/>
 			<empty/>
+			<functionblock position="header" name="HomeMoveTimer" type="TON"/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty or="true"/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<empty or="true"/>
+			<contact type="closed" name="gDistHW.di.SwDrConvPos"/>
+			<functionblock position="top" type="TON"><input name="IN"/><output name="Q"/></functionblock>
+			<line/>
+			<function position="top" type="MpAlarmXSet"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
 			<empty or="true"/>
 			<coil type="set" name="MainAutoStep.DIST_EXTEND_EJECTOR"/>
 		</row>
 		<row>
 			<empty/>
 			<empty/>
-			<empty or="true"/>
+			<analog type="input" name="HOME_MOVE_TIMEOUT"/>
+			<functionblock position="bottom" type="TON"><input name="PT"/><output name="ET"/></functionblock>
+			<analog type="input" name="gAlarmXCore_Dist"/>
+			<function position="middle" type="MpAlarmXSet"><input name="MpLink"/><output name="7"/></function>
+			<analog type="output" name="DummyDint" or="true"/>
 			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_TO_HOME"/>
+		</row>
+		<row>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<empty/>
+			<analog type="input" name="'Swivel Arm - Motion Blocked'"/>
+			<function position="bottom" type="MpAlarmXSet"><input name="Name"/></function>
+			<empty/>
+			<empty/>
+		</row>
+	</network>
+	<network label="" comment="" row="3" column="0" commented="0">
+		<row>
+			<contact type="open" name="MpAxisBasic_0.Error"/>
+			<function position="top" type="Compare!"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
+			<contact type="open" name="Error6057Present"/>
+			<coil type="open" name="MpAxisBasic_0.ErrorReset"/>
+		</row>
+		<row>
+			<empty/>
+			<function position="middle" type="Compare!"><input name=""/><output name="56"/></function>
+			<analog type="output" name="Error6057Present"/>
+			<empty/>
+		</row>
+		<row>
+			<empty/>
+			<function position="bottom" type="Compare!"><input name="&lt;!MpAxisBasic_0.Info.Diag.Internal.Code = 6057"/></function>
+			<empty/>
+			<empty/>
 		</row>
 	</network>
 	<network label="" comment="" row="20" column="0" commented="0">
@@ -1285,8 +1922,8 @@ PROGRAM _CYCLIC
 			<empty/>
 		</row>
 		<row>
-			<empty/>
-			<empty/>
+			<contact type="open" name="MpAxisBasic_0.Active"/>
+			<contact type="closed" name="MpAxisBasic_0.Error"/>
 			<functionblock position="middle" type="MpAxisBasic"><input name="Power"/><output name="CommandBusy"/></functionblock>
 			<empty/>
 		</row>
@@ -2254,25 +2891,169 @@ PROGRAM _CYCLIC
 			<coil type="open" name="MpAxisBasic_0.JogNegative"/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
-		<row>
-			<contact type="open" name="SetAlarm"/>
-			<function position="top" type="MpAlarmXSet"><input name="EN" ENO="true"/><output name="ENO" ENO="true"/></function>
-			<empty/>
-		</row>
+	<network label="" comment="" row="2" column="0" commented="0">
 		<row>
 			<analog type="input" name="gAlarmXCore_Dist"/>
-			<function position="middle" type="MpAlarmXSet"><input name="MpLink"/><output name="7"/></function>
-			<analog type="output" name="DummyDint"/>
+			<function position="top" type="MpAlarmXCheckReaction"><input name="MpLink"/><output name="1"/></function>
+			<coil type="set" name="SetErrorReaction"/>
 		</row>
 		<row>
-			<analog type="input" name="'Swivel Arm - Motion Blocked'"/>
-			<function position="bottom" type="MpAlarmXSet"><input name="Name"/></function>
+			<analog type="input" name="'ErrorReaction'"/>
+			<function position="bottom" type="MpAlarmXCheckReaction"><input name="Name"/></function>
 			<empty/>
+		</row>
+	</network>
+	<network label="" comment="" row="24" column="0" commented="0">
+		<row>
+			<contact type="open" name="SetErrorReaction"/>
+			<line/>
+			<line/>
+			<coil type="set" name="gDistHW.do.EjImpulse"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainMode.Auto"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="gDistHW.do.Vacuum"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="gDistHW.do.EjCylPushProduct"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="set" name="gDistHW.do.SwDrToConv"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<contact type="open" name="gDistHW.di.SwDrConvPos"/>
+			<line/>
+			<coil type="reset" name="SetErrorReaction"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<empty or="true"/>
+			<line/>
+			<coil type="reset" name="gDistHW.do.EjImpulse"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<empty or="true"/>
+			<line/>
+			<coil type="reset" name="MainCtrl.Input.Cmd.Home"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<empty or="true"/>
+			<line/>
+			<coil type="reset" name="gDistHW.do.SwDrToConv"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="gDistHW.do.SwDrToMag"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MpAxisBasic_0.MoveVelocity"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="set" name="MainAutoStep.DIST_EXTEND_EJECTOR"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_CONV_END"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_CONV_MOVING"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_CONV_START"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_INIT"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_RETRACT_EJECTOR"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_DROP"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_PICKUP"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_TO_CONV"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_TO_HOME"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_TO_MAG"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_SWIVEL_TO_PICKUP"/>
+		</row>
+		<row>
+			<empty or="true"/>
+			<line/>
+			<line/>
+			<coil type="reset" name="MainAutoStep.DIST_WAIT"/>
 		</row>
 	</network>
 </networks>
 END_PROGRAM
+
+
+
 
 
 

@@ -1,5 +1,0 @@
-VAR
-	MpAxisBasic_0 : MpAxisBasic; (*Function block for MpAxisBasic*)
-	ConveyorState : ConveyorState_typ;
-	AxisPars : MpAxisBasicParType;
-END_VAR

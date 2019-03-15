@@ -9,11 +9,7 @@
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4">
-    <Task Name="Ejector" Source="Distributing.Machine.Ejector.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="SwivelDriv" Source="Distributing.Machine.SwivelDrive.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="AlarmCtrl" Source="Distributing.AlarmCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="MainCtrl" Source="Distributing.Machine.MainCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
-    <Task Name="Conveyor" Source="Distributing.Machine.Conveyor.Conveyor.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
     <Task Name="VisCtrl" Source="Distributing.Visualization.VisCtrl.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="MainCtrl1" Source="Distributing.Machine.MainCtrl1.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>

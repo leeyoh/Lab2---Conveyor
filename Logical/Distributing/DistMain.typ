@@ -1,7 +1,7 @@
 
 TYPE
 	AutoManualSelector_Enum : 
-		(
+		( (*Enumeration of manual-automatic mode*)
 		DISTCTRL_AUTO := 0,
 		DISTCTRL_MANUAL := 1
 		);
