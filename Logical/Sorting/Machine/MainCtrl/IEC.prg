@@ -4,7 +4,6 @@
   <Objects>
     <Object Type="File" Description="Cyclic code">Cyclic.ld</Object>
     <Object Type="File" Description="Initialization code">Init.ld</Object>
-    <Object Type="File" Description="Exit code">Exit.ld</Object>
     <Object Type="Package" Description="Actions">Action</Object>
   </Objects>
 </Program>

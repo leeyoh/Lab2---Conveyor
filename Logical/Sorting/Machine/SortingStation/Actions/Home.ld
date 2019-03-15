@@ -3,7 +3,7 @@ ACTION Home:
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks xmlns:dt="urn:schemas-microsoft-com:datatypes" maxcolumn="0">
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Reset Switch if not already reset" row="1" column="0" commented="0">
 		<row>
 			<contact type="closed" name="Sorter.Output.Status.Switch1Retracted"/>
 			<line/>
@@ -19,7 +19,7 @@ ACTION Home:
 			<coil type="reset" name="Sorter.Input.CMD.ExtendSwitch2"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Reset Reset" row="1" column="0" commented="0">
 		<row>
 			<line/>
 			<line/>
@@ -37,6 +37,9 @@ ACTION Home:
 	</network>
 	<network label="" comment="" row="1" column="0" commented="0">
 		<row>
+			<line/>
+			<line/>
+			<line/>
 			<coil type="reset" name="Sorter.Conveyor.MoveVelocity"/>
 		</row>
 	</network>
@@ -48,7 +51,7 @@ ACTION Home:
 			<coil type="set" name="Sorter.Conveyor.Home"/>
 		</row>
 	</network>
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="IF reset set status bit" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="Sorter.Output.Status.Switch1Retracted"/>
 			<contact type="open" name="Sorter.Output.Status.Switch2Retracted"/>
@@ -59,6 +62,7 @@ ACTION Home:
 	</network>
 </networks>
 END_ACTION
+
 
 
 

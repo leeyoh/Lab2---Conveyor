@@ -3,7 +3,7 @@ ACTION Auto:
 <?AutomationStudio Version=3.0.71?>
 <!-- Automation Studio Generated XML Section -->
 <networks xmlns:dt="urn:schemas-microsoft-com:datatypes" maxcolumn="0">
-	<network label="" comment="" row="1" column="0" commented="0">
+	<network label="" comment="Start State, wait for Distriubtor to finish its cycle and set Run Cycle Byte" row="1" column="0" commented="0">
 		<row>
 			<contact type="open" name="Sorter.Input.CMD.RunCycle"/>
 			<contact type="open" name="AutoState.0"/>
@@ -31,7 +31,7 @@ ACTION Auto:
 			<coil type="set" name="AutoState.1"/>
 		</row>
 	</network>
-	<network label="" comment="" row="3" column="0" commented="0">
+	<network label="" comment="Evaluate State, Checks Color and Open Switch" row="3" column="0" commented="0">
 		<row>
 			<contact type="open" name="AutoState.1"/>
 			<function position="top" type="EQ"><input name="EN" extensible="true" ENO="true"/><output name="ENO" ENO="true"/></function>
@@ -172,7 +172,7 @@ ACTION Auto:
 			<coil type="set" name="AutoState.2"/>
 		</row>
 	</network>
-	<network label="" comment="" row="4" column="0" commented="0">
+	<network label="" comment="Waits till right switch set" row="4" column="0" commented="0">
 		<row>
 			<contact type="open" name="AutoState.2"/>
 			<contact type="open" name="EqLeft"/>
@@ -202,7 +202,7 @@ ACTION Auto:
 			<coil type="set" name="AutoState.3"/>
 		</row>
 	</network>
-	<network label="" comment="" row="5" column="0" commented="0">
+	<network label="" comment="Open Stopper and divide pucks, avoid multiple from going pass" row="5" column="0" commented="0">
 		<row>
 			<contact type="open" name="AutoState.3"/>
 			<contact type="open" name="Sorter.Conveyor.InPosition"/>
@@ -234,7 +234,7 @@ ACTION Auto:
 			<coil type="reset" name="Sorter.Conveyor.MoveAdditive"/>
 		</row>
 	</network>
-	<network label="" comment="" row="6" column="0" commented="0">
+	<network label="" comment="When Puck passes trigger start over" row="6" column="0" commented="0">
 		<row>
 			<contact type="open" name="AutoState.4"/>
 			<contact type="positive transition" name="Sorter.Output.Status.LaneFull"/>
@@ -274,6 +274,7 @@ ACTION Auto:
 	</network>
 </networks>
 END_ACTION
+
 
 
 
