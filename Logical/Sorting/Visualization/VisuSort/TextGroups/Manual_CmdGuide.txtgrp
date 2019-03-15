@@ -17,6 +17,8 @@
     <Text ID="230840" Value="Failure message: Switch 2 extended."/>
     <Text ID="230841" Value="Failure message: Switch 2 retracted."/>
     <Text ID="230842" Value="Failure message: Switch 1 extended."/>
+    <Text ID="237155" Value="Failure message: Stopper retracted."/>
+    <Text ID="237156" Value="Failure message: Stopper extended."/>
   </TextLayer>
   <TextLayer LanguageId="de">
     <Text ID="230831" Value=""/>
@@ -31,6 +33,8 @@
     <Text ID="230840" Value=""/>
     <Text ID="230841" Value=""/>
     <Text ID="230842" Value=""/>
+    <Text ID="237155" Value=""/>
+    <Text ID="237156" Value=""/>
   </TextLayer>
   <IndexMap>
     <Index ID="230831" Value="0"/>
@@ -45,5 +49,7 @@
     <Index ID="230840" Value="39"/>
     <Index ID="230841" Value="33"/>
     <Index ID="230842" Value="38"/>
+    <Index ID="237155" Value="40"/>
+    <Index ID="237156" Value="41"/>
   </IndexMap>
 </TextGroup>

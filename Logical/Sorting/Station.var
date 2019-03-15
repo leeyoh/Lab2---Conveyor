@@ -1,9 +1,9 @@
 VAR
-	Station : Station_type;
-	OpcUaComm : ARRAY[0..7] OF USINT;
-	OpcUaCommOld : ARRAY[0..7] OF USINT;
-	OpcUaCommTemp : ARRAY[0..7] OF USINT;
-	MachineState : ARRAY[0..7] OF USINT;
-	MachineStateOld : ARRAY[0..7] OF USINT;
-	MachineStateTemp : ARRAY[0..7] OF USINT;
+	Station : Station_type; (*Station type*)
+	OpcUaComm : ARRAY[0..7] OF USINT; (*OpcUa variable*)
+	OpcUaCommOld : ARRAY[0..7] OF USINT; (*OpcUa old variable*)
+	OpcUaCommTemp : ARRAY[0..7] OF USINT; (*OpcUa temp variable*)
+	MachineState : ARRAY[0..7] OF USINT; (*Machine state variable*)
+	MachineStateOld : ARRAY[0..7] OF USINT; (*Machine state old variable*)
+	MachineStateTemp : ARRAY[0..7] OF USINT; (*Machine state temp variable*)
 END_VAR

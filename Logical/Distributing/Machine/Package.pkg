@@ -8,5 +8,6 @@
     <Object Type="Package" Description="Contains conveyor task and relevant motion items">Conveyor</Object>
     <Object Type="File" Description="Definitions for individual station (Ejector, SwivelArm, Conveyor) interfaces" Private="true">Stations.typ</Object>
     <Object Type="File" Description="Individual station interfaces" Private="true">Stations.var</Object>
+    <Object Type="Program" Language="IEC" Description="Distributing main control">MainCtrl1</Object>
   </Objects>
 </Package>

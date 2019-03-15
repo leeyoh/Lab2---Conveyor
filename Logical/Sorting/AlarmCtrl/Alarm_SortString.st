@@ -29,6 +29,7 @@ ACTION Alarm_SortString:
 		ErrorString := 'CheckMachine';
 	END_IF
 
+	//MpAlarmXSet - enables user-defined alarms
 	IF EDGEPOS(Station.Output.Status.Error) THEN 
 		MpAlarmXSet(MpLink := gAlarmXCore_Sort, Name := ErrorString);
 	END_IF
