@@ -10,6 +10,7 @@ ACTION Linker:
 	
 	Station.Output.RejectionCode := Sorter.Output.RejectionCode;
 	Station.Output.CommandRejected := Sorter.Output.CommandRejected;
+	Sorter.Reset := Station.Reset;
 	
 	Sorter.Conveyor.Velocity := Station.Conveyor.Velocity;
 	Sorter.Conveyor.Accel := Station.Conveyor.Accel;

@@ -328,8 +328,22 @@ ACTION Collector:
 			<analog type="output" name="Sorter.SlotIndex.Middle"/>
 		</row>
 	</network>
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<line/>
+			<line/>
+			<line/>
+			<coil type="reset" name="Sorter.Reset"/>
+		</row>
+	</network>
+	<network label="" comment="" row="1" column="0" commented="0">
+		<row>
+			<coil type="reset" name="Station.Reset"/>
+		</row>
+	</network>
 </networks>
 END_ACTION
+
 
 
 

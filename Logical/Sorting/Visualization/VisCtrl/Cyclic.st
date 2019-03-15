@@ -25,7 +25,7 @@ PROGRAM _CYCLIC
 	IF Vis.Cmd.Stop = TRUE THEN
 		MachineState[2] := 0;
 		MachineState[0] := 0;
-		(**)Vis.Cmd.Automatic := FALSE;
+		Vis.Cmd.Automatic := FALSE;
 		Vis.Sts.AutoLock := FALSE;
 		Vis.Cmd.Stop    := FALSE;
 	END_IF
@@ -39,7 +39,7 @@ PROGRAM _CYCLIC
 	END_IF
 	
 	IF Vis.Cmd.Reset = TRUE THEN
-		MachineState[2] := 3;
+		Station.Reset := TRUE;
 		Vis.Cmd.Reset   := FALSE;
 	END_IF
 	

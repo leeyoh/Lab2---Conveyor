@@ -69,6 +69,7 @@ TYPE
 		ColorCount : ARRAY[0..2]OF USINT; (*Puck Color Count [Red, Black, Metallic]*)
 		Conveyor : Conveyor_type;
 		OpcUa : OpcUa_type;
+		Reset : BOOL;
 	END_STRUCT;
 	Status_type : 	STRUCT 
 		Switch1Extended : BOOL;
