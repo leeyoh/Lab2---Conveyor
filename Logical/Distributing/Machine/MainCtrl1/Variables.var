@@ -30,4 +30,6 @@ VAR
 	ManualPickupTimer : TON;
 	CmpPuckInTransit : BOOL;
 	ManualDropoffTimer : TON;
+	SetAlarm : BOOL;
+	DummyDint : UDINT;
 END_VAR
